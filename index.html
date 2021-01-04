@@ -87,12 +87,12 @@
             border-right: none;
         }
 
-        .main-tabbar-container {
+        .main-tabbar {
             background-color: #fff;
             height: 77px;
         }
 
-        .main-tabbar-container > ul {
+        .main-tabbar > ul {
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -101,22 +101,52 @@
             height: 100%;
         }
 
-        .main-tabbar-container > ul > li {
+        .main-tabbar > ul > li {
             text-align: center;
             box-sizing: border-box;
             padding: 28px 0 22px 0;
-
             border-bottom: 3px solid transparent;
             flex: 1;
         }
 
-        .main-tabbar-container > ul > li:hover {
+        .main-tabbar > ul > li:hover {
             border-bottom: 3px solid #ffd200;
         }
         
         .container {
             border-top: 1px solid #dfdfdf;
+            width: 100%;
         }
+
+        .content-box {
+            width: 720px;
+            margin-top: 8px;
+            margin: 8px auto 0 auto;
+            background-color: #fff;
+        }
+
+        .webtoon-tabbar {
+            position: relative;
+            width: 100%;
+            height: 67px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 20px;
+            color: #bbbbbb;
+        }
+        
+        .webtoon-tabbar > ul {
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 0px auto;
+        }
+
+        .webtoon-tabbar > ul > li:first-child {
+            color: #333333;
+            font-weight: 500;
+        }
+        
     </style>
 </head>
 <body>
@@ -135,34 +165,34 @@
             <a>로그인</a>
         </div>
     </div>
-    <div class="main-tabbar-container">
-        <ul class="main-tabbar">
-            <li class="main-tabbar-option">
+    <div class="main-tabbar">
+        <ul>
+            <li>
                 <a>
                     <img src="https://static-page.kakao.com/static/pc/menu_home.svg?fac7abe73b67dd1eb997d70a2c52d4d0" alt="홈" class="tab-image">
                 </a>
             </li>
-            <li class="main-tabbar-option">
+            <li>
                 <a>
                     <img src="https://static-page.kakao.com/static/pc/menu_toon.svg?42b75d406ec543b2fcf64e35287f0724" alt="웹툰/만화" class="tab-image">
                 </a>
             </li>
-            <li class="main-tabbar-option">
+            <li>
                 <a>
                     <img src="https://static-page.kakao.com/static/pc/menu_novel.svg?296e815be15f5e5edcdddb865f9863cd" alt="웹소설/장르" class="tab-image">
                 </a>
             </li>
-            <li class="main-tabbar-option">
+            <li>
                 <a>
                     <img src="https://static-page.kakao.com/static/pc/menu_vod.svg?0df7689ed8c083054bd9949aed77c589" alt="영화" class="tab-image">
                 </a>
             </li>
-            <li class="main-tabbar-option">
+            <li>
                 <a>
                     <img src="https://static-page.kakao.com/static/pc/menu_broadcast.svg?a6b4779526f1fa5dbeb1516607770b16" alt="예능/드라마" class="tab-image">
                 </a>
             </li>
-            <li class="main-tabbar-option">
+            <li>
                 <a>
                     <img src="https://static-page.kakao.com/static/pc/menu_book.svg?8fd0c5dc69d357fa23dd953d3b7e71aa" alt="책" class="tab-image">
                 </a>
@@ -170,17 +200,21 @@
         </ul>
     </div>
     <div class="container">
-        <ul>
-            <li>홈</li>
-            <li>요일연재</li>
-            <li>웹툰</li>
-            <li>소년</li>
-            <li>드라마</li>
-            <li>로맨스</li>
-            <li>로판</li>
-            <li>액션무협</li>
-            <li>BL/GL</li>
-        </ul>
+        <div class="content-box">
+            <div class="webtoon-tabbar">
+                <ul>
+                    <li>홈</li>
+                    <li>요일연재</li>
+                    <li>웹툰</li>
+                    <li>소년</li>
+                    <li>드라마</li>
+                    <li>로맨스</li>
+                    <li>로판</li>
+                    <li>액션무협</li>
+                    <li>BL/GL</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </body>
 </html>
