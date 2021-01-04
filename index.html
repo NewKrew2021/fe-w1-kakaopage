@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- <style>
+    <style>  
+        body {
+            @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css); 
+            font-family: 'Noto Sans KR', sans-serif;
+            margin:0;
+        }
+
         .header {
             position: sticky;
             height: 80px;
-            background-color: aqua;
         }
 
         .header > .title {
-            background-color: antiquewhite;
             text-align: center;
+            margin: 25px auto 19px;
         }
 
         .header > .title > .title-img {
@@ -19,30 +24,50 @@
         }
 
         .header > .sidemenu {
-            position: absolute;
+            position: fixed;
             display: flex;
-            justify-content: row;
+            justify-content: column;
+            align-items: center;
             top: 0px;
             right: 0px;
+            padding: 25px 40px 0 0;
         }
 
         .sidemenu > .search-box {
-            display: inline-block;
+            display: flex;
+            justify-content: space-between;
             width: 185px;
             height: 35px;
             border: 1px solid #cfcfcf;
             border-radius: 30px;
+            margin-right: 10px;
         }
         .search-box input {
+            position: relative;
+            margin: 7px 0 7px 8px;
             border: none;
-            height: 17px;
+            background-color: none;
+            font-size: 18px;
+            width: 136px;
         }
         .search-box .search-icon {
-            margin: 8px 0px 0px 0px;
+            margin: 8px 7px 7px 8px;
             width: 19px;
             height: 19px;
         }
-    </style> -->
+
+        .sidemenu > a {
+            font-size: 20px;
+            color: #999;
+            border-right: 1px solid #d9d9d9;
+            padding: 0 7px;
+        }
+        .sidemenu > a:last-child {
+            border-right: none;
+        }
+
+
+    </style>
 </head>
 <body>
     <div class="header">
@@ -55,8 +80,9 @@
                 <a>
                     <img src="https://static-page.kakao.com/static/pc/btn_search.png?a8ce9e4eba0250e52d4570c605f79f9a" alt="검색 버튼" class="search-icon">
                 </a>
-                <a>캐시충전</a> | <a>로그인</a>
             </div>
+            <a>캐시충전</a>
+            <a>로그인</a>
         </div>
     </div>
     <ul class="main-tabbar">
