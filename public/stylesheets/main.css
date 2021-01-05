@@ -19,6 +19,7 @@ a, a:visited, a:link, a:focus, a:active{
     top:0;
     background-color: white;
     text-align : center;
+    z-index:200;
 }
 
 .logo{
@@ -70,6 +71,7 @@ input{
     border-bottom:1px solid lightgray;
     font-size : 21px;
     font-weight: 500;
+    z-index:200;
 }
 
 #top_nav ul{
@@ -132,4 +134,12 @@ input{
 
 .contents_nav .c_active{
     color:black;
+}
+
+.card{
+    width:690px;
+    background-color:white;
+    margin-top:10px;
+    height:300px;
+    padding: 15px;
 }
