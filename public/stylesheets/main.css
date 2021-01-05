@@ -4,46 +4,27 @@ h1, h2, h3, h4, h5, h6, img, dl, dt, dd,
 fieldset, form, legend, label, table, caption,
 thead, tbody, tfoot, tr, th, td, ul, ol, li, a,
 select, textarea {margin: 0;padding: 0; border: 0 none; }
-
-.top_nav{
-    width:100%;
-    margin: 0 auto;
-    border-bottom:1px solid lightgray;
-    font-size : 21px;
-    font-weight: 500;
-}
-
-.top_nav ul{
-    height: 50px;
-    width:800px;
-    margin: 0 auto;
-}
-
-.top_nav li{
-    float: left;
-    width:16%;
-    height:100%;
-    text-align:center;
-    line-height:50px;
-    list-style: none;
-}
-
-#root{
-    background-color: rgb(233, 233, 233);
+body{
+    background-color:#eee;
 }
 
 #header{
-    margin-top: 15px;
-    display: relative;
+    width:100%;
+    position: fixed;
+    top:0;
     background-color: white;
     text-align : center;
+}
+
+.logo{
+    padding:30px;
 }
 
 #login_box{
     position: absolute;
     top: 0;
     right: 0;
-    padding: 35px;
+    padding: 45px;
 }
 
 .inner_box{
@@ -55,7 +36,7 @@ select, textarea {margin: 0;padding: 0; border: 0 none; }
 
 .inner_span{
     font-size:20px;
-    margin-left:5px;
+    margin-left:10px;
     color:rgb(150, 150, 150);
 }
 
@@ -73,4 +54,71 @@ input{
     width:18px;
     height:18px;
     padding: 5px 3px 0 2px;
+}
+
+#top_nav{
+    position:fixed;
+    top:120px;
+    width:100%;
+    margin: 0 auto;
+    background-color:white;
+    border-bottom:1px solid lightgray;
+    font-size : 21px;
+    font-weight: 500;
+}
+
+#top_nav ul{
+    width:800px;
+    margin: 0px auto;
+    display: flex;
+    background-color: white;
+}
+
+#top_nav li{
+    text-align:center;
+    margin: 0px auto;
+    width:100%;
+    font-size:20px;
+    list-style: none;
+    line-height: 50px;
+    cursor: pointer;
+    border-bottom:3px solid transparent;
+}
+
+#top_nav .active{
+    border-bottom:3px solid #FFCE33;
+}
+
+#dummy{
+    display:none;
+    text-align:center;
+    margin-top:500px;
+}
+
+#contents{
+    margin: 0px auto;
+    margin-top: 190px;
+}
+
+.contents_nav{
+    margin: 0px;
+}
+
+.contents_nav ul{
+    width:800px;
+    margin: 0px auto;
+    display: flex;
+    background-color: white;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+.contents_nav li{
+    text-align:center;
+    margin: 0px auto;
+    width:100%;
+    font-size:20px;
+    list-style: none;
+    line-height: 50px;
+    cursor: pointer;
 }
