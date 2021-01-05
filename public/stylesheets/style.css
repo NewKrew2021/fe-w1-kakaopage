@@ -1,8 +1,56 @@
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background: #dddddd;
 }
 
-a {
-  color: #00b7ff;
+.header {
+  position: relative;
+  height: 100px;
+  padding-top: 20px;
+  background: white;
+  box-sizing: border-box;
+}
+.header__logo {
+  margin: 0 auto;
+  width: fit-content;
+  font-size: 40px;
+}
+
+.header__status {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  height: 30px;
+}
+
+.search-bar {
+  float: left;
+  border-radius: 15px;
+  border: 1px solid #bbbbbb;
+  width: 170px;
+  height: 100%;
+}
+
+.user-status {
+  float: left;
+  border: 1px solid black;
+  height: 100%;
+}
+
+.user-status--login {
+}
+
+.header-nav {
+  height: 100px;
+  background: white;
+  border-bottom: 1px solid #cccccc;
+}
+
+.header-nav__list {
+  width: 700px;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+.header-nav__item {
+  display: inline-block;
 }
