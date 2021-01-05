@@ -2,6 +2,11 @@ body {
   background: #dddddd;
 }
 
+p {
+  padding: 0;
+  margin: 0;
+}
+
 .header {
   position: relative;
   height: 100px;
@@ -32,25 +37,48 @@ body {
 
 .user-status {
   float: left;
-  border: 1px solid black;
   height: 100%;
+  font-size: 22px;
+  color: #aaaaaa;
+  margin-left: 10px;
+  padding: 3px;
+}
+
+.user-status__cash-charge-button {
+  float: left;
+  border-right: 1px solid #aaaaaa;
+  margin-right: 4px;
+  padding-right: 4px;
+}
+
+.user-status__login-button {
+  float: left;
 }
 
 .user-status--login {
 }
 
 .header-nav {
-  height: 100px;
   background: white;
   border-bottom: 1px solid #cccccc;
 }
 
 .header-nav__list {
+  box-sizing: border-box;
   width: 700px;
-  border: 1px solid black;
   margin: 0 auto;
+  padding: 0;
+  display: flex;
 }
 
 .header-nav__item {
-  display: inline-block;
+  list-style-type: none;
+  flex: 1 1 auto;
+  font-size: 25px;
+  padding: 20px;
+  text-align: center;
+}
+
+.header-nav__item--clicked {
+  border-bottom: solid 4px#ffd200;
 }
