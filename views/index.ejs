@@ -5,55 +5,8 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
 </head>
 <body>
-    <div class="header">
-        <h1 class="logo">
-            <img src="https://static-page.kakao.com/static/pc/mainLogo.png?cbbbd3f1a3ca7834cb8fc1adf0115a6c" alt="kakaopage logo" class="logo-img">
-        </h1>
-        <div class="sidemenu">
-            <div class="search-box">
-                <input type="text" name="search-input" id="search-input">
-                <div class="search-button">
-                    <img src="https://static-page.kakao.com/static/pc/btn_search.png?a8ce9e4eba0250e52d4570c605f79f9a" alt="검색 버튼" class="search-icon">
-                </div>
-            </div>
-            <a>캐시충전</a>
-            <a>로그인</a>
-        </div>
-    </div>
-    <div class="main-tabbar">
-        <ul>
-            <li>
-                <a href="/home">
-                    <img src="https://static-page.kakao.com/static/pc/menu_home.svg?fac7abe73b67dd1eb997d70a2c52d4d0" alt="홈" class="tab-image">
-                </a>
-            </li>
-            <li>
-                <a href="/webtoon">
-                    <img src="https://static-page.kakao.com/static/pc/menu_toon.svg?42b75d406ec543b2fcf64e35287f0724" alt="웹툰/만화" class="tab-image">
-                </a>
-            </li>
-            <li>
-                <a href="/webnovel">
-                    <img src="https://static-page.kakao.com/static/pc/menu_novel.svg?296e815be15f5e5edcdddb865f9863cd" alt="웹소설/장르" class="tab-image">
-                </a>
-            </li>
-            <li>
-                <a href="/movie">
-                    <img src="https://static-page.kakao.com/static/pc/menu_vod.svg?0df7689ed8c083054bd9949aed77c589" alt="영화" class="tab-image">
-                </a>
-            </li>
-            <li>
-                <a href="/broadcast">
-                    <img src="https://static-page.kakao.com/static/pc/menu_broadcast.svg?a6b4779526f1fa5dbeb1516607770b16" alt="예능/드라마" class="tab-image">
-                </a>
-            </li>
-            <li>
-                <a href="/book">
-                    <img src="https://static-page.kakao.com/static/pc/menu_book.svg?8fd0c5dc69d357fa23dd953d3b7e71aa" alt="책" class="tab-image">
-                </a>
-            </li>
-        </ul>
-    </div>
+    <%- include('./header.ejs') %>
+    <%- include('./mainTabbar.ejs') %>
     <div class="container">
         <div class="content-box">
             <div class="webtoon-tabbar">

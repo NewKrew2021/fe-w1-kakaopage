@@ -3,7 +3,7 @@ module.exports = {
     name: "fe-w1-kakaopage",
     script: './app.js',
     watch: '.',
-    watch_delay: 1000,
+    watch_delay: 100,
     ignore_watch: ["node_modules", "/images"],
     watch_options: {
       "followSymlinks": false
