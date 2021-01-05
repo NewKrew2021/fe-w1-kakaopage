@@ -1,0 +1,145 @@
+html, body, div, p, span,
+strong, b, em, iframe, pre,
+h1, h2, h3, h4, h5, h6, img, dl, dt, dd,
+fieldset, form, legend, label, table, caption,
+thead, tbody, tfoot, tr, th, td, ul, ol, a, li,
+select, textarea {margin: 0;padding: 0; border: 0 none; }
+body{
+    background-color:#eee;
+}
+
+a, a:visited, a:link, a:focus, a:active{
+    color : gray;
+    text-decoration: none;
+}
+
+#header{
+    width:100%;
+    position: fixed;
+    top:0;
+    background-color: white;
+    text-align : center;
+    z-index:200;
+}
+
+.logo{
+    padding:30px;
+}
+
+#login_box{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 45px;
+}
+
+.inner_box{
+    display:inline-block;
+    border:1px solid lightgray;
+    border-radius: 20px;
+    padding:2px;
+}
+
+.inner_span{
+    font-size:20px;
+    margin-left:10px;
+    color:rgb(150, 150, 150);
+}
+
+input{
+    font-size:17px;
+    line-height:0.8;
+    border: 0px;
+    box-shadow: none;
+    outline: none;
+    margin-left:5px;
+    margin-bottom:2px;
+}
+
+.search_btn{
+    width:18px;
+    height:18px;
+    padding: 3px 4px 0 2px;
+}
+
+#top_nav{
+    position:fixed;
+    top:120px;
+    width:100%;
+    margin: 0 auto;
+    background-color:white;
+    border-bottom:1px solid lightgray;
+    font-size : 21px;
+    font-weight: 500;
+    z-index:200;
+}
+
+#top_nav ul{
+    width:720px;
+    height:65px;
+    margin: 0px auto;
+    display: flex;
+    background-color: white;
+}
+
+#top_nav li{
+    text-align:center;
+    margin: 0px auto;
+    width:100%;
+    font-size:20px;
+    list-style: none;
+    line-height: 50px;
+    cursor: pointer;
+    border-bottom:3px solid transparent;
+}
+
+#top_nav .active{
+    border-bottom:3px solid #FFCE33;
+}
+
+#dummy{
+    display:none;
+    text-align:center;
+    margin-top:500px;
+}
+
+#contents{
+    margin: 0px auto;
+    margin-top: 195px;
+}
+
+.contents_nav{
+    margin: 0px;
+}
+
+.contents_nav ul{
+    width:720px;
+    margin: 0px auto;
+    display: flex;
+    background-color: white;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+.contents_nav li{
+    text-align:center;
+    margin: 0px auto;
+    width:100%;
+    font-size:20px;
+    list-style: none;
+    line-height: 50px;
+    cursor: pointer;
+    color:rgb(155, 155, 155);
+}
+
+.contents_nav .c_active{
+    color:black;
+}
+
+.card{
+    width:690px;
+    background-color:white;
+    margin-top:10px;
+    height:300px;
+    padding: 15px;
+}
