@@ -4,13 +4,14 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/reset.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/slideshow.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/card.css">
 </head>
 <body>
     <%- include('./header.ejs') %>
     <%- include('./mainTabbar.ejs', {page}) %>
     <div class="container">
         <div class="content-box">
-            <div class="webtoon-tabbar">
+            <div class="sub-tabbar">
                 <ul>
                     <li>홈</li>
                     <li>요일연재</li>
@@ -35,70 +36,23 @@
                     <img src="https://static-page.kakao.com/static/common/ic-more-gray.svg?639494b81c8127013d0e627243aee94e" class="css-fvmobz">
                 </div>
             </div>
-            <div class="contents">
-                adf;kaljs
+            <div class="day-underline-tabbar">
+                <ul>
+                    <li>월</li>
+                    <li>화</li>
+                    <li>수</li>
+                    <li>목</li>
+                    <li>금</li>
+                    <li>토</li>
+                    <li>일</li>
+                    <li>완결</li>
+                </ul>
             </div>
-
-        </div>
-        <div class="content-box-with-title">
-            <div class="content-title">
-                <div class="content-title-text">
-                    요일 연재 TOP
-                </div>
-                <div class="more">
-                    더보기
-                    <img src="https://static-page.kakao.com/static/common/ic-more-gray.svg?639494b81c8127013d0e627243aee94e" class="css-fvmobz">
-                </div>
+            <div class="grid-contents">
+                <% for(let i = 0; i < 10; i++) { %>
+                    <%- include('./card.ejs'); %>
+                <% } %>
             </div>
-            <div class="contents">
-                adf;kaljs
-            </div>
-
-        </div>
-        <div class="content-box-with-title">
-            <div class="content-title">
-                <div class="content-title-text">
-                    요일 연재 TOP
-                </div>
-                <div class="more">
-                    더보기
-                    <img src="https://static-page.kakao.com/static/common/ic-more-gray.svg?639494b81c8127013d0e627243aee94e" class="css-fvmobz">
-                </div>
-            </div>
-            <div class="contents">
-                adf;kaljs
-            </div>
-
-        </div>
-        <div class="content-box-with-title">
-            <div class="content-title">
-                <div class="content-title-text">
-                    요일 연재 TOP
-                </div>
-                <div class="more">
-                    더보기
-                    <img src="https://static-page.kakao.com/static/common/ic-more-gray.svg?639494b81c8127013d0e627243aee94e" class="css-fvmobz">
-                </div>
-            </div>
-            <div class="contents">
-                adf;kaljs
-            </div>
-
-        </div>
-        <div class="content-box-with-title">
-            <div class="content-title">
-                <div class="content-title-text">
-                    요일 연재 TOP
-                </div>
-                <div class="more">
-                    더보기
-                    <img src="https://static-page.kakao.com/static/common/ic-more-gray.svg?639494b81c8127013d0e627243aee94e" class="css-fvmobz">
-                </div>
-            </div>
-            <div class="contents">
-                adf;kaljs
-            </div>
-
         </div>
     </div>
 </body>
