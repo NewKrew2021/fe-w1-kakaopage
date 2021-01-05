@@ -10,25 +10,25 @@ app.use(express.static('public'))
 
 // routes
 app.get('/', (req, res) => {
-    res.render('dummypage', {})
+    res.render('dummyPage', {})
 })
 app.get('/home', (req, res) => {
-    res.render('dummypage', {})
+    res.render('dummyPage', {})
 })
 app.get('/webtoon', (req, res) => {
     res.render('index', {})
 })
 app.get('/webnovel', (req, res) => {
-    res.render('dummypage', {})
+    res.render('dummyPage', {})
 })
 app.get('/movie', (req, res) => {
-    res.render('dummypage', {})
+    res.render('dummyPage', {})
 })
 app.get('/broadcast', (req, res) => {
-    res.render('dummypage', {})
+    res.render('dummyPage', {})
 })
 app.get('/book', (req, res) => {
-    res.render('dummypage', {})
+    res.render('dummyPage', {})
 })
 
 
