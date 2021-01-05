@@ -2,10 +2,15 @@ html, body, div, p, span,
 strong, b, em, iframe, pre,
 h1, h2, h3, h4, h5, h6, img, dl, dt, dd,
 fieldset, form, legend, label, table, caption,
-thead, tbody, tfoot, tr, th, td, ul, ol, li, a,
+thead, tbody, tfoot, tr, th, td, ul, ol, a, li,
 select, textarea {margin: 0;padding: 0; border: 0 none; }
 body{
     background-color:#eee;
+}
+
+a, a:visited, a:link, a:focus, a:active{
+    color : gray;
+    text-decoration: none;
 }
 
 #header{
@@ -53,7 +58,7 @@ input{
 .search_btn{
     width:18px;
     height:18px;
-    padding: 5px 3px 0 2px;
+    padding: 3px 4px 0 2px;
 }
 
 #top_nav{
@@ -68,7 +73,8 @@ input{
 }
 
 #top_nav ul{
-    width:800px;
+    width:720px;
+    height:65px;
     margin: 0px auto;
     display: flex;
     background-color: white;
@@ -97,7 +103,7 @@ input{
 
 #contents{
     margin: 0px auto;
-    margin-top: 190px;
+    margin-top: 195px;
 }
 
 .contents_nav{
@@ -105,7 +111,7 @@ input{
 }
 
 .contents_nav ul{
-    width:800px;
+    width:720px;
     margin: 0px auto;
     display: flex;
     background-color: white;
@@ -121,4 +127,9 @@ input{
     list-style: none;
     line-height: 50px;
     cursor: pointer;
+    color:rgb(155, 155, 155);
+}
+
+.contents_nav .c_active{
+    color:black;
 }
