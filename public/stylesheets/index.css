@@ -1,0 +1,167 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css); 
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #eee;
+}
+
+.header {
+    position: sticky;
+    height: 65px;
+    padding-top: 15px;
+    background-color: #fff;
+}
+
+.header > .logo {
+    text-align: center;
+    margin: 11px auto;
+}
+
+.header > .logo > .logo-img {
+    width: 167px;
+    height: 36px;
+}
+
+.header > .sidemenu {
+    position: fixed;
+    display: flex;
+    justify-content: column;
+    align-items: center;
+    top: 0px;
+    right: 0px;
+    padding: 25px 40px 0 0;
+}
+
+.sidemenu > .search-box {
+    display: flex;
+    justify-content: space-between;
+    width: 185px;
+    height: 35px;
+    border: 1px solid #cfcfcf;
+    border-radius: 30px;
+    margin-right: 10px;
+}
+
+.search-box input {
+    position: relative;
+    margin: 7px 0 7px 8px;
+    border: none;
+    background-color: none;
+    font-size: 18px;
+    width: 136px;
+}
+
+.search-box input:focus {
+    outline: none;
+}
+
+.search-box .search-icon {
+    margin: 8px 7px 7px 8px;
+    width: 19px;
+    height: 19px;
+}
+
+.sidemenu > a {
+    font-size: 20px;
+    color: #999;
+    border-right: 1px solid #d9d9d9;
+    padding: 0 7px;
+}
+
+.sidemenu > a:last-child {
+    border-right: none;
+}
+
+.main-tabbar {
+    background-color: #fff;
+    height: 77px;
+}
+
+.main-tabbar > ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 720px;
+    margin: 0px auto;
+    height: 100%;
+}
+
+.main-tabbar > ul > li {
+    text-align: center;
+    box-sizing: border-box;
+    padding: 28px 0 22px 0;
+    border-bottom: 3px solid transparent;
+    flex: 1;
+}
+
+.main-tabbar > ul > li:first-child {
+    border-bottom: 3px solid #ffd200;
+}
+
+.container {
+    border-top: 1px solid #dfdfdf;
+    width: 100%;
+}
+
+.content-box {
+    width: 720px;
+    margin-top: 8px;
+    margin: 8px auto 0 auto;
+    background-color: #fff;
+}
+
+.webtoon-tabbar {
+    position: relative;
+    width: 100%;
+    height: 67px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 20px;
+    color: #bbbbbb;
+}
+
+.webtoon-tabbar > ul {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0px auto;
+}
+
+.webtoon-tabbar > ul > li:first-child {
+    color: #333333;
+    font-weight: 500;
+}
+
+.content-box-with-title {
+    width: 720px;
+    margin-top: 8px;
+    margin: 8px auto 0 auto;
+    background-color: #fff;           
+}
+
+.content-box-with-title > .content-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 680px;
+    padding: 22px 20px 0 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.content-title > .content-title-text {
+    font-size: 20px;
+    color: #333333;
+}
+
+.content-title > .more {
+    font-size: 16px;
+    color: #999999;
+}
+
+.content-title > .more > img {
+}
+
+.contents {
+    margin: 22px 0 0 0 ;
+    padding: 0 20px 20px 20px;
+}
