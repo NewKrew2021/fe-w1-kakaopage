@@ -100,7 +100,8 @@ body {
     flex: 1;
 }
 
-.main-tabbar > ul > li:first-child {
+.main-tabbar > ul > .active{
+    background: none;
     border-bottom: 3px solid #ffd200;
 }
 
