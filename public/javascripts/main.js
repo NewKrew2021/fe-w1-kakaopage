@@ -38,6 +38,10 @@ const createNewElement = (tag, className, innerText) => {
   return newElement;
 };
 
+const deleteClassFromElement = (element, className) => {
+  element.classList.remove(className);
+};
+
 // render 함수
 const renderHeaderNav = () => {
   const headerNavList = $(HEADER_NAV_LIST_CLASS_NAME);
@@ -49,7 +53,7 @@ const renderHeaderNav = () => {
       navItem.pageName
     );
     navItemElement.addEventListener('click', () => {
-      navItem.renderFunction();
+      navItem.renderFunction(navItem.pageIndex);
     });
     headerNavList.appendChild(navItemElement);
   });
@@ -57,6 +61,18 @@ const renderHeaderNav = () => {
   headerNavList.childNodes[currentPage].classList.add(
     HEADER_NAV_CLICKED_ITEM_CLASS_NAME
   );
+};
+
+const changeClickedNavTab = pageIndex => {
+  const headerNavList = $(HEADER_NAV_LIST_CLASS_NAME);
+  deleteClassFromElement(
+    headerNavList.childNodes[currentPage],
+    HEADER_NAV_CLICKED_ITEM_CLASS_NAME
+  );
+  headerNavList.childNodes[pageIndex].classList.add(
+    HEADER_NAV_CLICKED_ITEM_CLASS_NAME
+  );
+  currentPage = pageIndex;
 };
 
 const createGenreNav = (navItemList, navClassName) => {
@@ -75,35 +91,41 @@ const createGenreNav = (navItemList, navClassName) => {
   return genreNav;
 };
 
-function renderHomePage() {
+function renderHomePage(pageIndex) {
   const contentTag = $('.content');
   contentTag.innerText = '';
+  changeClickedNavTab(pageIndex);
 }
 
-function renderWebtoonPage() {
+function renderWebtoonPage(pageIndex) {
   const contentTag = $('.content');
   contentTag.innerText = '';
+  changeClickedNavTab(pageIndex);
   contentTag.appendChild(createGenreNav(WEBTOON_NAV_LIST, 'webtoon-genre-nav'));
 }
 
-function renderWebNovelPage() {
+function renderWebNovelPage(pageIndex) {
   const contentTag = $('.content');
   contentTag.innerText = '';
+  changeClickedNavTab(pageIndex);
 }
 
-function renderMoviePage() {
+function renderMoviePage(pageIndex) {
   const contentTag = $('.content');
   contentTag.innerText = '';
+  changeClickedNavTab(pageIndex);
 }
 
-function renderBroadcastingPage() {
+function renderBroadcastingPage(pageIndex) {
   const contentTag = $('.content');
   contentTag.innerText = '';
+  changeClickedNavTab(pageIndex);
 }
 
-function renderBookPage() {
+function renderBookPage(pageIndex) {
   const contentTag = $('.content');
   contentTag.innerText = '';
+  changeClickedNavTab(pageIndex);
 }
 
 const render = () => {
