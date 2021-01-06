@@ -75,42 +75,11 @@ img {vertical-align: middle;}
   text-align: center;
   height:100%;
 }
-
-.banner{
-  display:inline-block;
-}
-.small{
-  background-color: var(--main-bg-color);
-  padding: 18px;
-  flex: 1;
-  font-size:18px;
-  margin: 1px;
-}
 .first{
   border-radius: 8px 0 0 8px;
 }
 .third{
   border-radius: 0 8px 8px 0;
-}
-
-.middle{
-  width: 540px;
-  height: 100px;
-}
-.btn-prev{
-  width:65px;
-  height:100px;
-  background-position-y: center;
-  background-repeat: no-repeat;
-  cursor: pointer;
-}
-.btn-next{
-  width:65px;
-  height:100px;
-  background-position-y: center;
-  background-position-x: 25px;
-  background-repeat: no-repeat;
-  cursor: pointer;
 }
 .counts{
   background-color: var(--main-yellow);

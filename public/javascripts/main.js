@@ -67,10 +67,9 @@ for (let i = 0; i < getElementsClass("nav-dummy").length; i++) {
 }
 
 /* [웹툰 > 홈] 의 첫번째 banner에 이미지 추가 */
-getElement("banner-prev").style.backgroundImage = "url('/images/before.svg')";
-getElement("banner-next").style.backgroundImage = "url('/images/next.svg')";
+getElement("btn-prev").setAttribute('src','/images/before.svg');
+getElement("btn-next").setAttribute('src','/images/next.svg');
 getElement("banner-img").setAttribute('src','/images/banner1.png');
-
 
 let slideIndex = 0;
 let timer;

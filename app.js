@@ -18,6 +18,7 @@ const home_banner_1_txt = ['오늘 UP', '오늘 신작', '오리지널'];
 const home_banner_1_attr = ['first','second','third'];
 const home_banner_1_cnt = ['161','','1,250'];
 
+
 var day_slide = [
   { numtxt: day_slide_numtxt[0], img: day_slide_img[0], title: day_slide_title[0], exp: day_slide_explain[0] },
   { numtxt: day_slide_numtxt[1], img: day_slide_img[1], title: day_slide_title[1], exp: day_slide_explain[1] },
@@ -48,6 +49,12 @@ var homeBanner = [
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 app.set('views', './views');
+app.set('data','./data');
+
+const fs = require('fs');
+const data = fs.readFileSync('./public/data/webtoon.json');
+const data_parse = JSON.parse(data);
+console.log(data_parse.items);
 
 app.get('/', function(req, res){
   res.render('index', { home_slide, homeBanner, day_slide });

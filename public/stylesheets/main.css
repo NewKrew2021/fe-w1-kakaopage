@@ -28,6 +28,13 @@ input{
     margin-bottom:2px;
 }
 
+.bg-color__main{
+    background-color:var(--main-bg-color);
+}
+.bg-color__content{
+    background-color:var(--main-yellow);
+}
+
 .pd-3{
     padding: 0.3em;
 }
@@ -55,6 +62,13 @@ input{
 .right-0{
     right: 0;
 }
+.flex{
+    display: flex;
+    justify-content: center;
+}
+.flex-balanced{
+    flex: 1;
+}
 .fixed{
     position: fixed !important;
 }
@@ -66,6 +80,9 @@ input{
 }
 .block{
     display: block;
+}
+.mg-1px{
+    margin: 1px;
 }
 .mg-all-5{
     margin: 0.5em;
@@ -106,10 +123,10 @@ input{
 .font-30{
     font-size: 30px;
 }
-.font-22{
+.font-title{
     font-size: 22px;
 }
-.font-18{
+.font-main{
     font-size: 18px;
 }
 

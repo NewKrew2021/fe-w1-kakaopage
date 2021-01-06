@@ -1,0 +1,37 @@
+{
+    "itemName" : "home",
+    "items": [
+        {
+            "slideNum" : "1/4",
+            "title" : "마족의 계약",
+            "explain" : "마계공주, 인간세계에서 무료봉사 중?!",
+            "subtext_img" : "/images/badge-up.svg",
+            "subtext_dir" : "웹툰",
+            "subtext_cnt" : "42.7만명"
+        },
+        {
+            "slideNum" : "2/4",
+            "title" : "빅 라이프",
+            "explain" : "안 팔리는 무명 작가의 인생 대반전!",
+            "subtext_img" : "/images/badge-up.svg",
+            "subtext_dir" : "웹툰",
+            "subtext_cnt" : "43.1만명"
+        },
+        {
+            "slideNum" : "3/4",
+            "title" : "까마귀 우는 밤",
+            "explain" : "우리 다시 만날 수 있어요?",
+            "subtext_img" : "/images/badge-up.svg",
+            "subtext_dir" : "웹툰",
+            "subtext_cnt" : "34.1만명"
+        },
+        {
+            "slideNum" : "4/4",
+            "title" : "트리거",
+            "explain" : "내 안의 화끈한 방아쇠를 당겨라!",
+            "subtext_img" : "/images/badge-up.svg",
+            "subtext_dir" : "웹툰",
+            "subtext_cnt" : "33.5만명"
+        }
+    ]
+}

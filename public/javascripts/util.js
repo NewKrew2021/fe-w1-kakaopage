@@ -1,6 +1,6 @@
 /* 배너 이미지 변경하기 */
 var count = 0;
-getElement("banner-prev").addEventListener("click", ()=>{
+getElement("btn-prev").addEventListener("click", ()=>{
     if(count > 0){
         count--;
         getElement("banner-img").setAttribute('src',topbannerImg[count]);
@@ -10,7 +10,7 @@ getElement("banner-prev").addEventListener("click", ()=>{
         getElement("banner-img").setAttribute('src',topbannerImg[count]);
     }
 });
-getElement("banner-next").addEventListener("click", ()=>{
+getElement("btn-next").addEventListener("click", ()=>{
     if(count < 2){
         count++;
         getElement("banner-img").setAttribute('src',topbannerImg[count]);
