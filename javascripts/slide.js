@@ -12,9 +12,9 @@ let slide = {
     timerId: 0,
     slideDOM: null,
     images: [
-        { id: 1, src: "./images/resource-1.png" },
-        { id: 2, src: "./images/resource-2.png" },
-        { id: 3, src: "./images/resource-3.png" }
+        { id: 1, src: "../images/resource-1.png" },
+        { id: 2, src: "../images/resource-2.png" },
+        { id: 3, src: "../images/resource-3.png" }
     ]
 };
 
@@ -58,40 +58,4 @@ function makeImageElement(src, width, height) {
     element.setAttribute("width", `${width}px`);
     element.setAttribute("height", `${height}px`);
     return element;
-}
-
-window.onload = function() {
-    // 슬라이드를 위해 웹툰 포스터 이미지 연결
-    slide.slideDOM = document.getElementById("slide");
-    slide.slideDOM.style.width = `${(slide.cnt + 2) * 720}px`;
-
-    slide.slideDOM.appendChild(makeImageElement(slide.images[slide.cnt - 1].src, 720, 480));
-    for(let img of slide.images) {
-        let element = makeImageElement(img.src, 720, 480);
-        slide.slideDOM.appendChild(element);
-    }
-    slide.slideDOM.appendChild(makeImageElement(slide.images[0].src, 720, 480));
-
-    // slide 버튼 이벤트 등록
-    let prevBtn = document.getElementById("prevBtn");
-    let nextBtn = document.getElementById("nextBtn");
-    prevBtn.addEventListener("click", function(e) {
-        prev();
-        clearInterval(slide.timerId);
-        slide.timerId = setInterval(next, 2000);
-    })
-    nextBtn.addEventListener("click", function(e) {
-        next();
-        clearInterval(slide.timerId);
-        slide.timerId = setInterval(next, 2000);
-    })
-
-    // 현재 slide 1로 초기화
-    let page = document.getElementById("page");
-    page.innerHTML = `${slide.curId} / ${slide.cnt}`;
-
-    // 3 1 2 3 1 중 두번째 1로 한칸 옮기기
-    slide.slideDOM.style.transform = `translate(-720px)`;
-
-    slide.timerId = setInterval(next, 2000);
 }
