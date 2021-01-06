@@ -15,11 +15,12 @@ const home_topData = fs.readFileSync('./public/data/hometop.json');
 
 const slideJSON = JSON.parse(slideData);
 const home_totalJSON = JSON.parse(home_totalData);
-const home_top = JSON.parse(home_topData);
+const home_topJSON = JSON.parse(home_topData);
 
 const home_slide = slideJSON.home_slide;
 const day_slide = slideJSON.day_slide;
 const homeBanner = home_totalJSON.home_total;
+const home_top = home_topJSON.data;
 
 app.get('/', function(req, res){
   res.render('index', { home_slide, homeBanner, home_top, day_slide });

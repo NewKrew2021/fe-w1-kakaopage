@@ -105,65 +105,55 @@
                         <div class="font-title flex">요일 연재 TOP
                             <div class="font-small gray flex mg-left-5">(1,084)</div>
                         </div>
-                        <div class="font-main gray">더보기<img class="btn" src="/images/more_btn.svg">
+                        <div class="font-main gray">더보기<img class="btn mg-left-5" src="/images/more_btn.svg">
                         </div>
                     </div>
                     <!-- 네번째 배너 -->
                     <div class="card flex">
                         <div class="font-title flex">기대신작 TOP</div>
-                        <div class="font-main gray">더보기</div><img class="btn" src="/images/more_btn.svg">
+                        <div class="font-main gray">더보기</div><img class="btn mg-left-5" src="/images/more_btn.svg">
                     </div>
-                    <!-- 다섯번째부터 여덟번째는 반복된 요소라 아래 하드코딩을 없앨 예정 -->
-                    <!-- 다섯번째 배너 -->
+
+                    <!-- 다섯번째 ~ 아홉번째 배너 -->
+                    <% home_top.forEach(function(data) { %>
                     <div class="card">
                         <div class="flex">
-                            <div class="font-title flex">로맨스 TOP</div>
-                            <div class="font-main gray">더보기</div><img class="btn" src="/images/more_btn.svg">
+                            <div class="font-title flex"> <%= data.subject %> </div>
+                            <div class="font-main gray">더보기</div><img class="btn mg-left-5" src="/images/more_btn.svg">
                         </div>
                         <!-- 썸네일 영역 -->
                         <div class="flex-between">
-                            <div class="mg-top-10">
-                                <div class="thumb">
-                                    <img src="/images/romancetop/01.png">
-                                    <div class="thumb-bottom bottom flex">
-                                        <div class="flex">
-                                            <img src="/images/romancetop/star.svg">
-                                            <div class="yellow font-18 mg-top-3">10.0</div>
+                            <% data.item.forEach(function(item) { %>
+                                <div class="mg-top-10" style="width:120px;">
+                                    <div class="thumb">
+                                        <img src=" <%= item.image %> ">
+                                        <div class="thumb-bottom bottom flex">
+                                            <div class="flex">
+                                                <img src=" <%= item.star_img %> ">
+                                                <div class="yellow font-18 mg-top-3">
+                                                    <%= item.score %>
+                                                </div>
+                                            </div>
+                                            <img src=" <%= item.c_img %> ">
                                         </div>
-                                        <img src="/images/romancetop/clock.svg">
+                                    </div>
+                                    <div class="text-ellipsis bottom mg-top-25 letter-spacing">
+                                        <%= item.title %>
+                                    </div>
+                                    <div class="bottom">
+                                        <div class="flex mg-top-3">
+                                            <img src=" <%= item.up_img %> ">
+                                            <img src=" <%= item.p_img %> ">
+                                            <div class="font-15 gray">
+                                                <%= item.count %>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="bottom mg-top-25">
-                                    인소의 법칙
-                                    <div class="flex mg-top-3">
-                                        <img src="/images/romancetop/icon_up.png">
-                                        <img src="/images/romancetop/people.png">
-                                        <div class="font-15 gray">110.3만명</div>
-                                    </div>
-                                </div>
-                            </div>
+                                <% }) %>
                         </div>
                     </div>
-                    <!-- 여섯번째 배너 -->
-                    <div class="card flex">
-                        <div class="font-title flex">로판 TOP</div>
-                        <div class="font-main gray">더보기</div><img class="btn" src="/images/more_btn.svg">
-                    </div>
-                    <!-- 여섯번째 배너 -->
-                    <div class="card flex">
-                        <div class="font-title flex">드라마 TOP</div>
-                        <div class="font-main gray">더보기</div><img class="btn" src="/images/more_btn.svg">
-                    </div>
-                    <!-- 일곱번째 배너 -->
-                    <div class="card flex">
-                        <div class="font-title flex">BL/GL TOP</div>
-                        <div class="font-main gray">더보기</div><img class="btn" src="/images/more_btn.svg">
-                    </div>
-                    <!-- 여덟번째 배너 -->
-                    <div class="card flex">
-                        <div class="font-title flex">소년 TOP</div>
-                        <div class="font-main gray">더보기</div><img class="btn" src="/images/more_btn.svg">
-                    </div>
+                    <% }) %>
                 </div>
 
                 <!-- 요일연재 -->
