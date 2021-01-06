@@ -6,15 +6,28 @@
 
 // name space 생성
 const MAIN = {};
+MAIN.URL = "http://localhost:5500";
 
-MAIN.mainCategory = "홈";
-MAIN.mainCategoryDOMs = {};
-
-MAIN.webtoonCategory = "홈";
-MAIN.webtoonCategoryDOMs = {};
+MAIN.mainCategory = {
+    currentMenu: "홈",
+    kinds : ["홈", "웹툰", "웹소설", "영화", "방송", "책"],
+    DOMs : undefined
+}
+MAIN.webtoonCategory = {
+    currentMenu: "홈",
+    kinds : ["홈", "요일연재", "웹툰", "소년", "드라마", "로맨스", "로판", "액션무협", "BL/GL"],
+    DOMs : undefined
+}
 
 MAIN.containerDOM;
 
+function getCategory(type) {
+    return new Promise(function(resolve, reject) {
+        fetch(`${MAIN.URL}/${type}-category.json`).then(function(response) {
+            resolve(response.json());
+        });
+    });
+}
 window.onload = function() {
     // 슬라이드를 위해 웹툰 포스터 이미지 연결
     slide.slideDOM = document.getElementById("slide");
@@ -50,8 +63,13 @@ window.onload = function() {
 
     slide.timerId = setInterval(next, 2000);
 
-    // main category DOM 객체 저장
-    MAIN.mainCategoryDOMs = document.querySelectorAll('.menu');
-
+    MAIN.mainCategory.DOMs = document.querySelectorAll('.menu');
     MAIN.containerDOM = document.getElementById("container");
+    
+    getCategory("main").then(function(category) {
+        const mainCategoryDOM = document.getElementById("mainCategory");
+        for(let name in category) {
+            mainCategoryDOM.innerHTML += `<li class="menu"><img src="./images/${category[name]}" class="menuImage"></li>`;
+        }
+    });
 }
