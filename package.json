@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ChanhuiSeok/fe-w1-kakaopage#readme",
   "dependencies": {
+    "ejs": "^3.1.5",
     "express": "^4.17.1"
   }
 }

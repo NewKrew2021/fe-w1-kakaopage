@@ -58,7 +58,7 @@
             <div id="contents">
                 <div class="contents_nav">
                     <ul>
-                        <li class="contents_li home c_active">홈</li>
+                        <li id="content_home" class="contents_li home c_active">홈</li>
                         <li class="contents_li day">요일연재</li>
                         <li class="contents_li webtoon">웹툰</li>
                         <li class="contents_li boy">소년</li>
@@ -72,64 +72,60 @@
 
                 <div id="home" class="page visible">
                     <div class="slideshow-container">
-                        <div class="mySlides fade">
-                            <div id = "slide_num1" class="numbertext"></div>
-                            <img id = "slide_img1" style="width:100%">
-                            <div id = "slide_txt1" class="text"></div>
-                            <div id = "slide_subtxt1" class="subtext"></div>
-                            <div id = "slide_exp1" class="explain"></div>
+                        <% home_slide.forEach(function(home_slide){ %>
+                            <div class="mySlides fade">
+                                <div class="numbertext"><%= home_slide.numtxt %></div>
+                                <img style="width:100%" src= "<%= home_slide.img %>" >
+                                <div class="text"><%= home_slide.title %></div>
+                                <div class="subtext"><img src = "<%= home_slide.subtxt_img %>"> <%= home_slide.subtxt_dir %>
+                                    <img src = "/images/line_top_banner.png"> <img src = "/images/ico-bigthum-person.svg">
+                                    <%= home_slide.subtxt_person %> </div>
+                                <div class="explain"><%= home_slide.exp %></div>
+                            </div>
+                        <% }); %>
+                    </div>
+                    <!-- 첫번째 배너 -->
+                    <div class = "card" style="display: flex">
+                        <% homeBanner.forEach(function(homeBanner) {%>
+                            <div class="banner small <%= homeBanner.attr %> >"><%= homeBanner.text %>
+                                <% if(homeBanner.cnt !== '') { %>
+                                    <span class = "counts"> <%= homeBanner.cnt %> </span>
+                                <% }; %>
+                            </div>
+                        <% }); %>
+                    </div>
+                    <!-- 두번째 배너 -->
+                    <div class = "card" style="display: relative">
+                        <div id="banner_prev" class="banner prev_btn"></div>
+                        <div id="banner_1" class="banner middle">
+                            <img style="display:block" width="100%" id="banner_img">
                         </div>
-                        <div class="mySlides fade">
-                            <div id = "slide_num2" class="numbertext"></div>
-                            <img id = "slide_img2" style="width:100%">
-                            <div id = "slide_txt2" class="text"></div>
-                            <div id = "slide_subtxt2" class="subtext"></div>
-                            <div id = "slide_exp2" class="explain"></div>
-                        </div>
-                        <div class="mySlides fade">
-                            <div id = "slide_num3" class="numbertext"></div>
-                            <img id = "slide_img3" style="width:100%">
-                            <div id = "slide_txt3" class="text"></div>
-                            <div id = "slide_subtxt3" class="subtext"></div>
-                            <div id = "slide_exp3" class="explain"></div>
-                        </div>
-                        <div class="mySlides fade">
-                            <div id = "slide_num4" class="numbertext"></div>
-                            <img id = "slide_img4" style="width:100%">
-                            <div id = "slide_txt4" class="text"></div>
-                            <div id = "slide_subtxt4" class="subtext"></div>
-                            <div id = "slide_exp4" class="explain"></div>
-                        </div>
+                        <div id="banner_next" class="banner next_btn"></div>
                     </div>
                     <div class = "card">구현 예정입니다..</div>
                     <div class = "card">구현 예정입니다..</div>
                     <div class = "card">구현 예정입니다..</div>
+                    <div class = "card">구현 예정입니다..</div>
+                    <div class = "card">구현 예정입니다..</div>
+                    <div class = "card">구현 예정입니다..</div>
                 </div>
+
                 <div id="day" class="page invisible">
                     <div class="slideshow-container">
-                        <div class="daySlides fade">
-                            <div id = "day_slide_num1" class="numbertext"></div>
-                            <img id = "day_slide_img1" style="width:100%">
-                            <div id = "day_slide_txt1" class="text"></div>
-                            <div id = "day_slide_exp1" class="explain"></div>
-                        </div>
-                        <div class="daySlides fade">
-                            <div id = "day_slide_num2" class="numbertext"></div>
-                            <img id = "day_slide_img2" style="width:100%">
-                            <div id = "day_slide_txt2" class="text"></div>
-                            <div id = "day_slide_exp2" class="explain"></div>
-                        </div>
-                        <div class="daySlides fade">
-                            <div id = "day_slide_num3" class="numbertext"></div>
-                            <img id = "day_slide_img3" style="width:100%">
-                            <div id = "day_slide_txt3" class="text"></div>
-                            <div id = "day_slide_exp3" class="explain"></div>
-                        </div>
+                        <% day_slide.forEach(function(day_slide){ %>
+                            <div class="daySlides fade">
+                                <div class="numbertext"><%= day_slide.numtxt %></div>
+                                <img style="width:100%" src= "<%= day_slide.img %>" >
+                                <div class="text"><%= day_slide.title %></div>
+                                <div class="explain"><%= day_slide.exp %></div>
+                            </div>
+                        <% }); %>
                     </div>
                     <div class = "card">구현 예정입니다..</div>
                     <div class = "card">구현 예정입니다..</div>
                     <div class = "card">구현 예정입니다..</div>
                 </div>
+
                 <div id="webtoon" class="page invisible">구현예정...</div>
                 <div id="boy" class="page invisible">구현예정...</div>
                 <div id="drama" class="page invisible">구현예정...</div>

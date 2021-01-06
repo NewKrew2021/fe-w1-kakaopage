@@ -3,7 +3,7 @@ strong, b, em, iframe, pre,
 h1, h2, h3, h4, h5, h6, img, dl, dt, dd,
 fieldset, form, legend, label, table, caption,
 thead, tbody, tfoot, tr, th, td, ul, ol, a, li,
-select, textarea {margin: 0;padding: 0; border: 0 none; }
+select, textarea {margin: 0; padding: 0; border: 0 none; }
 body{
     background-color:#eee;
 }
@@ -134,12 +134,4 @@ input{
 
 .contents_nav .c_active{
     color:black;
-}
-
-.card{
-    width:690px;
-    background-color:white;
-    margin-top:10px;
-    height:300px;
-    padding: 15px;
 }
