@@ -1,10 +1,10 @@
 const HEADER_NAV_LIST = [
-  { pageName: '홈', renderFunction: '' },
+  { pageName: '홈', renderFunction: renderHomePage },
   { pageName: '웹툰', renderFunction: renderWebtoonPage },
-  { pageName: '웹소설', renderFunction: '' },
-  { pageName: '영화', renderFunction: '' },
-  { pageName: '방송', renderFunction: '' },
-  { pageName: '책', renderFunction: '' },
+  { pageName: '웹소설', renderFunction: renderWebNovelPage },
+  { pageName: '영화', renderFunction: renderMoviePage },
+  { pageName: '방송', renderFunction: renderBroadcastingPage },
+  { pageName: '책', renderFunction: renderBookPage },
 ];
 const WEBTOON_NAV_LIST = [
   '홈',
@@ -71,10 +71,35 @@ const createGenreNav = (navItemList, navClassName) => {
   return genreNav;
 };
 
+function renderHomePage() {
+  const contentTag = $('.content');
+  contentTag.innerText = '';
+}
+
 function renderWebtoonPage() {
   const contentTag = $('.content');
   contentTag.innerText = '';
   contentTag.appendChild(createGenreNav(WEBTOON_NAV_LIST, 'webtoon-genre-nav'));
+}
+
+function renderWebNovelPage() {
+  const contentTag = $('.content');
+  contentTag.innerText = '';
+}
+
+function renderMoviePage() {
+  const contentTag = $('.content');
+  contentTag.innerText = '';
+}
+
+function renderBroadcastingPage() {
+  const contentTag = $('.content');
+  contentTag.innerText = '';
+}
+
+function renderBookPage() {
+  const contentTag = $('.content');
+  contentTag.innerText = '';
 }
 
 const render = () => {
