@@ -1,6 +1,6 @@
 const HEADER_NAV_LIST = [
   { pageName: '홈', renderFunction: '' },
-  { pageName: '웹툰', renderFunction: '' },
+  { pageName: '웹툰', renderFunction: renderWebtoonPage },
   { pageName: '웹소설', renderFunction: '' },
   { pageName: '영화', renderFunction: '' },
   { pageName: '방송', renderFunction: '' },
@@ -44,6 +44,9 @@ const renderHeaderNav = () => {
       HEADER_NAV_ITEM_CLASS_NAME,
       navItem.pageName
     );
+    navItemElement.addEventListener('click', () => {
+      navItem.renderFunction();
+    });
     headerNavList.appendChild(navItemElement);
   });
 
@@ -53,7 +56,7 @@ const renderHeaderNav = () => {
 };
 
 const createGenreNav = (navItemList, navClassName) => {
-  const genreNav = $(`.${navClassName}`);
+  const genreNav = createNewElement('div', 'webtoon-genre-nav', '');
   const genreNavList = createNewElement('ul', 'genre-nav__list', '');
 
   navItemList.forEach(navItem => {
@@ -68,13 +71,14 @@ const createGenreNav = (navItemList, navClassName) => {
   return genreNav;
 };
 
-const renderWebtoonPage = () => {
-  createGenreNav(WEBTOON_NAV_LIST, 'webtoon-genre-nav');
-};
+function renderWebtoonPage() {
+  const contentTag = $('.content');
+  contentTag.innerText = '';
+  contentTag.appendChild(createGenreNav(WEBTOON_NAV_LIST, 'webtoon-genre-nav'));
+}
 
 const render = () => {
   renderHeaderNav();
-  renderWebtoonPage();
 };
 
 window.addEventListener('DOMContentLoaded', () => render());
