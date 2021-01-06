@@ -60,28 +60,40 @@
                     <div class="slideshow-container">
                         <% home_slide.forEach(function(home_slide){ %>
                             <div class="mySlides fade">
-                                <div class="slide-num"><%= home_slide.slideNum %></div>
-                                <img style="width:100%" src= "<%= home_slide.img %>" >
-                                <div class="slide-title"><%= home_slide.title %></div>
-                                <div class="slide-subtext"><img src = "<%= home_slide.subtext_img %>"> <%= home_slide.subtext_dir %>
-                                    <img src = "/images/line_top_banner.png"> <img src = "/images/ico-bigthum-person.svg">
-                                    <%= home_slide.subtext_cnt %> </div>
-                                <div class="slide-explain"><%= home_slide.explain %></div>
+                                <div class="slide-num">
+                                    <%= home_slide.slideNum %>
+                                </div>
+                                <img style="width:100%" src="<%= home_slide.img %>">
+                                <div class="slide-title">
+                                    <%= home_slide.title %>
+                                </div>
+                                <div class="slide-subtext"><img src="<%= home_slide.subtext_img %>">
+                                    <%= home_slide.subtext_dir %>
+                                        <img src="/images/line_top_banner.png"> <img
+                                            src="/images/ico-bigthum-person.svg">
+                                        <%= home_slide.subtext_cnt %>
+                                </div>
+                                <div class="slide-explain">
+                                    <%= home_slide.explain %>
+                                </div>
                             </div>
-                        <% }); %>
+                            <% }); %>
                     </div>
                     <!-- 첫번째 배너 -->
-                    <div class = "card" style="display: flex">
+                    <div class="card text-center" style="display: flex">
                         <% homeBanner.forEach(function(homeBanner) {%>
-                            <div class="flex-balanced mg-1px bg-color__main font-main pd-10 <%= homeBanner.attr %> >"><%= homeBanner.title %>
-                                <% if(homeBanner.count !== '') { %>
-                                    <span class = "counts"> <%= homeBanner.count %> </span>
-                                <% }; %>
+                            <div class="flex-balanced mg-1px bg-color__main font-main pd-10 <%= homeBanner.attr %> >">
+                                <%= homeBanner.title %>
+                                    <% if(homeBanner.count !=='' ) { %>
+                                        <span class="counts">
+                                            <%= homeBanner.count %>
+                                        </span>
+                                        <% }; %>
                             </div>
-                        <% }); %>
+                            <% }); %>
                     </div>
                     <!-- 두번째 배너 -->
-                    <div class = "card flex">
+                    <div class="card flex">
                         <img id="btn-prev" class="btn">
                         <div id="banner-1" class="middle mg-left-10 mg-right-10">
                             <img class="block" width="100%" id="banner-img">
@@ -89,7 +101,7 @@
                         <img id="btn-next" class="btn">
                     </div>
                     <!-- 세번째 배너 -->
-                    <div class ="card flex">
+                    <div class="card flex">
                         <div class="font-title flex">요일 연재 TOP
                             <div class="font-small gray flex mg-left-5">(1,084)</div>
                         </div>
@@ -97,33 +109,58 @@
                         </div>
                     </div>
                     <!-- 네번째 배너 -->
-                    <div class = "card flex">
+                    <div class="card flex">
                         <div class="font-title flex">기대신작 TOP</div>
                         <div class="font-main gray">더보기</div><img class="btn" src="/images/more_btn.svg">
                     </div>
                     <!-- 다섯번째부터 여덟번째는 반복된 요소라 아래 하드코딩을 없앨 예정 -->
                     <!-- 다섯번째 배너 -->
-                    <div class = "card flex">
-                        <div class="font-title flex">로맨스 TOP</div>
-                        <div class="font-main gray">더보기</div><img class="btn" src="/images/more_btn.svg">
+                    <div class="card">
+                        <div class="flex">
+                            <div class="font-title flex">로맨스 TOP</div>
+                            <div class="font-main gray">더보기</div><img class="btn" src="/images/more_btn.svg">
+                        </div>
+                        <!-- 썸네일 영역 -->
+                        <div class="flex-between">
+                            <div class="mg-top-10">
+                                <div class="thumb">
+                                    <img src="/images/romancetop/01.png">
+                                    <div class="thumb-bottom bottom flex">
+                                        <div class="flex">
+                                            <img src="/images/romancetop/star.svg">
+                                            <div class="yellow font-18 mg-top-3">10.0</div>
+                                        </div>
+                                        <img src="/images/romancetop/clock.svg">
+                                    </div>
+                                </div>
+                                <div class="bottom mg-top-25">
+                                    인소의 법칙
+                                    <div class="flex mg-top-3">
+                                        <img src="/images/romancetop/icon_up.png">
+                                        <img src="/images/romancetop/people.png">
+                                        <div class="font-15 gray">110.3만명</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- 여섯번째 배너 -->
-                    <div class = "card flex">
+                    <div class="card flex">
                         <div class="font-title flex">로판 TOP</div>
                         <div class="font-main gray">더보기</div><img class="btn" src="/images/more_btn.svg">
                     </div>
                     <!-- 여섯번째 배너 -->
-                    <div class = "card flex">
+                    <div class="card flex">
                         <div class="font-title flex">드라마 TOP</div>
                         <div class="font-main gray">더보기</div><img class="btn" src="/images/more_btn.svg">
                     </div>
                     <!-- 일곱번째 배너 -->
-                    <div class = "card flex">
+                    <div class="card flex">
                         <div class="font-title flex">BL/GL TOP</div>
                         <div class="font-main gray">더보기</div><img class="btn" src="/images/more_btn.svg">
                     </div>
                     <!-- 여덟번째 배너 -->
-                    <div class = "card flex">
+                    <div class="card flex">
                         <div class="font-title flex">소년 TOP</div>
                         <div class="font-main gray">더보기</div><img class="btn" src="/images/more_btn.svg">
                     </div>
@@ -134,19 +171,28 @@
                     <div class="slideshow-container">
                         <% day_slide.forEach(function(day_slide){ %>
                             <div class="daySlides fade">
-                                <div class="slide-num"><%= day_slide.slideNum %></div>
-                                <img style="width:100%" src= "<%= day_slide.img %>" >
-                                <div class="slide-title"><%= day_slide.title %></div>
-                                <div class="slide-subtext"><img src = "<%= day_slide.subtext_img %>"> <%= day_slide.subtext_dir %>
-                                    <img src = "/images/line_top_banner.png"> <img src = "/images/ico-bigthum-person.svg">
-                                    <%= day_slide.subtext_cnt %> </div>
-                                <div class="slide-explain"><%= day_slide.explain %></div>
+                                <div class="slide-num">
+                                    <%= day_slide.slideNum %>
+                                </div>
+                                <img style="width:100%" src="<%= day_slide.img %>">
+                                <div class="slide-title">
+                                    <%= day_slide.title %>
+                                </div>
+                                <div class="slide-subtext"><img src="<%= day_slide.subtext_img %>">
+                                    <%= day_slide.subtext_dir %>
+                                        <img src="/images/line_top_banner.png"> <img
+                                            src="/images/ico-bigthum-person.svg">
+                                        <%= day_slide.subtext_cnt %>
+                                </div>
+                                <div class="slide-explain">
+                                    <%= day_slide.explain %>
+                                </div>
                             </div>
-                        <% }); %>
+                            <% }); %>
                     </div>
-                    <div class = "card">구현 예정입니다..</div>
-                    <div class = "card">구현 예정입니다..</div>
-                    <div class = "card">구현 예정입니다..</div>
+                    <div class="card">구현 예정입니다..</div>
+                    <div class="card">구현 예정입니다..</div>
+                    <div class="card">구현 예정입니다..</div>
                 </div>
 
                 <!-- 웹툰 -->
