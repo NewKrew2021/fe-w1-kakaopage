@@ -95,10 +95,13 @@
                     <div class="slideshow-container">
                         <% day_slide.forEach(function(day_slide){ %>
                             <div class="daySlides fade">
-                                <div class="slide-num"><%= day_slide.numtxt %></div>
+                                <div class="slide-num"><%= day_slide.slideNum %></div>
                                 <img style="width:100%" src= "<%= day_slide.img %>" >
                                 <div class="slide-title"><%= day_slide.title %></div>
-                                <div class="slide-explain"><%= day_slide.exp %></div>
+                                <div class="slide-subtext"><img src = "<%= day_slide.subtext_img %>"> <%= day_slide.subtext_dir %>
+                                    <img src = "/images/line_top_banner.png"> <img src = "/images/ico-bigthum-person.svg">
+                                    <%= day_slide.subtext_cnt %> </div>
+                                <div class="slide-explain"><%= day_slide.explain %></div>
                             </div>
                         <% }); %>
                     </div>
