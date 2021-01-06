@@ -34,7 +34,13 @@ input{
 .bg-color__content{
     background-color:var(--main-yellow);
 }
+.gray{
+    color: rgb(150, 150, 150);
+}
 
+.btn{
+    cursor: pointer;
+}
 .pd-3{
     padding: 0.3em;
 }
@@ -64,10 +70,13 @@ input{
 }
 .flex{
     display: flex;
-    justify-content: center;
+    flex: 1;
+    align-items: center;
 }
 .flex-balanced{
     flex: 1;
+    justify-content: center;
+    align-items: center;
 }
 .fixed{
     position: fixed !important;
@@ -124,10 +133,13 @@ input{
     font-size: 30px;
 }
 .font-title{
-    font-size: 22px;
+    font-size: 20px;
 }
 .font-main{
     font-size: 18px;
+}
+.font-small{
+    font-size: 14px;
 }
 
 #header{

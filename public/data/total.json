@@ -1,0 +1,19 @@
+{
+    "home_total": [
+        {
+            "title": "오늘 UP",
+            "count": "161",
+            "attr":"first"
+        },
+        {
+            "title": "오늘 신작",
+            "count": "15",
+            "attr":"second"
+        },
+        {
+            "title": "오리지널",
+            "count": "1250",
+            "attr":"third"
+        }
+    ]
+}

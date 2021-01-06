@@ -10,6 +10,9 @@ function creElement(id){
 function getElementsClass(className){
     return document.getElementsByClassName(className);
 }
+function getQueryAll(node){
+    return document.querySelectorAll(node);
+}
 
 /* 매직 넘버 */
 const intervalTime = 2400;
@@ -26,16 +29,8 @@ const intervalTime = 2400;
     ];
     const top_nav = getElement('top-nav-ul');
     for(var i = 0; i < nav_list.length; i++){
-        let node = creElement("LI");
-        node.className = "nav-dummy";
-        top_nav.appendChild(node);
-    }
-    for(var i = 0; i < nav_list.length; i++){
         let node = getElementsClass("nav-dummy");
         node[i].innerHTML = '<a><img src = '+nav_list[i].img+'></a>';
-        if(i == 1){
-            node[i].className += " webtoon active";
-        }
     }
 })();
 
@@ -58,9 +53,9 @@ const intervalTime = 2400;
 })();
 
 /* top_nav - 누른 요소만 노란색 밑줄 강조 표시 */
-for (let i = 0; i < getElementsClass("nav-dummy").length; i++) {
-    getElementsClass("nav-dummy")[i].addEventListener("click", () => {
-        var current = document.getElementsByClassName("active");
+for (let i = 0; i < getQueryAll("li.nav-dummy").length; i++) {
+    getQueryAll("li.nav-dummy")[i].addEventListener("click", function() {
+        let current = document.getElementsByClassName("active");
         current[0].className = current[0].className.replace(" active", "");
         this.className += " active";
     });
