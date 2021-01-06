@@ -1,4 +1,4 @@
-#carousel{
+.genre-contents{
     /* nav바로 아래에 오게끔 하는 더 좋은 방법? */
     position:absolute; 
     top:7.6%;

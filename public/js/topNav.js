@@ -1,4 +1,4 @@
-(function topNaveInit(){
+(function (){
     const topNav=document.getElementById("top-nav");
     const dataList=[
         {src:"https://static-page.kakao.com/static/pc/menu_home.svg?fac7abe73b67dd1eb997d70a2c52d4d0",alt:"홈"},
