@@ -1,114 +1,109 @@
-/* navBar 클릭 이벤트 리스너 */
-const topNavBar = document.querySelectorAll(".nav_dummy");
-const topNavWebtoon = document.getElementById("nav_webtoon");
-const dummyContent = document.getElementById("dummy");
-const mainContent = document.getElementById("contents");
-const topNavList = document.getElementsByClassName("nav_dummy");
-const contentNavList = document.getElementsByClassName("contents_li");
-
-/* div List */
-const content_home = document.getElementById("home");
-const content_day = document.getElementById("day");
-const content_webtoon = document.getElementById("webtoon");
-const content_boy = document.getElementById("boy");
-const content_drama = document.getElementById("drama");
-const content_romance = document.getElementById("romance");
-const content_fantasy = document.getElementById("fantasy");
-const content_action = document.getElementById("action");
-const content_blgl = document.getElementById("blgl");
-
 const topbannerImg = ['/images/banner1.png', '/images/banner2.png', '/images/banner3.png'];
 
-/* banner에 이미지 추가 */
-document.getElementById("banner_prev").style.backgroundImage = "url('/images/before.svg')";
-document.getElementById("banner_next").style.backgroundImage = "url('/images/next.svg')";
-document.getElementById("banner_img").setAttribute('src','/images/banner1.png');
-
-/* 배너 이미지 변경하기 */
-var count = 0;
-document.getElementById("banner_prev").addEventListener("click", ()=>{
-    if(count > 0){
-        count--;
-        document.getElementById("banner_img").setAttribute('src',topbannerImg[count]);
-    }
-    else if (count <= 0){
-        count = 2;
-        document.getElementById("banner_img").setAttribute('src',topbannerImg[count]);
-    }
-});
-document.getElementById("banner_next").addEventListener("click", ()=>{
-    if(count < 2){
-        count++;
-        document.getElementById("banner_img").setAttribute('src',topbannerImg[count]);
-    }
-    else if (count >= 2){
-        count = 0;
-        document.getElementById("banner_img").setAttribute('src',topbannerImg[count]);
-    }
-});
-
-/* 웹툰 메뉴 이외에는 dummy 보여주기 */
-function showDummyArea() {
-    for (var i = 0; i < topNavBar.length; i++) {
-        topNavBar[i].addEventListener("click", () => {
-            mainContent.style.display = 'none';
-            dummyContent.style.display = 'block';
-        });
-    }
+/* 자주 사용하는 함수 간소화 */
+function getElement(id){
+    return document.getElementById(id);
 }
-showDummyArea();
-
-function showContentArea() {
-    topNavWebtoon.addEventListener("click", () => {
-        mainContent.style.display = 'block';
-        dummyContent.style.display = 'none';
-    })
+function creElement(id){
+    return document.createElement(id);
 }
-showContentArea();
+function getElementsClass(className){
+    return document.getElementsByClassName(className);
+}
 
-/* top_navBar - 누른 요소만 노란색 강조 표시하기 */
-for (var i = 0; i < topNavList.length; i++) {
-    topNavList[i].addEventListener("click", function () {
+/* 매직 넘버 */
+const intervalTime = 2400;
+
+/* 공통 top_nav에 항목 추가 */
+(function(){
+    const nav_list = [
+        { name : "홈", img : "https://static-page.kakao.com/static/pc/menu_home.svg?fac7abe73b67dd1eb997d70a2c52d4d0" },
+        { name : "웹툰", img : "https://static-page.kakao.com/static/pc/menu_toon.svg?42b75d406ec543b2fcf64e35287f0724" },
+        { name : "웹소설", img : "https://static-page.kakao.com/static/pc/menu_novel.svg?296e815be15f5e5edcdddb865f9863cd" },
+        { name : "영화", img : "https://static-page.kakao.com/static/pc/menu_vod.svg?0df7689ed8c083054bd9949aed77c589" },
+        { name : "방송", img : "https://static-page.kakao.com/static/pc/menu_broadcast.svg?a6b4779526f1fa5dbeb1516607770b16" },
+        { name : "책", img : "https://static-page.kakao.com/static/pc/menu_book.svg?8fd0c5dc69d357fa23dd953d3b7e71aa" },
+    ];
+    const top_nav = getElement('top-nav-ul');
+    for(var i = 0; i < nav_list.length; i++){
+        let node = creElement("LI");
+        node.className = "nav-dummy";
+        top_nav.appendChild(node);
+    }
+    for(var i = 0; i < nav_list.length; i++){
+        let node = getElementsClass("nav-dummy");
+        node[i].innerHTML = '<a><img src = '+nav_list[i].img+'></a>';
+        if(i == 1){
+            node[i].className += " webtoon active";
+        }
+    }
+})();
+
+/* top_nav의 웹툰 탭 이외에는 더미 페이지가 보이게 하기 */
+(function(){
+    const top_nav_li = getElementsClass("nav-dummy");
+    for(let i = 0; i < top_nav_li.length; i++){
+        if(top_nav_li[i].classList.contains("webtoon")){
+            top_nav_li[i].addEventListener("click",()=>{
+                getElement("contents").style.display = 'block';
+                getElement("dummy").style.display = 'none';
+            });
+        } else{
+            top_nav_li[i].addEventListener("click",()=>{
+                getElement("contents").style.display = 'none';
+                getElement("dummy").style.display = 'block';
+            })
+        }
+    }
+})();
+
+/* top_nav - 누른 요소만 노란색 밑줄 강조 표시 */
+for (let i = 0; i < getElementsClass("nav-dummy").length; i++) {
+    getElementsClass("nav-dummy")[i].addEventListener("click", () => {
         var current = document.getElementsByClassName("active");
         current[0].className = current[0].className.replace(" active", "");
         this.className += " active";
     });
 }
 
-var slideIndex = 0;
-var timer;
+/* [웹툰 > 홈] 의 첫번째 banner에 이미지 추가 */
+getElement("banner-prev").style.backgroundImage = "url('/images/before.svg')";
+getElement("banner-next").style.backgroundImage = "url('/images/next.svg')";
+getElement("banner-img").setAttribute('src','/images/banner1.png');
+
+
+let slideIndex = 0;
+let timer;
 
 /* [웹툰] 슬라이드 애니메이션 함수 */
 function showSlides(slidename) {
-  var i;
-  var slides = document.getElementsByClassName(slidename);
+  let i;
+  let slides = getElementsClass(slidename);
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";  
   }
   slideIndex++;
   if (slideIndex > slides.length) {slideIndex = 1}  
   slides[slideIndex-1].style.display = "block";  
-  timer = setTimeout(showSlides, 2400, slidename); // 3초마다 이미지 변경
+  timer = setTimeout(showSlides, intervalTime, slidename); // 3초마다 이미지 변경
 }
 
 /* [웹툰 > navBar] 클릭한 요소에 따라 컨텐츠 div 표시하기 */
-for (var i = 0; i < contentNavList.length; i++) {
-    contentNavList[i].addEventListener("click", function () {
-        var current = document.getElementsByClassName("c_active");
-        var cur_content = document.getElementsByClassName("visible");
+for (let i = 0; i < getElementsClass("contents-li").length; i++) {
+    getElementsClass("contents-li")[i].addEventListener("click", function () {
+        let current = getElementsClass("c-active");
+        let cur_content = getElementsClass("visible");
 
         /* 웹툰 > navBar 클릭 시 강조 기능 */
-        current[0].className = current[0].className.replace(" c_active", "");
-        this.className += " c_active";
+        current[0].className = current[0].className.replace(" c-active", "");
+        this.className += " c-active";
 
         /* 웹툰 > navBar 클릭에 따른 컨텐츠 구현 */
         cur_content[0].className = cur_content[0].className.replace(" visible", " invisible");
-        document.getElementById(this.classList[1]).className =
-            document.getElementById(this.classList[1]).className.replace(" invisible", " visible");
+        getElement(this.classList[1]).className = getElement(this.classList[1]).className.replace(" invisible", " visible");
 
         /* 클릭 후 이미지, 텍스트 로딩 */
-        var show_content = this.classList[1];
-        console.log(show_content);
+        let show_content = this.classList[1];
 
         /* 홈 tab */
         if (show_content == "home") {   
@@ -116,7 +111,6 @@ for (var i = 0; i < contentNavList.length; i++) {
             clearTimeout(timer);
             showSlides('mySlides'); 
         }
-
         /* 요일연재 tab */
         else if (show_content == "day") { 
             slideIndex = 0;
@@ -125,4 +119,4 @@ for (var i = 0; i < contentNavList.length; i++) {
         }
     })
 }
-document.getElementById("content_home").click();
+getElement("content-home").click();

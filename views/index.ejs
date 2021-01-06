@@ -12,75 +12,55 @@
 <body>
     <div id="root">
         <div id="header">
-            <div class="logo">
+            <div class="pd-20">
                 <img src="/images/title_logo.png">
             </div>
-
-            <div id="login_box">
-                <div class="inner_box">
+            <div class="absolute pd-40 top-0 right-0">
+                <div class="inline-block bd-1-lg bd-radius-10 pd-3">
                     <input type="text" size="15">
-                    <img class="search_btn" src="/images/btn_search.png">
+                    <img class="search-btn" src="/images/btn_search.png">
                 </div>
-                <span class="inner_span">캐시충전 | 로그인</span>
+                <span class="inner-span">캐시충전 | 로그인</span>
             </div>
         </div>
 
-        <nav id="top_nav">
-            <ul id="top_nav_ul">
-                <li class="nav_dummy">
-                    <a><img src="https://static-page.kakao.com/static/pc/menu_home.svg?fac7abe73b67dd1eb997d70a2c52d4d0"
-                        alt="홈" class="css-1sr68ml"></a>
-                </li>
-                <li id="nav_webtoon" class="nav_dummy active">
-                    <a><img src="https://static-page.kakao.com/static/pc/menu_toon.svg?42b75d406ec543b2fcf64e35287f0724"
-                        alt="웹툰/만화" class="css-1sr68ml"></a>
-                </li>
-                <li class="nav_dummy">
-                    <a><img src="https://static-page.kakao.com/static/pc/menu_novel.svg?296e815be15f5e5edcdddb865f9863cd"
-                        alt="웹소설/장르" class="css-1sr68ml"></a>
-                </li>
-                <li class="nav_dummy">
-                    <a><img src="https://static-page.kakao.com/static/pc/menu_vod.svg?0df7689ed8c083054bd9949aed77c589"
-                        alt="영화" class="css-1sr68ml"></a>
-                </li>
-                <li class="nav_dummy">
-                    <a><img src="https://static-page.kakao.com/static/pc/menu_broadcast.svg?a6b4779526f1fa5dbeb1516607770b16"
-                        alt="예능/드라마" class="css-1sr68ml"></a>
-                </li>
-                <li class="nav_dummy">
-                    <a><img src="https://static-page.kakao.com/static/pc/menu_book.svg?8fd0c5dc69d357fa23dd953d3b7e71aa"
-                        alt="책" class="css-1sr68ml"></a>
-                </li>
+        <!-- 공통 내비게이션 -->
+        <nav id="top-nav">
+            <ul id="top-nav-ul">
             </ul>
         </nav>
 
+        <!-- 메인 컨텐츠 시작 -->
         <div id="main">
             <div id="contents">
-                <div class="contents_nav">
+
+                <!-- [웹툰] 탭의 하위 컨텐츠 시작-->
+                <div class="contents-nav">
                     <ul>
-                        <li id="content_home" class="contents_li home c_active">홈</li>
-                        <li class="contents_li day">요일연재</li>
-                        <li class="contents_li webtoon">웹툰</li>
-                        <li class="contents_li boy">소년</li>
-                        <li class="contents_li drama">드라마</li>
-                        <li class="contents_li romance">로맨스</li>
-                        <li class="contents_li fantasy">로판</li>
-                        <li class="contents_li action">액션무협</li>
-                        <li class="contents_li blgl">BL/GL</li>
+                        <li id="content-home" class="contents-li home c-active">홈</li>
+                        <li class="contents-li day">요일연재</li>
+                        <li class="contents-li webtoon">웹툰</li>
+                        <li class="contents-li boy">소년</li>
+                        <li class="contents-li drama">드라마</li>
+                        <li class="contents-li romance">로맨스</li>
+                        <li class="contents-li fantasy">로판</li>
+                        <li class="contents-li action">액션무협</li>
+                        <li class="contents-li blgl">BL/GL</li>
                     </ul>
                 </div>
 
+                <!-- 홈 -->
                 <div id="home" class="page visible">
                     <div class="slideshow-container">
                         <% home_slide.forEach(function(home_slide){ %>
                             <div class="mySlides fade">
-                                <div class="numbertext"><%= home_slide.numtxt %></div>
+                                <div class="slide-num"><%= home_slide.numtxt %></div>
                                 <img style="width:100%" src= "<%= home_slide.img %>" >
-                                <div class="text"><%= home_slide.title %></div>
-                                <div class="subtext"><img src = "<%= home_slide.subtxt_img %>"> <%= home_slide.subtxt_dir %>
+                                <div class="slide-title"><%= home_slide.title %></div>
+                                <div class="slide-subtext"><img src = "<%= home_slide.subtxt_img %>"> <%= home_slide.subtxt_dir %>
                                     <img src = "/images/line_top_banner.png"> <img src = "/images/ico-bigthum-person.svg">
                                     <%= home_slide.subtxt_person %> </div>
-                                <div class="explain"><%= home_slide.exp %></div>
+                                <div class="slide-explain"><%= home_slide.exp %></div>
                             </div>
                         <% }); %>
                     </div>
@@ -96,11 +76,11 @@
                     </div>
                     <!-- 두번째 배너 -->
                     <div class = "card" style="display: relative">
-                        <div id="banner_prev" class="banner prev_btn"></div>
-                        <div id="banner_1" class="banner middle">
-                            <img style="display:block" width="100%" id="banner_img">
+                        <div id="banner-prev" class="banner btn-prev"></div>
+                        <div id="banner-1" class="banner middle">
+                            <img class="block" width="100%" id="banner-img">
                         </div>
-                        <div id="banner_next" class="banner next_btn"></div>
+                        <div id="banner-next" class="banner btn-next"></div>
                     </div>
                     <div class = "card">구현 예정입니다..</div>
                     <div class = "card">구현 예정입니다..</div>
@@ -110,14 +90,15 @@
                     <div class = "card">구현 예정입니다..</div>
                 </div>
 
+                <!-- 요일연재 -->
                 <div id="day" class="page invisible">
                     <div class="slideshow-container">
                         <% day_slide.forEach(function(day_slide){ %>
                             <div class="daySlides fade">
-                                <div class="numbertext"><%= day_slide.numtxt %></div>
+                                <div class="slide-num"><%= day_slide.numtxt %></div>
                                 <img style="width:100%" src= "<%= day_slide.img %>" >
-                                <div class="text"><%= day_slide.title %></div>
-                                <div class="explain"><%= day_slide.exp %></div>
+                                <div class="slide-title"><%= day_slide.title %></div>
+                                <div class="slide-explain"><%= day_slide.exp %></div>
                             </div>
                         <% }); %>
                     </div>
@@ -126,6 +107,7 @@
                     <div class = "card">구현 예정입니다..</div>
                 </div>
 
+                <!-- 웹툰 -->
                 <div id="webtoon" class="page invisible">구현예정...</div>
                 <div id="boy" class="page invisible">구현예정...</div>
                 <div id="drama" class="page invisible">구현예정...</div>
@@ -142,6 +124,7 @@
     </div>
 
     <script src="/javascripts/main.js"></script>
+    <script src="/javascripts/util.js"></script>
     <script src="/javascripts/slide.js"></script>
 </body>
 
