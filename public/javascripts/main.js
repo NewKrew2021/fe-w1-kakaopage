@@ -1,11 +1,12 @@
 const HEADER_NAV_LIST = [
-  { pageName: '홈', renderFunction: renderHomePage },
-  { pageName: '웹툰', renderFunction: renderWebtoonPage },
-  { pageName: '웹소설', renderFunction: renderWebNovelPage },
-  { pageName: '영화', renderFunction: renderMoviePage },
-  { pageName: '방송', renderFunction: renderBroadcastingPage },
-  { pageName: '책', renderFunction: renderBookPage },
+  { pageIndex: 0, pageName: '홈', renderFunction: renderHomePage },
+  { pageIndex: 1, pageName: '웹툰', renderFunction: renderWebtoonPage },
+  { pageIndex: 2, pageName: '웹소설', renderFunction: renderWebNovelPage },
+  { pageIndex: 3, pageName: '영화', renderFunction: renderMoviePage },
+  { pageIndex: 4, pageName: '방송', renderFunction: renderBroadcastingPage },
+  { pageIndex: 5, pageName: '책', renderFunction: renderBookPage },
 ];
+
 const WEBTOON_NAV_LIST = [
   '홈',
   '요일연재',
@@ -17,10 +18,13 @@ const WEBTOON_NAV_LIST = [
   '액션무협',
   'BL/GL',
 ];
+
 const HEADER_NAV_ITEM_CLASS_NAME = 'header-nav__item';
 const HEADER_NAV_CLICKED_ITEM_CLASS_NAME = 'header-nav__item--clicked';
 const LIST_TAG = 'li';
 const HEADER_NAV_LIST_CLASS_NAME = '.header-nav__list';
+
+let currentPage = 0;
 
 // util 함수
 const $ = (target, parent = document) => {
@@ -50,7 +54,7 @@ const renderHeaderNav = () => {
     headerNavList.appendChild(navItemElement);
   });
 
-  headerNavList.firstElementChild.classList.add(
+  headerNavList.childNodes[currentPage].classList.add(
     HEADER_NAV_CLICKED_ITEM_CLASS_NAME
   );
 };
