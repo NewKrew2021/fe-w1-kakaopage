@@ -1,4 +1,11 @@
-const HEADER_NAV_LIST = ['홈', '웹툰', '웹소설', '영화', '방송', '책'];
+const HEADER_NAV_LIST = [
+  { pageName: '홈', renderFunction: '' },
+  { pageName: '웹툰', renderFunction: '' },
+  { pageName: '웹소설', renderFunction: '' },
+  { pageName: '영화', renderFunction: '' },
+  { pageName: '방송', renderFunction: '' },
+  { pageName: '책', renderFunction: '' },
+];
 const WEBTOON_NAV_LIST = [
   '홈',
   '요일연재',
@@ -35,7 +42,7 @@ const renderHeaderNav = () => {
     const navItemElement = createNewElement(
       LIST_TAG,
       HEADER_NAV_ITEM_CLASS_NAME,
-      navItem
+      navItem.pageName
     );
     headerNavList.appendChild(navItemElement);
   });
