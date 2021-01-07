@@ -2,11 +2,11 @@ let bannerIndex = 0;
 
 document.getElementById("prevBtn").addEventListener("click", () => {
   changeBanner(bannerIndex += -1);
-})
+});
 
 document.getElementById("nextBtn").addEventListener("click", () => {
   changeBanner(bannerIndex += 1);
-})
+});
 
 const changeBanner = curBanner => {
   let idx;

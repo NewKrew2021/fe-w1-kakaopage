@@ -10,7 +10,7 @@
     },
     {
       "id": 2,
-      "title": "도깨비아빠",
+      "title": "도깨비 아빠",
       "numofwatch": 130000,
       "week": "mon",
       "rank": 0,
@@ -29,7 +29,7 @@
       "title": "환골탈태",
       "numofwatch": 960000,
       "week": "mon",
-      "rank": 2,
+      "rank": 0,
       "top": true
     },
     {
@@ -42,7 +42,7 @@
     },
     {
       "id": 6,
-      "title": "녹음의관",
+      "title": "녹음의 관",
       "numofwatch": 830000,
       "week": "mon",
       "rank": 1,
@@ -50,26 +50,114 @@
     },
     {
       "id": 7,
-      "title": "그녀가공작저",
+      "title": "그녀가 공작저",
       "numofwatch": 1920000,
+      "week": "mon",
+      "rank": 2,
+      "top": false
+    },
+    {
+      "id": 8,
+      "title": "환골탈태",
+      "numofwatch": 960000,
       "week": "mon",
       "rank": 3,
       "top": false
     },
     {
-      "id": 8,
-      "title": "그림자황비",
+      "id": 9,
+      "title": "그림자 황비",
       "numofwatch": 650000,
       "week": "mon",
       "rank": 4,
       "top": false
     },
     {
-      "id": 9,
-      "title": "속도위반대표",
+      "id": 10,
+      "title": "속도위반 대표",
       "numofwatch": 290000,
       "week": "mon",
+      "rank": 5,
+      "top": false
+    },
+    {
+      "id": 11,
+      "title": "로드 오브 머니",
+      "numofwatch": 200000,
+      "week": "tue",
+      "rank": 0,
+      "top": true
+    },
+    {
+      "id": 12,
+      "title": "만렙 영웅님께",
+      "numofwatch": 370000,
+      "week": "tue",
+      "rank": 0,
+      "top": true
+    },
+    {
+      "id": 13,
+      "title": "아비무쌍",
+      "numofwatch": 590000,
+      "week": "tue",
+      "rank": 0,
+      "top": true
+    },
+    {
+      "id": 14,
+      "title": "외과의사 엘리제",
+      "numofwatch": 2020000,
+      "week": "tue",
+      "rank": 0,
+      "top": true
+    },
+    {
+      "id": 15,
+      "title": "아이리스",
+      "numofwatch": 910000,
+      "week": "tue",
+      "rank": 0,
+      "top": true
+    },
+    {
+      "id": 16,
+      "title": "마족의 계약",
+      "numofwatch": 440000,
+      "week": "tue",
       "rank": 1,
+      "top": false
+    },
+    {
+      "id": 17,
+      "title": "남주의 엄마가",
+      "numofwatch": 600000,
+      "week": "tue",
+      "rank": 2,
+      "top": false
+    },
+    {
+      "id": 18,
+      "title": "도굴왕",
+      "numofwatch": 1420000,
+      "week": "tue",
+      "rank": 3,
+      "top": false
+    },
+    {
+      "id": 19,
+      "title": "외과의사 엘리제",
+      "numofwatch": 2020000,
+      "week": "tue",
+      "rank": 4,
+      "top": false
+    },
+    {
+      "id": 20,
+      "title": "막내 황녀님",
+      "numofwatch": 930000,
+      "week": "tue",
+      "rank": 5,
       "top": false
     }
   ]

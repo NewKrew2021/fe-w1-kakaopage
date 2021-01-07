@@ -46,3 +46,11 @@
     - 의미있는 변수명 사용
     - HTML 내부에서 JS사용 지양 => addEventListener, querySelector 등 활용
   * 내일부터는 Feature, Issue 단위로 커밋 자주하는 습관...
+
+
+## 2021-1.7
+   - CategoryBar 동적 기능
+   - 요일별 웹툰 (weektop)
+     - 요일 클릭시 특정 요일의 웹툰 보여주는 기능
+   - 장르(genre)
+     - 장르별 레이아웃

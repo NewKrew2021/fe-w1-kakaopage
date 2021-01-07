@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8"></meta>
     <title>카카오페이지</title>
+    <link rel="shortcut icon" href="/img/icon.ico">
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/contents.css" />
   </head>
@@ -37,15 +38,15 @@
         <div class="genre">
           <!--genre-->
           <ul class="genre_container">
-            <button class="genre_btn">홈</button>
-            <button class="genre_btn">요일연재</button>
-            <button class="genre_btn">웹소설</button>
-            <button class="genre_btn">판타지</button>
-            <button class="genre_btn">현판</button>
-            <button class="genre_btn">로맨스</button>
-            <button class="genre_btn">로판</button>
-            <button class="genre_btn">무협</button>
-            <button class="genre_btn">단행본</button>
+            <button class="genre_btn" id="genreHome">홈</button>
+            <button class="genre_btn" id="genreWeek">요일연재</button>
+            <button class="genre_btn" id="genreWebtoon">웹툰</button>
+            <button class="genre_btn" id="genreBoy">소년</button>
+            <button class="genre_btn" id="genreDrama">드라마</button>
+            <button class="genre_btn" id="genreRomance">로맨스</button>
+            <button class="genre_btn" id="genreRofan">로판</button>
+            <button class="genre_btn" id="genreAction">액션무협</button>
+            <button class="genre_btn" id="genreblGl">BL/GL</button>
           </ul>
         </div>
         <!--Banner-->
@@ -65,107 +66,63 @@
           <a class="prev" id="prevBtn"> </a>
           <a class="next" id="nextBtn"> </a>
         </div>
-        <!--Dashboard-->
-        <ul class="dashboard_container">
-          <button class="dashboard_btn left_btn">오늘 UP</button>
-          <button class="dashboard_btn center_btn">오늘 신작</button>
-          <button class="dashboard_btn right_btn">오리지널</button>
-        </ul>
+        <div class="genreHome">
+          <!--Dashboard-->
+          <ul class="dashboard_container">
+            <button class="dashboard_btn left_btn">오늘 UP</button>
+            <button class="dashboard_btn center_btn">오늘 신작</button>
+            <button class="dashboard_btn right_btn">오리지널</button>
+          </ul>
 
-        <!--Event-->
-        <div class="event_container">
-          <div class="event fade">
-            <img src="img/event1.png" style="width:100%">
+          <!--Event-->
+          <div class="event_container">
+            <div class="event fade">
+              <img src="img/event1.png" style="width:100%">
+            </div>
+            <div class="event fade">
+              <img src="img/event2.png" style="width:100%">
+            </div>
+            <div class="event fade">
+              <img src="img/event3.png" style="width:100%">
+            </div>
+            <a class="prev" id="eventPrev"> </a>
+            <a class="next" id="eventNext"> </a>
           </div>
-          <div class="event fade">
-            <img src="img/event2.png" style="width:100%">
-          </div>
-          <div class="event fade">
-            <img src="img/event3.png" style="width:100%">
-          </div>
-          <a class="prev" id="eventPrev"> </a>
-          <a class="next" id="eventNext"> </a>
-        </div>
 
-        <!--WeekTop-->
-        <div class="weektop_container">
-          <div class="weektop_title">
-            <div class="weektop_text">요일 연재 TOP</div>
-            <button class="weektop_more">더보기 ></button>
-          </div>
-          <div class="weektop_week">
-              <button class="weektop_btn mon" id="mon">월</button>
-              <button class="weektop_btn tue" id="tue">화</button>
-              <button class="weektop_btn wed" id="wed">수</button>
-              <button class="weektop_btn thu" id="thu">목</button>
-              <button class="weektop_btn fri" id="fri">금</button>
-              <button class="weektop_btn sat" id="sat">토</button>
-              <button class="weektop_btn sun" id="sun">일</button>
-              <button class="weektop_btn fin" id="fin">완결</button>
-          </div>
-          <div class="weektop_top" id="mon">
-            <li class="weektop_list">
-              <img class="weektop_img" src="./img/banner1.png"></img>
-              <div class="webtoon_title">롱리브더킹</div>
-              <div class="numofwatch"><img src="./img/person.png"> 1234 만명</div>
-            </li>
-            <li class="weektop_list">
-              <img class="weektop_img" src="./img/banner1.png"></img>
-              <div class="webtoon_title">롱리브더킹</div>
-              <div class="numofwatch"><img src="./img/person.png"> 1234 만명</div>
-            </li>
-            <li class="weektop_list">
-              <img class="weektop_img" src="./img/banner1.png"></img>
-              <div class="webtoon_title">롱리브더킹</div>
-              <div class="numofwatch"><img src="./img/person.png"> 1234 만명</div>
-              <div>
-            </li>
-            <li class="weektop_list">
-              <img class="weektop_img" src="./img/banner1.png"></img>
-              <div class="webtoon_title">롱리브더킹</div>
-              <div class="numofwatch"><img src="./img/person.png"> 1234 만명</div>
-            </li>
-            <li class="weektop_list">
-              <img class="weektop_img" src="./img/banner1.png"></img>
-              <div class="webtoon_title">롱리브더킹</div>
-              <div class="numofwatch"><img src="./img/person.png"> 1234 만명</div>
-            </li>
-          </div>
-          <div class="weektop_rank" id="mon">
-            <li class="weektop_list">
-              <img class="weektop_img" src="./img/banner1.png"></img>
-              <div class="webtoon_title">롱리브더킹</div>
-              <div class="numofwatch"><img src="./img/person.png"> 1234 만명</div>
-            </li>
-            <li class="weektop_list">
-              <img class="weektop_img" src="./img/banner1.png"></img>
-              <div class="webtoon_title">롱리브더킹</div>
-              <div class="numofwatch"><img src="./img/person.png"> 1234 만명</div>
-            </li>
-            <li class="weektop_list">
-              <img class="weektop_img" src="./img/banner1.png"></img>
-              <div class="webtoon_title">롱리브더킹</div>
-              <div class="numofwatch"><img src="./img/person.png"> 1234 만명</div>
-              <div>
-            </li>
-            <li class="weektop_list">
-              <img class="weektop_img" src="./img/banner1.png"></img>
-              <div class="webtoon_title">롱리브더킹</div>
-              <div class="numofwatch"><img src="./img/person.png"> 1234 만명</div>
-            </li>
-            <li class="weektop_list">
-              <img class="weektop_img" src="./img/banner1.png"></img>
-              <div class="webtoon_title">롱리브더킹</div>
-              <div class="numofwatch"><img src="./img/person.png"> 1234 만명</div>
-            </li>
+          <!--WeekTop-->
+          <div class="weektop_container">
+            <div class="weektop_title">
+              <div class="weektop_text">요일 연재 TOP</div>
+              <button class="weektop_more">더보기 ></button>
+            </div>
+            <div class="weektop_week">
+                <button class="weektop_btn mon" id="mon">월</button>
+                <button class="weektop_btn tue" id="tue">화</button>
+                <button class="weektop_btn wed" id="wed">수</button>
+                <button class="weektop_btn thu" id="thu">목</button>
+                <button class="weektop_btn fri" id="fri">금</button>
+                <button class="weektop_btn sat" id="sat">토</button>
+                <button class="weektop_btn sun" id="sun">일</button>
+                <button class="weektop_btn fin" id="fin">완결</button>
+            </div>
+            <div id="weektop_top"></div>
+            <div id="weektop_rank"></div>
           </div>
         </div>
-        
+        <div class="genreWeek">요일연재</div>
+        <div class="genreWebtoon">웹툰</div>
+        <div class="genreBoy">소년</div>
+        <div class="genreDrama">드라마</div>
+        <div class="genreRomance">로맨스</div>
+        <div class="genreRofan">로판</div>
+        <div class="genreAction">액션무협</div>
+        <div class="genreblGl">BL/GL</div>
       </div>
     </div>
     <script type="text/javascript" src="js/category.js"></script>
     <script type="text/javascript" src="js/banner.js"></script>
     <script type="text/javascript" src="js/event.js"></script> 
-    <script type="text/javascript" src="js/weektop.js"></script>   
+    <script type="text/javascript" src="js/weektop.js"></script>  
+    <script type="text/javascript" src="js/genre.js"></script> 
   </body>
 </html>
