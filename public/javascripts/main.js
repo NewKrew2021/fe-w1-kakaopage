@@ -1,4 +1,5 @@
 import { $, createNewElement, deleteClassFromElement } from './utils.js';
+import { createGenreNav } from './genre-nav.js';
 
 const HEADER_NAV_LIST = [
   { pageIndex: 0, pageName: '홈', renderFunction: renderHomePage },
@@ -59,22 +60,6 @@ const changeClickedNavTab = pageIndex => {
     HEADER_NAV_CLICKED_ITEM_CLASS_NAME
   );
   currentPage = pageIndex;
-};
-
-const createGenreNav = (navItemList, navClassName) => {
-  const genreNav = createNewElement('div', 'webtoon-genre-nav', '');
-  const genreNavList = createNewElement('ul', 'genre-nav__list', '');
-
-  navItemList.forEach(navItem => {
-    const navItemElement = createNewElement(
-      LIST_TAG,
-      'genre-nav__item',
-      navItem
-    );
-    genreNavList.appendChild(navItemElement);
-  });
-  genreNav.appendChild(genreNavList);
-  return genreNav;
 };
 
 function renderHomePage(pageIndex) {
