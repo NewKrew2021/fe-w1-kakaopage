@@ -94,7 +94,7 @@ img {vertical-align: middle;}
   border-radius: 8px;
   border: 1px solid rgba(0,0,0,0.1);
 }
-.thumb img{
+.thumb>img{
   width: 120px;
   height: 120px;
   border-radius: 8px 8px 0 0;
@@ -105,8 +105,7 @@ img {vertical-align: middle;}
   height:30px;
 }
 .bottom img{
-  width:24px;
-  height: 16px;
+  height: 14px;
   margin-left:3px;
   margin-right:3px;
 }
