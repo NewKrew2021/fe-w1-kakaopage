@@ -198,10 +198,21 @@ li {
 
 .sniffet-image {
   width: 120px;
+  border: #cccccc 1px solid;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .sniffet-image__image {
   width: 120px;
+  border-radius: 10px 10px 0 0;
+}
+
+.sniffet-image__detail {
+  background: #000000;
+  color: #ffd200;
+  padding: 5px;
+  border-radius: 0 0 10px 10px;
 }
 
 .sniffet-title {
