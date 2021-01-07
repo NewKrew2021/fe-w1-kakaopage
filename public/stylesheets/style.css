@@ -184,3 +184,25 @@ li {
   background: #ffffff;
   margin: 15px auto 0 auto;
 }
+
+.day-list__content {
+}
+
+.sniffet-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sniffet {
+}
+
+.sniffet-image {
+  width: 120px;
+}
+
+.sniffet-image__image {
+  width: 120px;
+}
+
+.sniffet-title {
+}
