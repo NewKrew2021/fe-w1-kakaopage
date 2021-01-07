@@ -61,6 +61,10 @@ function makeImageElement(src, width, height) {
 }
 
 function setSlide() {
+    // 초기화
+    slide.curId = 1;
+    slide.position = 2;
+
     // 슬라이드를 위해 웹툰 포스터 이미지 연결
     slide.slideDOM = document.getElementById("slide");
     slide.slideDOM.style.width = `${(slide.cnt + 2) * 720}px`;

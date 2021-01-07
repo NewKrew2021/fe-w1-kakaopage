@@ -13,7 +13,7 @@ body {
 }
 .header2 {
     top: 80px;
-    border-bottom: 1px solid #dfdfdf;
+    border-bottom: 1px solid #ddd;
 }
 .logoBox {
     width: 167px;
@@ -108,7 +108,7 @@ a {
     cursor: pointer;
 }
 #page {
-    color: #ffffff;
+    color: #fff;
     position: absolute;
     top: 50%;
     margin-right: 20px;
@@ -117,7 +117,7 @@ a {
     opacity: 0.6;
 }
 .content {
-    background: #ffffff;
+    background: #fff;
     width: 100%;
     min-height: 100px;
     margin-top: 10px;

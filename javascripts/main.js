@@ -1,8 +1,11 @@
 /*
+    메인 카테고리, 웹툰 카테고리 제어
+    웹툰 카테고리의 container 생성
+
     [v] 선택된 카테고리를 저장한다.
     [v] 선택된 카테고리에 표시한다.(노란색, 진한 글씨)
     [v] 메인 카테고리의 event를 등록한다.
-    [] 웹툰 카테고리의 event를 등록한다.
+    [v] 웹툰 카테고리의 event를 등록한다.
 */
 
 // name space 생성
@@ -18,6 +21,8 @@ MAIN.containerDOM;
 MAIN.selectedMainMenuDOM;
 MAIN.selectedWebtoonMenuDOM;
 
+MAIN.contentDOM;
+
 function getCategory(type) {
     return new Promise((resolve, reject) => {
         fetch(`${MAIN.URL}/../data/${type}-category.json`).then(response => {
@@ -30,13 +35,16 @@ function setContainer(menu) {
     if(menu != "웹툰") {
         // 웹툰 외 더미 데이터
         MAIN.containerDOM.innerHTML = `<p style="font-size:240px;text-align:center">${menu}</p>`;
+
+        // 웹툰 외 slide 없음 event 호출 취소
+        clearInterval(slide.timerId);
     }
     else {
         // 공통(navigator, slide) + content container
         MAIN.containerDOM.innerHTML = `<div class="navigator"><ul class="navigator" id="webtoonCategory"></ul></div>`;
         MAIN.containerDOM.innerHTML += `<div class="slide"><div id="slide"></div><div id="prevBtn">
             <img src="./images/slide_prev.svg"></div><div id="nextBtn"><img src="./images/slide_next.svg"></div><div id="page"></div></div>`;
-        MAIN.containerDOM.innerHTML += `<div class="content"></div>`;
+        MAIN.containerDOM.innerHTML += `<div class="content" id="content"></div>`;
         
         // 세부 카테고리 그리기
         MAIN.webtoonCategory = document.getElementById("webtoonCategory");
@@ -64,6 +72,9 @@ function setContainer(menu) {
 
             // 슬라이드
             setSlide();
+
+            // 슬라이드 및 content DOM 객체 저장
+            MAIN.contentDOM = document.getElementById("content");
         });
 
         
