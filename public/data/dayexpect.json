@@ -1,0 +1,34 @@
+{
+    "data": [
+        {
+            "item": 
+                {
+                    "title": "건마왕증",
+                    "count": "5.2만명",
+                    "subject" : "웹툰",
+                    "explain" : "마왕님 왜 그렇게 뿔에 집착하나요?!",
+                    "image": "/images/expect_01.png",
+                    "b_img": "/images/line_top_banner.png",
+                    "e_img": "/images/badge-event.svg",
+                    "c_img": "/images/person-white.svg",
+                    "p_img": "/images/ico-wait-white.svg"
+                }
+            
+        },
+        {
+            "item": 
+                {
+                    "title": "수라도",
+                    "count": "3.8만명",
+                    "subject" : "웹툰",
+                    "explain" : "음모와 지략의 난무, 수라의 세계!",
+                    "image": "/images/expect_02.png",
+                    "b_img": "/images/line_top_banner.png",
+                    "e_img": "/images/badge-event.svg",
+                    "c_img": "/images/person-white.svg",
+                    "p_img": "/images/ico-wait-white.svg"
+                }
+            
+        }
+    ]
+}

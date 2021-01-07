@@ -1,9 +1,43 @@
 
+/* 기본 컨텐츠 box */
+.card{
+  background-color:#ffffff;
+  margin-top:10px;
+  height:100%;
+}
+.first{
+  border-radius: 8px 0 0 8px;
+}
+.third{
+  border-radius: 0 8px 8px 0;
+}
+.counts{
+  background-color: var(--main-yellow);
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 4px;
+}
+
 .page{
     display: none;
     margin: 0px auto;
     width:720px;
     margin-top: 10px;
+}
+
+.footer{
+  margin: 0px auto;
+  width: 720px;
+  margin-top:10px;
+  margin-bottom:50px;
+}
+.footer>img{
+  display: block;
+  margin: 0px auto;
+  width:70%;
+}
+.footer-text{
+  margin-bottom:10px;
 }
 
 .visible{
@@ -24,6 +58,7 @@ img {vertical-align: middle;}
   position: relative;
   margin: auto;
 }
+
 
 /* slideshow 공통 */
 .slide-num {
@@ -66,25 +101,46 @@ img {vertical-align: middle;}
   background-color: var(--main-yellow);
 }
 
-/* 기본 컨텐츠 box */
-.card{
-  width:690px;
-  background-color:#ffffff;
-  margin-top:10px;
-  padding: 15px;
-  height:100%;
+/* minishow 영역 */
+.minishow-container{
+  width: 332px;
+  margin: 15px auto;
+  position:relative;
 }
-.first{
-  border-radius: 8px 0 0 8px;
+.minishow-container>img{
+  width:100%;
 }
-.third{
-  border-radius: 0 8px 8px 0;
+.minishow-title {
+  color: #ffffff;
+  font-size: 20px;
+  margin-left : 17px;
+  width: 50%;
+  text-align: left;
+  position: absolute;
+  bottom: 60px;
 }
-.counts{
+.minishow-subtext{
+  color: #ffffff;
+  font-size: 15px;
+  margin-left : 17px;
+  width: 50%;
+  text-align: left;
+  position: absolute;
+  bottom: 37px;
+}
+.minishow-subtext>img{
+  height:16px;
+}
+.minishow-explain{
+  font-size: 13px;
+  width:100%;
+  height: 25px;
+  text-align: center;
+  line-height: 1.9;
   background-color: var(--main-yellow);
-  border-radius: 10px;
-  font-size: 18px;
-  padding: 4px;
+  position: absolute;
+  bottom: 0;
+  border-radius: 0 0 0.5em 0.5em;
 }
 
 /* 공통 썸네일 영역 */
@@ -92,9 +148,9 @@ img {vertical-align: middle;}
   width: 120px;
   height: 120px;
   border-radius: 8px;
-  border: 1px solid var(--main-bg-color);
+  border: 1px solid rgba(0,0,0,0.1);
 }
-.thumb img{
+.thumb>img{
   width: 120px;
   height: 120px;
   border-radius: 8px 8px 0 0;
@@ -105,7 +161,6 @@ img {vertical-align: middle;}
   height:30px;
 }
 .bottom img{
-  width: 14px;
   height: 14px;
   margin-left:3px;
   margin-right:3px;
