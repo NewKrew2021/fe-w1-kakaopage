@@ -19,6 +19,13 @@ body {
     margin: 0 auto;
 }
 
+@media screen and (max-width: 980px) {
+    .header > .logo {
+        margin: 0 0 0 35px;
+        text-align: initial;
+    }
+}
+
 .header > .logo > .logo-img {
     width: 167px;
     height: 36px;
@@ -188,12 +195,19 @@ body {
     color: #bbbbbb;
 }
 
-.content-box__day-navbar > ul >li:first-child {
+.content-box__day-navbar > ul > .selected {
     color: #333333;
     border-bottom: 2px solid #ffd500;
 }
 
 .content-box__card-group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 19px;
+}
+
+.content-box__day-card-group {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
