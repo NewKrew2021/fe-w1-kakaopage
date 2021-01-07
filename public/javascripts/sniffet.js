@@ -16,3 +16,23 @@ const createSniffetImage = (sniffetImageSrc, sniffetImageDetail) => {
 
   return sniffetImageWrapper;
 };
+
+const createSniffetDescription = sniffetData => {
+  const sniffetDescription = createNewElement('div', 'sniffet-description', '');
+  const sniffetTitle = createNewElement(
+    'p',
+    'sniffet-title',
+    sniffetData.sniffetTitle
+  );
+  const sniffetViewCount = createNewElement(
+    'p',
+    'sniffet-title',
+    sniffetData.sniffetViewCount
+  );
+  sniffetDescription.appendChild(sniffetTitle);
+  sniffetDescription.appendChild(sniffetViewCount);
+
+  return sniffetDescription;
+};
+
+export { createSniffetImage, createSniffetDescription };
