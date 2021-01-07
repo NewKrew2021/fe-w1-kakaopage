@@ -1,17 +1,22 @@
 /*
-    [] 선택된 카테고리를 저장한다.
-    [] 선택된 카테고리에 표시한다.(노란색, 진한 글씨)
-    [] 메인 카테고리의 event를 등록한다.
+    [v] 선택된 카테고리를 저장한다.
+    [v] 선택된 카테고리에 표시한다.(노란색, 진한 글씨)
+    [v] 메인 카테고리의 event를 등록한다.
+    [] 웹툰 카테고리의 event를 등록한다.
 */
 
 // name space 생성
 const MAIN = {};
 MAIN.URL = "http://localhost:5500";
 
+// 선택된 카테고리, container 정보 DOM 객체로 저장
 MAIN.mainCategoryDOMs;
-MAIN.containerDOM; // DOM 객체로 저장
+MAIN.webtoonCategoryDOMs;
 
-MAIN.selectedMainMenu; // DOM 객체로 저장
+MAIN.containerDOM;
+
+MAIN.selectedMainMenuDOM;
+MAIN.selectedWebtoonMenuDOM;
 
 function getCategory(type) {
     return new Promise((resolve, reject) => {
@@ -21,12 +26,51 @@ function getCategory(type) {
     });
 }
 
-function drawMenu(menu) {
-    if(menu.toString() != "웹툰") {
-        MAIN.containerDOM.innerHTML = menu;
-        return;
+function setContainer(menu) {
+    if(menu != "웹툰") {
+        // 웹툰 외 더미 데이터
+        MAIN.containerDOM.innerHTML = `<p style="font-size:240px;text-align:center">${menu}</p>`;
     }
-    
+    else {
+        // 공통(navigator, slide) + content container
+        MAIN.containerDOM.innerHTML = `<div class="navigator"><ul class="navigator" id="webtoonCategory"></ul></div>`;
+        MAIN.containerDOM.innerHTML += `<div class="slide"><div id="slide"></div><div id="prevBtn">
+            <img src="./images/slide_prev.svg"></div><div id="nextBtn"><img src="./images/slide_next.svg"></div><div id="page"></div></div>`;
+        MAIN.containerDOM.innerHTML += `<div class="content"></div>`;
+        
+        // 세부 카테고리 그리기
+        MAIN.webtoonCategory = document.getElementById("webtoonCategory");
+        getCategory("webtoon").then(function(category) {
+            for(let name in category) {
+                MAIN.webtoonCategory.innerHTML += `<li class="menu2"><a>${name}</a></li>`;
+            }
+            MAIN.webtoonCategoryDOMs = document.querySelectorAll(".menu2");
+
+            // default 홈(맨 왼쪽) 설정
+            if(MAIN.webtoonCategoryDOMs[0] != undefined) {
+                MAIN.selectedWebtoonMenuDOM = MAIN.webtoonCategoryDOMs[0];
+                MAIN.selectedWebtoonMenuDOM.firstChild.style.color = "#000";
+            }
+
+            // 웹툰 카테고리 이벤트 등록
+            for(let menu of MAIN.webtoonCategoryDOMs) {
+                if(menu.firstChild == undefined) continue;
+                menu.firstChild.addEventListener("click", function(e) {
+                    MAIN.selectedWebtoonMenuDOM.firstChild.style.color = "#bbb";
+                    MAIN.selectedWebtoonMenuDOM = menu;
+                    MAIN.selectedWebtoonMenuDOM.firstChild.style.color = "#000";
+                });
+            }
+
+            // 슬라이드
+            setSlide();
+        });
+
+        
+
+        // 각 내용
+        setHome(MAIN.containerDOM);
+    }
 }
 
 window.onload = function() {
@@ -42,25 +86,24 @@ window.onload = function() {
         }
         MAIN.mainCategoryDOMs = document.querySelectorAll(".menu");
         
-        // default 홈 설정
+        // default 홈(맨 왼쪽) 설정
         if(MAIN.mainCategoryDOMs[0] != undefined) {
-            MAIN.mainCategoryDOMs[0].style.borderBottom = "3px solid #fd0";
-            MAIN.selectedMainMenu = MAIN.mainCategoryDOMs[0];
+            MAIN.selectedMainMenuDOM = MAIN.mainCategoryDOMs[0];
+            MAIN.selectedMainMenuDOM.style.borderBottom = "3px solid #fd0";
+            MAIN.containerDOM.innerHTML = `<p style="font-size:240px;text-align:center">${MAIN.selectedMainMenuDOM.id}</p>`;
         }
         
         // 이벤트 등록(네모 칸 안의 글자에 등록)
         for(let menu of MAIN.mainCategoryDOMs) {
             if(menu.firstChild == undefined) continue;
             menu.firstChild.addEventListener("click", function(e) {
-                MAIN.selectedMainMenu.style.borderBottom = "";
-                MAIN.selectedMainMenu = menu;
-                MAIN.selectedMainMenu.style.borderBottom = "3px solid #fd0";
+                MAIN.selectedMainMenuDOM.style.borderBottom = "";
+                MAIN.selectedMainMenuDOM = menu;
+                MAIN.selectedMainMenuDOM.style.borderBottom = "3px solid #fd0";
 
-                drawMenu(menu.id);                
+                setContainer(menu.id);                
             });
         }
 
     });
-
-    
 }
