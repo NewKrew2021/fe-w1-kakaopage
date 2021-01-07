@@ -1,6 +1,11 @@
 import { $, createNewElement } from './utils.js';
 import { createGenreNav, changeClickedNavTab } from './genre-nav.js';
-import { headerNavData, webtoonPageData, webtoonSniffetData } from './data.js';
+import {
+  headerNavData,
+  webtoonPageData,
+  webtoonSniffetData,
+  sniffetDataListText,
+} from './data.js';
 import { renderCarousel } from './carousel.js';
 import { createSniffetImage, createSniffetDescription } from './sniffet.js';
 
@@ -11,6 +16,12 @@ const DAY_LIST_HEADER_DATA = {
   title: '요일 연재 TOP',
   subtitle: '(1,085)',
   right: '더보기 >',
+};
+
+const createSniffetListContent = () => {
+  const dayListContent = createNewElement('div', 'day-list__content', '');
+  dayListContent.innerHTML = sniffetDataListText + sniffetDataListText;
+  return dayListContent;
 };
 
 const createDayListHeader = dayListHeaderData => {
@@ -51,6 +62,7 @@ const createWebtoonDayList = webtoonSniffetData => {
   dayList.appendChild(
     createGenreNav(webtoonSniffetData.headerItemList, 'day-list__nav')
   );
+  dayList.appendChild(createSniffetListContent());
 
   return dayList;
 };

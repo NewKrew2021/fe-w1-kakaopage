@@ -281,4 +281,79 @@ const webtoonSniffetData = {
   ],
 };
 
-export { headerNavData, webtoonPageData, webtoonSniffetData };
+const sniffetDataListText = `
+<div class="sniffet-list">
+  <div class="sniffet">
+    <div class="sniffet-image">
+      <img
+        src="http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2"
+        class="sniffet-image__image"
+      />
+      <div class="sniffet-image__detail">TOP</div>
+    </div>
+    <div class="sniffet-description">
+      <p class="sniffet-title">롱리브더킹</p>
+      <p class="sniffet-view-count">235만명</p>
+    </div>
+  </div>
+  <div class="sniffet">
+    <div class="sniffet-image">
+      <img
+        src="http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2"
+        class="sniffet-image__image"
+      />
+      <div class="sniffet-image__detail">TOP</div>
+    </div>
+    <div class="sniffet-description">
+      <p class="sniffet-title">롱리브더킹</p>
+      <p class="sniffet-view-count">235만명</p>
+    </div>
+  </div>
+  <div class="sniffet">
+    <div class="sniffet-image">
+      <img
+        src="http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2"
+        class="sniffet-image__image"
+      />
+      <div class="sniffet-image__detail">TOP</div>
+    </div>
+    <div class="sniffet-description">
+      <p class="sniffet-title">롱리브더킹</p>
+      <p class="sniffet-view-count">235만명</p>
+    </div>
+  </div>
+  <div class="sniffet">
+    <div class="sniffet-image">
+      <img
+        src="http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2"
+        class="sniffet-image__image"
+      />
+      <div class="sniffet-image__detail">TOP</div>
+    </div>
+    <div class="sniffet-description">
+      <p class="sniffet-title">롱리브더킹</p>
+      <p class="sniffet-view-count">235만명</p>
+    </div>
+  </div>
+  <div class="sniffet">
+    <div class="sniffet-image">
+      <img
+        src="http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2"
+        class="sniffet-image__image"
+      />
+      <div class="sniffet-image__detail">TOP</div>
+    </div>
+    <div class="sniffet-description">
+      <p class="sniffet-title">롱리브더킹</p>
+      <p class="sniffet-view-count">235만명</p>
+    </div>
+  </div>
+</div>
+`;
+
+export {
+  headerNavData,
+  webtoonPageData,
+  webtoonSniffetData,
+  sniffetDataListText,
+};
