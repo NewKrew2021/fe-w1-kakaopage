@@ -25,6 +25,15 @@ const createGenreNav = (navItemList, navClassName) => {
       'genre-nav__item',
       navItem.pageName
     );
+
+    navItemElement.addEventListener('click', () => {
+      navItem.renderFunction(
+        navItem.pageIndex,
+        '.content__list',
+        navItem.carouselList
+      );
+    });
+
     genreNavList.appendChild(navItemElement);
   });
   genreNav.appendChild(genreNavList);
