@@ -8,59 +8,59 @@
 const MAIN = {};
 MAIN.URL = "http://localhost:5500";
 
-MAIN.containerDOM;
+MAIN.mainCategoryDOMs;
+MAIN.containerDOM; // DOM 객체로 저장
+
+MAIN.selectedMainMenu; // DOM 객체로 저장
 
 function getCategory(type) {
-    return new Promise(function(resolve, reject) {
-        fetch(`${MAIN.URL}/${type}-category.json`).then(function(response) {
+    return new Promise((resolve, reject) => {
+        fetch(`${MAIN.URL}/../data/${type}-category.json`).then(response => {
             resolve(response.json());
         });
     });
 }
-window.onload = function() {
-    // 슬라이드를 위해 웹툰 포스터 이미지 연결
-    slide.slideDOM = document.getElementById("slide");
-    slide.slideDOM.style.width = `${(slide.cnt + 2) * 720}px`;
 
-    slide.slideDOM.appendChild(makeImageElement(slide.images[slide.cnt - 1].src, 720, 480));
-    for(let img of slide.images) {
-        let element = makeImageElement(img.src, 720, 480);
-        slide.slideDOM.appendChild(element);
+function drawMenu(menu) {
+    if(menu.toString() != "웹툰") {
+        MAIN.containerDOM.innerHTML = menu;
+        return;
     }
-    slide.slideDOM.appendChild(makeImageElement(slide.images[0].src, 720, 480));
-
-    // slide 버튼 이벤트 등록
-    let prevBtn = document.getElementById("prevBtn");
-    let nextBtn = document.getElementById("nextBtn");
-    prevBtn.addEventListener("click", function(e) {
-        prev();
-        clearInterval(slide.timerId);
-        slide.timerId = setInterval(next, 2000);
-    })
-    nextBtn.addEventListener("click", function(e) {
-        next();
-        clearInterval(slide.timerId);
-        slide.timerId = setInterval(next, 2000);
-    })
-
-    // 현재 slide 1로 초기화
-    let page = document.getElementById("page");
-    page.innerHTML = `${slide.curId} / ${slide.cnt}`;
-
-    // 3 1 2 3 1 중 두번째 1로 한칸 옮기기
-    slide.slideDOM.style.transform = `translate(-720px)`;
-
-    slide.timerId = setInterval(next, 2000);
-
-    MAIN.containerDOM = document.getElementById("container");
     
+}
+
+window.onload = function() {
+    MAIN.containerDOM = document.getElementById("container");
+
+    // 메인 카테고리 데이터를 받아서 그림, 카테고리 선택 이벤트 등록
     getCategory("main").then(function(category) {
         const mainCategoryDOM = document.getElementById("mainCategory");
+        
+        // 메인 카테고리 그리기
         for(let name in category) {
-            mainCategoryDOM.innerHTML += `<li class="menu"><img src="./images/${category[name]}" class="menuImage"></li>`;
+            mainCategoryDOM.innerHTML += `<li class="menu" id="${name}"><img src="./images/${category[name]}" class="menuImage"></li>`;
         }
+        MAIN.mainCategoryDOMs = document.querySelectorAll(".menu");
+        
+        // default 홈 설정
+        if(MAIN.mainCategoryDOMs[0] != undefined) {
+            MAIN.mainCategoryDOMs[0].style.borderBottom = "3px solid #fd0";
+            MAIN.selectedMainMenu = MAIN.mainCategoryDOMs[0];
+        }
+        
+        // 이벤트 등록(네모 칸 안의 글자에 등록)
+        for(let menu of MAIN.mainCategoryDOMs) {
+            if(menu.firstChild == undefined) continue;
+            menu.firstChild.addEventListener("click", function(e) {
+                MAIN.selectedMainMenu.style.borderBottom = "";
+                MAIN.selectedMainMenu = menu;
+                MAIN.selectedMainMenu.style.borderBottom = "3px solid #fd0";
+
+                drawMenu(menu.id);                
+            });
+        }
+
     });
 
-    MAIN.mainCategoryDOMs = document.querySelectorAll(".menu");
-    console.log(MAIN.mainCategoryDOMs);
+    
 }
