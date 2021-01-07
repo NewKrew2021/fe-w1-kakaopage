@@ -115,4 +115,79 @@ const webtoonPageData = {
   ],
 };
 
+const webtoonSniffetData = {
+  월: [
+    {
+      sniffetTitle: '롱리브더킹',
+      sniffetViewCount: '235만명',
+      sniffetImageSrc:
+        'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
+      sniffetImageDetail: 'TOP',
+    },
+    {
+      sniffetTitle: '롱리브더킹',
+      sniffetViewCount: '235만명',
+      sniffetImageSrc:
+        'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
+      sniffetImageDetail: 'TOP',
+    },
+    {
+      sniffetTitle: '롱리브더킹',
+      sniffetViewCount: '235만명',
+      sniffetImageSrc:
+        'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
+      sniffetImageDetail: 'TOP',
+    },
+    {
+      sniffetTitle: '롱리브더킹',
+      sniffetViewCount: '235만명',
+      sniffetImageSrc:
+        'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
+      sniffetImageDetail: 'TOP',
+    },
+    {
+      sniffetTitle: '롱리브더킹',
+      sniffetViewCount: '235만명',
+      sniffetImageSrc:
+        'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
+      sniffetImageDetail: 'TOP',
+    },
+    {
+      sniffetTitle: '롱리브더킹',
+      sniffetViewCount: '235만명',
+      sniffetImageSrc:
+        'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
+      sniffetImageDetail: 'TOP',
+    },
+    {
+      sniffetTitle: '롱리브더킹',
+      sniffetViewCount: '235만명',
+      sniffetImageSrc:
+        'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
+      sniffetImageDetail: 'TOP',
+    },
+    {
+      sniffetTitle: '롱리브더킹',
+      sniffetViewCount: '235만명',
+      sniffetImageSrc:
+        'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
+      sniffetImageDetail: 'TOP',
+    },
+    {
+      sniffetTitle: '롱리브더킹',
+      sniffetViewCount: '235만명',
+      sniffetImageSrc:
+        'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
+      sniffetImageDetail: 'TOP',
+    },
+    {
+      sniffetTitle: '롱리브더킹',
+      sniffetViewCount: '235만명',
+      sniffetImageSrc:
+        'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
+      sniffetImageDetail: 'TOP',
+    },
+  ],
+};
+
 export { headerNavData, webtoonPageData };
