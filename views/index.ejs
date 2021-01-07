@@ -3,10 +3,10 @@
 <head>
     <link rel="stylesheet" type="text/css" href="stylesheets/reset.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/slideshow.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/card.css">
 </head>
 <body>
+    <script type="text/javascript" src="data/home.js"></script>
     <%- include('./header.ejs') %>
     <%- include('./mainTabbar.ejs', {page}) %>
     <div class="container">
@@ -26,7 +26,6 @@
             </div>
         </div>
         <div class="container__contents">
-            <%- include('./slideshow.ejs') %>
         </div>
     </div>
     <script type="text/javascript" src="javascripts/genreNavbar.js"></script>
