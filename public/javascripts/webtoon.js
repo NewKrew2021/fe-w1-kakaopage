@@ -13,11 +13,45 @@ const DAY_LIST_HEADER_DATA = {
   right: '더보기 >',
 };
 
+const createDayListHeader = dayListHeaderData => {
+  const dayListHeader = createNewElement('div', 'day-list__header', '');
+  const dayListHeaderLeft = createNewElement(
+    'div',
+    'day-list__header-left',
+    ''
+  );
+  const dayListHeaderRight = createNewElement(
+    'div',
+    'day-list__header-right',
+    dayListHeaderData.right
+  );
+  dayListHeaderLeft.appendChild(
+    createNewElement(
+      'p',
+      'day-list__header-left-title',
+      dayListHeaderData.title
+    )
+  );
+  dayListHeaderLeft.appendChild(
+    createNewElement(
+      'p',
+      'day-list__header-left-subtitle',
+      dayListHeaderData.subtitle
+    )
+  );
+  dayListHeader.appendChild(dayListHeaderLeft);
+  dayListHeader.appendChild(dayListHeaderRight);
+  return dayListHeader;
+};
+
 const createWebtoonDayList = webtoonSniffetData => {
   const dayList = createNewElement('div', 'day-list', '');
+  const dayListHeader = createDayListHeader(DAY_LIST_HEADER_DATA);
+  dayList.appendChild(dayListHeader);
   dayList.appendChild(
     createGenreNav(webtoonSniffetData.headerItemList, 'day-list__nav')
   );
+
   return dayList;
 };
 
