@@ -13,6 +13,16 @@ function getElementsClass(className){
 function getQueryAll(node){
     return document.querySelectorAll(node);
 }
+/* navBar 클릭한 요소만 밑줄 강조하는 quick 함수 */
+function add_line_by_clicked(element){
+    for (let i = 0; i < getQueryAll("li."+element).length; i++) {
+        getQueryAll("li."+element)[i].addEventListener("click", function() {
+            let current = getElementsClass(element+ " active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
+}
 
 /* 매직 넘버 */
 const intervalTime = 2400;
@@ -51,15 +61,6 @@ const intervalTime = 2400;
         }
     }
 })();
-
-/* [공통] top_nav - 누른 요소만 노란색 밑줄 강조 표시 */
-for (let i = 0; i < getQueryAll("li.nav-dummy").length; i++) {
-    getQueryAll("li.nav-dummy")[i].addEventListener("click", function() {
-        let current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
-    });
-}
 
 /* [웹툰 > 홈] 첫번째 banner에 이미지 추가 */
 getElement("btn-prev").setAttribute('src','/images/before.svg');
@@ -122,7 +123,7 @@ getElement("content-home").click();
     daytop_ul.className += " contents-ul";
     for(let i = 0; i<=7; i++){
         let daytop_li = document.createElement("LI");
-        daytop_li.className += "daytop-nav contents-li font-title gray";
+        daytop_li.className += "daytop-li contents-li font-title gray";
         if(i == 0){
             daytop_li.className += " active";
         }
@@ -131,4 +132,6 @@ getElement("content-home").click();
     }
 })();
 
-/* [웹툰 > 요일 연재 TOP] navBar 클릭한 요소만 강조하기 */
+/* navBar 강조 기능 추가 */
+add_line_by_clicked("daytop-li");
+add_line_by_clicked("nav-dummy");
