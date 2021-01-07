@@ -56,7 +56,7 @@ function next() {
     console.log(document.querySelector(".slideTitle"));
 }
 function makeImageElement(src, width, height) {
-    let element = document.createElement("img");
+    const element = document.createElement("img");
     element.setAttribute("src", src);
     element.setAttribute("width", `${width}px`);
     element.setAttribute("height", `${height}px`);
@@ -74,14 +74,14 @@ function setSlide() {
 
     slide.slideDOM.appendChild(makeImageElement(slide.images[slide.cnt - 1].src, 720, 480));
     for(let img of slide.images) {
-        let element = makeImageElement(img.src, 720, 480);
+        const element = makeImageElement(img.src, 720, 480);
         slide.slideDOM.appendChild(element);
     }
     slide.slideDOM.appendChild(makeImageElement(slide.images[0].src, 720, 480));
 
     // slide 버튼 이벤트 등록
-    let prevBtn = document.getElementById("prevBtn");
-    let nextBtn = document.getElementById("nextBtn");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
     prevBtn.addEventListener("click", function(e) {
         prev();
         clearInterval(slide.timerId);
@@ -94,7 +94,7 @@ function setSlide() {
     })
 
     // 현재 slide 1로 초기화
-    let page = document.getElementById("page");
+    const page = document.getElementById("page");
     page.innerHTML = `${slide.curId} / ${slide.cnt}`;
 
     // 3 1 2 3 1 중 두번째 1로 한칸 옮기기

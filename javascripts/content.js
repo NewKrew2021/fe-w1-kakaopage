@@ -5,7 +5,7 @@
 */
 
 function makeWebtoonElement(webtoon) {
-    let element = document.createElement("div");
+    const element = document.createElement("div");
     element.className = "webtoon";
     element.innerHTML = `<div id="imgBox"><img id="webtoonImage" src="../webtoon-images/${webtoon.src}"></div>`;
     element.innerHTML += `<div id="webtoonInfo"><div class="title">${webtoon.title}
@@ -18,7 +18,7 @@ function makeWebtoonElement(webtoon) {
 
 function webtoonFilter(webtoons, condition) {
     if(condition == null) return webtoons;
-    let ret = [];
+    const ret = [];
     for(let webtoon of webtoons) {
         let select = true;
         for(let key in condition) {
@@ -36,7 +36,7 @@ function setContent(contentDOM, subject, webtoons) {
     contentDOM.innerHTML = `<div id="subject">${subject}</div>`;
     if(contentDOM == undefined) return;
     for(let webtoon of webtoons) {
-        let element = makeWebtoonElement(webtoon);
+        const element = makeWebtoonElement(webtoon);
         contentDOM.appendChild(element);
     }
 }
