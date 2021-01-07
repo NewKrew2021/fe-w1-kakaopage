@@ -25,67 +25,10 @@
                 </ul>
             </div>
         </div>
-        <%- include('./slideshow.ejs') %>
-        <div class="content-box">
-            <div class="content-box__header">
-                <div class="content-box__header__title">
-                    요일 연재 TOP
-                </div>
-                <div class="content-box__header__more">
-                    더보기
-                    <img src="https://static-page.kakao.com/static/common/ic-more-gray.svg?639494b81c8127013d0e627243aee94e" class="css-fvmobz">
-                </div>
-            </div>
-            <div class="content-box__day-navbar">
-                <ul>
-                    <li>월</li>
-                    <li>화</li>
-                    <li>수</li>
-                    <li>목</li>
-                    <li>금</li>
-                    <li>토</li>
-                    <li>일</li>
-                    <li>완결</li>
-                </ul>
-            </div>
-            <div class="content-box__card-group">
-                <% for(let i = 0; i < 10; i++) { %>
-                    <%- include('./card.ejs'); %>
-                <% } %>
-            </div>
-        </div>
-        <div class="content-box">
-            <div class="content-box__header">
-                <div class="content-title-text">
-                    로맨스 TOP
-                </div>
-                <div class="more">
-                    더보기
-                    <img src="https://static-page.kakao.com/static/common/ic-more-gray.svg?639494b81c8127013d0e627243aee94e" class="css-fvmobz">
-                </div>
-            </div>
-            <div class="grid-contents">
-                <% for(let i = 0; i < 5; i++) { %>
-                    <%- include('./card.ejs'); %>
-                <% } %>
-            </div>
-        </div>
-        <div class="content-box">
-            <div class="content-title">
-                <div class="content-title-text">
-                    로판 TOP
-                </div>
-                <div class="more">
-                    더보기
-                    <img src="https://static-page.kakao.com/static/common/ic-more-gray.svg?639494b81c8127013d0e627243aee94e" class="css-fvmobz">
-                </div>
-            </div>
-            <div class="grid-contents">
-                <% for(let i = 0; i < 5; i++) { %>
-                    <%- include('./card.ejs'); %>
-                <% } %>
-            </div>
+        <div class="container__contents">
+            <%- include('./slideshow.ejs') %>
         </div>
     </div>
+    <script type="text/javascript" src="javascripts/genreNavbar.js"></script>
 </body>
 </html>
