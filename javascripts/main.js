@@ -23,6 +23,16 @@ MAIN.selectedWebtoonMenuDOM;
 
 MAIN.contentDOM;
 
+MAIN.webtoons;
+
+function getWebtoon() {
+    return new Promise((resolve, reject) => {
+        fetch(`${MAIN.URL}/../data/webtoon.json`).then(response => {
+            resolve(response.json());
+        });
+    });
+}
+
 function getCategory(type) {
     return new Promise((resolve, reject) => {
         fetch(`${MAIN.URL}/../data/${type}-category.json`).then(response => {
@@ -42,8 +52,7 @@ function setContainer(menu) {
     else {
         // 공통(navigator, slide) + content container
         MAIN.containerDOM.innerHTML = `<div class="navigator"><ul class="navigator" id="webtoonCategory"></ul></div>`;
-        MAIN.containerDOM.innerHTML += `<div class="slide"><div id="slide"></div><div id="prevBtn">
-            <img src="./images/slide_prev.svg"></div><div id="nextBtn"><img src="./images/slide_next.svg"></div><div id="page"></div></div>`;
+        MAIN.containerDOM.innerHTML += `<div class="slide"><div id="slide"></div><div id="prevBtn"><img src="./images/slide_prev.svg"></div><div id="nextBtn"><img src="./images/slide_next.svg"></div><div id="page"></div></div>`;
         MAIN.containerDOM.innerHTML += `<div class="content" id="content"></div>`;
         
         // 세부 카테고리 그리기
@@ -75,12 +84,14 @@ function setContainer(menu) {
 
             // 슬라이드 및 content DOM 객체 저장
             MAIN.contentDOM = document.getElementById("content");
+
+            // default 홈
+            setContent(MAIN.contentDOM, "웹툰 전체",MAIN.webtoons);
         });
 
         
 
-        // 각 내용
-        setHome(MAIN.containerDOM);
+        
     }
 }
 
@@ -116,5 +127,10 @@ window.onload = function() {
             });
         }
 
+    });
+
+    getWebtoon().then(function(webtoon) {
+        MAIN.webtoons = webtoon.webtoon;
+        
     });
 }
