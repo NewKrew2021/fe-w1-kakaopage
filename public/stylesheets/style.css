@@ -86,7 +86,8 @@ li {
   border-bottom: solid 4px#ffd200;
 }
 
-.webtoon-genre-nav {
+.webtoon-genre-nav,
+.web-novel-genre-nav {
   width: 700px;
   background: #ffffff;
   margin: 10px auto;
