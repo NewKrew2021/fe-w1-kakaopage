@@ -96,6 +96,7 @@ input{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-flow: wrap;
 }
 .flex-balanced{
     flex: 1;

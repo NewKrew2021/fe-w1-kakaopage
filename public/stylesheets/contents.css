@@ -92,7 +92,7 @@ img {vertical-align: middle;}
   width: 120px;
   height: 120px;
   border-radius: 8px;
-  border: 1px solid var(--main-bg-color);
+  border: 1px solid rgba(0,0,0,0.1);
 }
 .thumb img{
   width: 120px;
@@ -105,14 +105,11 @@ img {vertical-align: middle;}
   height:30px;
 }
 .bottom img{
-  width: 14px;
-  height: 14px;
+  width:24px;
+  height: 16px;
   margin-left:3px;
   margin-right:3px;
 }
-
-/* 하위 내비게이션들의 강조 서식 */
-
 
 /* Fading animation */
 .fade {

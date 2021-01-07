@@ -14,7 +14,7 @@ function getQueryAll(node){
     return document.querySelectorAll(node);
 }
 /* navBar 클릭한 요소만 밑줄 강조하는 quick 함수 */
-function add_line_by_clicked(element){
+function ADD_HIGHLIGHT_BY_CLICKED(element){
     for (let i = 0; i < getQueryAll("li."+element).length; i++) {
         getQueryAll("li."+element)[i].addEventListener("click", function() {
             let current = getElementsClass(element+ " active");
@@ -125,13 +125,15 @@ getElement("content-home").click();
         let daytop_li = document.createElement("LI");
         daytop_li.className += "daytop-li contents-li font-title gray";
         if(i == 0){
+            daytop_li.setAttribute("id", "default");
             daytop_li.className += " active";
         }
+        daytop_li.setAttribute('tab', i);
         daytop_li.innerHTML = daytext[i];
         daytop_ul.appendChild(daytop_li);
     }
 })();
 
 /* navBar 강조 기능 추가 */
-add_line_by_clicked("daytop-li");
-add_line_by_clicked("nav-dummy");
+ADD_HIGHLIGHT_BY_CLICKED("daytop-li");
+ADD_HIGHLIGHT_BY_CLICKED("nav-dummy");

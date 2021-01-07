@@ -12,18 +12,21 @@ const fs = require('fs');
 const slideData = fs.readFileSync('./public/data/slides.json');
 const home_totalData = fs.readFileSync('./public/data/total.json');
 const home_topData = fs.readFileSync('./public/data/hometop.json');
+const day_topData = fs.readFileSync('./public/data/daytop.json');
 
 const slideJSON = JSON.parse(slideData);
 const home_totalJSON = JSON.parse(home_totalData);
 const home_topJSON = JSON.parse(home_topData);
+const day_topJSON = JSON.parse(day_topData);
 
 const home_slide = slideJSON.home_slide;
 const day_slide = slideJSON.day_slide;
 const homeBanner = home_totalJSON.home_total;
 const home_top = home_topJSON.data;
+const day_top = day_topJSON.data;
 
 app.get('/', function(req, res){
-  res.render('index', { home_slide, homeBanner, home_top, day_slide });
+  res.render('index', { home_slide, day_top, homeBanner, home_top, day_slide });
 })
 
 app.listen(port, () => {
