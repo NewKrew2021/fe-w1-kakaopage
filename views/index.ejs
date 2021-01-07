@@ -4,101 +4,87 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/reset.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/slideshow.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/card.css">
 </head>
 <body>
     <%- include('./header.ejs') %>
     <%- include('./mainTabbar.ejs', {page}) %>
     <div class="container">
         <div class="content-box">
-            <div class="webtoon-tabbar">
+            <div class="genre-navbar">
                 <ul>
-                    <li>홈</li>
-                    <li>요일연재</li>
-                    <li>웹툰</li>
-                    <li>소년</li>
-                    <li>드라마</li>
-                    <li>로맨스</li>
-                    <li>로판</li>
-                    <li>액션무협</li>
-                    <li>BL/GL</li>
+                    <li id="home">홈</li>
+                    <li id="daily">요일연재</li>
+                    <li id="webtoon">웹툰</li>
+                    <li id="highteen">소년</li>
+                    <li id="drama">드라마</li>
+                    <li id="romance">로맨스</li>
+                    <li id="rofan">로판</li>
+                    <li id="action">액션무협</li>
+                    <li id="bl-gl">BL/GL</li>
                 </ul>
             </div>
         </div>
         <%- include('./slideshow.ejs') %>
-        <div class="content-box-with-title">
-            <div class="content-title">
-                <div class="content-title-text">
+        <div class="content-box">
+            <div class="content-box__header">
+                <div class="content-box__header__title">
                     요일 연재 TOP
                 </div>
-                <div class="more">
+                <div class="content-box__header__more">
                     더보기
                     <img src="https://static-page.kakao.com/static/common/ic-more-gray.svg?639494b81c8127013d0e627243aee94e" class="css-fvmobz">
                 </div>
             </div>
-            <div class="contents">
-                adf;kaljs
+            <div class="content-box__day-navbar">
+                <ul>
+                    <li>월</li>
+                    <li>화</li>
+                    <li>수</li>
+                    <li>목</li>
+                    <li>금</li>
+                    <li>토</li>
+                    <li>일</li>
+                    <li>완결</li>
+                </ul>
             </div>
-
+            <div class="content-box__card-group">
+                <% for(let i = 0; i < 10; i++) { %>
+                    <%- include('./card.ejs'); %>
+                <% } %>
+            </div>
         </div>
-        <div class="content-box-with-title">
-            <div class="content-title">
+        <div class="content-box">
+            <div class="content-box__header">
                 <div class="content-title-text">
-                    요일 연재 TOP
+                    로맨스 TOP
                 </div>
                 <div class="more">
                     더보기
                     <img src="https://static-page.kakao.com/static/common/ic-more-gray.svg?639494b81c8127013d0e627243aee94e" class="css-fvmobz">
                 </div>
             </div>
-            <div class="contents">
-                adf;kaljs
+            <div class="grid-contents">
+                <% for(let i = 0; i < 5; i++) { %>
+                    <%- include('./card.ejs'); %>
+                <% } %>
             </div>
-
         </div>
-        <div class="content-box-with-title">
+        <div class="content-box">
             <div class="content-title">
                 <div class="content-title-text">
-                    요일 연재 TOP
+                    로판 TOP
                 </div>
                 <div class="more">
                     더보기
                     <img src="https://static-page.kakao.com/static/common/ic-more-gray.svg?639494b81c8127013d0e627243aee94e" class="css-fvmobz">
                 </div>
             </div>
-            <div class="contents">
-                adf;kaljs
+            <div class="grid-contents">
+                <% for(let i = 0; i < 5; i++) { %>
+                    <%- include('./card.ejs'); %>
+                <% } %>
             </div>
-
-        </div>
-        <div class="content-box-with-title">
-            <div class="content-title">
-                <div class="content-title-text">
-                    요일 연재 TOP
-                </div>
-                <div class="more">
-                    더보기
-                    <img src="https://static-page.kakao.com/static/common/ic-more-gray.svg?639494b81c8127013d0e627243aee94e" class="css-fvmobz">
-                </div>
-            </div>
-            <div class="contents">
-                adf;kaljs
-            </div>
-
-        </div>
-        <div class="content-box-with-title">
-            <div class="content-title">
-                <div class="content-title-text">
-                    요일 연재 TOP
-                </div>
-                <div class="more">
-                    더보기
-                    <img src="https://static-page.kakao.com/static/common/ic-more-gray.svg?639494b81c8127013d0e627243aee94e" class="css-fvmobz">
-                </div>
-            </div>
-            <div class="contents">
-                adf;kaljs
-            </div>
-
         </div>
     </div>
 </body>

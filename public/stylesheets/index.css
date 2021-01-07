@@ -16,7 +16,7 @@ body {
 
 .header > .logo {
     text-align: center;
-    margin: 11px auto;
+    margin: 0 auto;
 }
 
 .header > .logo > .logo-img {
@@ -80,6 +80,7 @@ body {
     height: 77px;
     top: 80px;
     z-index: 1;
+    border-bottom: 1px solid #dfdfdf;
     background-color: #fff;
 }
 
@@ -106,7 +107,6 @@ body {
 }
 
 .container {
-    border-top: 1px solid #dfdfdf;
     width: 100%;
     padding-top: 157px;
 }
@@ -118,7 +118,7 @@ body {
     background-color: #fff;
 }
 
-.webtoon-tabbar {
+.genre-navbar {
     position: relative;
     width: 100%;
     height: 67px;
@@ -127,7 +127,7 @@ body {
     color: #bbbbbb;
 }
 
-.webtoon-tabbar > ul {
+.genre-navbar > ul {
     height: 100%;
     display: flex;
     justify-content: space-around;
@@ -135,19 +135,12 @@ body {
     margin: 0px auto;
 }
 
-.webtoon-tabbar > ul > li:first-child {
+.genre-navbar > ul > .selected {
     color: #333333;
     font-weight: 500;
 }
 
-.content-box-with-title {
-    width: 720px;
-    margin-top: 8px;
-    margin: 8px auto 0 auto;
-    background-color: #fff;           
-}
-
-.content-box-with-title > .content-title {
+.content-box > .content-box__header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -156,20 +149,53 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
-.content-title > .content-title-text {
+.content-box__header > .content-box__header__title {
     font-size: 20px;
     color: #333333;
 }
 
-.content-title > .more {
+.content-box__header > .content-box__header__more {
     font-size: 16px;
     color: #999999;
 }
 
-.content-title > .more > img {
+.content-box__header__more > img {
 }
 
 .contents {
     margin: 22px 0 0 0 ;
     padding: 0 20px 20px 20px;
+}
+
+.content-box__day-navbar {
+    margin: 5px 19px 0px 19px;
+}
+
+.content-box__day-navbar > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content-box__day-navbar > ul > li {
+    flex: 1;
+    text-align: center;
+    font-family: 'Noto Sans KR';
+    font-size: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid #f1f1f1;
+    color: #bbbbbb;
+}
+
+.content-box__day-navbar > ul >li:first-child {
+    color: #333333;
+    border-bottom: 2px solid #ffd500;
+}
+
+.content-box__card-group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 19px;
 }
