@@ -17,7 +17,7 @@ function getQueryAll(node){
 /* 매직 넘버 */
 const intervalTime = 2400;
 
-/* 공통 top_nav에 항목 추가 */
+/* [공통] 공통 top_nav에 항목 추가 */
 (function(){
     const nav_list = [
         { name : "홈", img : "https://static-page.kakao.com/static/pc/menu_home.svg?fac7abe73b67dd1eb997d70a2c52d4d0" },
@@ -34,25 +34,25 @@ const intervalTime = 2400;
     }
 })();
 
-/* top_nav의 웹툰 탭 이외에는 더미 페이지가 보이게 하기 */
+/* [공통] top_nav의 웹툰 탭 이외에는 더미 페이지가 보이게 하기 */
 (function(){
     const top_nav_li = getElementsClass("nav-dummy");
     for(let i = 0; i < top_nav_li.length; i++){
         if(top_nav_li[i].classList.contains("webtoon")){
             top_nav_li[i].addEventListener("click",()=>{
                 getElement("contents").style.display = 'block';
-                getElement("dummy").style.display = 'none';
+                getElement("blank").style.display = 'none';
             });
         } else{
             top_nav_li[i].addEventListener("click",()=>{
                 getElement("contents").style.display = 'none';
-                getElement("dummy").style.display = 'block';
+                getElement("blank").style.display = 'block';
             })
         }
     }
 })();
 
-/* top_nav - 누른 요소만 노란색 밑줄 강조 표시 */
+/* [공통] top_nav - 누른 요소만 노란색 밑줄 강조 표시 */
 for (let i = 0; i < getQueryAll("li.nav-dummy").length; i++) {
     getQueryAll("li.nav-dummy")[i].addEventListener("click", function() {
         let current = document.getElementsByClassName("active");
@@ -61,7 +61,7 @@ for (let i = 0; i < getQueryAll("li.nav-dummy").length; i++) {
     });
 }
 
-/* [웹툰 > 홈] 의 첫번째 banner에 이미지 추가 */
+/* [웹툰 > 홈] 첫번째 banner에 이미지 추가 */
 getElement("btn-prev").setAttribute('src','/images/before.svg');
 getElement("btn-next").setAttribute('src','/images/next.svg');
 getElement("banner-img").setAttribute('src','/images/banner1.png');
@@ -114,3 +114,21 @@ for (let i = 0; i < getElementsClass("contents-li").length; i++) {
     })
 }
 getElement("content-home").click();
+
+/* [웹툰 > 요일 연재 TOP] navBar 요소 추가 */
+(function(){
+    const daytop_ul = getElement("daytop-nav");
+    const daytext = ['월','화','수','목','금','토','일','완결'];
+    daytop_ul.className += " contents-ul";
+    for(let i = 0; i<=7; i++){
+        let daytop_li = document.createElement("LI");
+        daytop_li.className += "daytop-nav contents-li font-title gray";
+        if(i == 0){
+            daytop_li.className += " active";
+        }
+        daytop_li.innerHTML = daytext[i];
+        daytop_ul.appendChild(daytop_li);
+    }
+})();
+
+/* [웹툰 > 요일 연재 TOP] navBar 클릭한 요소만 강조하기 */

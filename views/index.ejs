@@ -41,8 +41,8 @@
             <div id="contents">
 
                 <!-- [웹툰] 탭의 하위 컨텐츠 시작-->
-                <div class="contents-nav">
-                    <ul>
+                <div class="contents-nav font-title">
+                    <ul class="contents-ul pd-tb-5">
                         <li id="content-home" class="contents-li home c-active">홈</li>
                         <li class="contents-li day">요일연재</li>
                         <li class="contents-li webtoon">웹툰</li>
@@ -92,7 +92,7 @@
                             </div>
                             <% }); %>
                     </div>
-                    <!-- 두번째 배너 -->
+                    <!-- 두번째 배너 - 기대 신작 TOP -->
                     <div class="card flex">
                         <img id="btn-prev" class="btn">
                         <div id="banner-1" class="middle mg-left-10 mg-right-10">
@@ -100,15 +100,20 @@
                         </div>
                         <img id="btn-next" class="btn">
                     </div>
-                    <!-- 세번째 배너 -->
-                    <div class="card flex">
-                        <div class="font-title flex">요일 연재 TOP
-                            <div class="font-small gray flex mg-left-5">(1,084)</div>
+                    <!-- 세번째 배너 - 요일 연재 TOP -->
+                    <div class="card">
+                        <div class="flex">
+                            <div class="font-title"> 요일 연재 TOP </div>
+                                <div class="font-small gray flex mg-left-5">(1,084)</div>
+                            <div class="font-main gray">더보기</div><img class="btn mg-left-5" src="/images/more_btn.svg">
                         </div>
-                        <div class="font-main gray">더보기<img class="btn mg-left-5" src="/images/more_btn.svg">
+                        <!-- 요일 내비게이션 -->
+                        <div class="flex bd-bt-gray">
+                            <ul id="daytop-nav" class="pd-t-10">
+                            </ul>
                         </div>
                     </div>
-                    <!-- 네번째 배너 -->
+                    <!-- 네번째 배너 - 기대 신작 TOP -->
                     <div class="card flex">
                         <div class="font-title flex">기대신작 TOP</div>
                         <div class="font-main gray">더보기</div><img class="btn mg-left-5" src="/images/more_btn.svg">
@@ -195,7 +200,7 @@
                 <div id="book" class="page invisible">구현예정...</div>
                 <div id="blgl" class="page invisible">구현예정...</div>
             </div>
-            <div id="dummy">
+            <div id="blank">
                 <span style="font-size:20px; color:gray;">컨텐츠가 없습니다.</span>
             </div>
         </div>

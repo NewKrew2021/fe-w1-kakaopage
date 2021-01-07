@@ -2,7 +2,7 @@ html, body, div, p, span,
 strong, b, em, iframe, pre,
 h1, h2, h3, h4, h5, h6, img, dl, dt, dd,
 fieldset, form, legend, label, table, caption,
-thead, tbody, tfoot, tr, th, td, ul, ol, a, li,
+thead, tbody, tfoot, tr, th, td, ul, ol, a,
 select, textarea {margin: 0; padding: 0; border: 0 none; }
 body{
     background-color:#eee;
@@ -58,6 +58,13 @@ input{
 }
 .pd-5{
     padding: 0.5em;
+}
+.pd-t-10{
+    padding-top:1em;
+}
+.pd-tb-5{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 }
 .pd-10{
     padding: 1em;
@@ -211,14 +218,17 @@ input{
     list-style: none;
     line-height: 50px;
     cursor: pointer;
-    border-bottom:3px solid transparent;
 }
 
-#top-nav .active{
-    border-bottom:3px solid var(--main-yellow);
+/* 탭 선택 시 강조 */
+.active{
+    border-bottom: 3px solid var(--main-yellow);
+}
+.bd-bt-gray{
+    border-bottom:1px solid var(--main-bg-color);
 }
 
-#dummy{
+#blank{
     display:none;
     text-align:center;
     margin-top:500px;
@@ -229,20 +239,17 @@ input{
     margin-top: 195px;
 }
 
-.contents-nav ul{
+.contents-ul{
     width:720px;
     margin: 0px auto;
     display: flex;
     background-color: #ffffff;
-    padding-top:5px;
-    padding-bottom:5px;
 }
 
-.contents-nav li{
+.contents-li{
     text-align:center;
     margin: 0px auto;
     width:100%;
-    font-size:20px;
     list-style: none;
     line-height: 50px;
     cursor: pointer;
