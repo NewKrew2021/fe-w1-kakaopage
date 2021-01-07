@@ -19,6 +19,13 @@ body {
     margin: 0 auto;
 }
 
+@media screen and (max-width: 980px) {
+    .header > .logo {
+        margin: 0 0 0 35px;
+        text-align: initial;
+    }
+}
+
 .header > .logo > .logo-img {
     width: 167px;
     height: 36px;
