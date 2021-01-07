@@ -10,7 +10,7 @@
                     "image": "/images/expect_01.png",
                     "b_img": "/images/line_top_banner.png",
                     "e_img": "/images/badge-event.svg",
-                    "c_img": "/images/people.png",
+                    "c_img": "/images/person-white.svg",
                     "p_img": "/images/ico-wait-white.svg"
                 }
             
@@ -25,7 +25,7 @@
                     "image": "/images/expect_02.png",
                     "b_img": "/images/line_top_banner.png",
                     "e_img": "/images/badge-event.svg",
-                    "c_img": "/images/people.png",
+                    "c_img": "/images/person-white.svg",
                     "p_img": "/images/ico-wait-white.svg"
                 }
             

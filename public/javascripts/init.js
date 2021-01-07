@@ -1,6 +1,6 @@
 /*
     init.js
-    > 렌더링 직후 바로 초기화 해야 하는 것들
+    > 렌더링 직후 바로 초기화 해야 하는 것들, 즉시 실행 함수 활용
 */
 const topbannerImg = ['/images/banner1.png', '/images/banner2.png', '/images/banner3.png'];
 
