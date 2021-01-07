@@ -1,3 +1,5 @@
+import { $, createNewElement, deleteClassFromElement } from './utils.js';
+
 const HEADER_NAV_LIST = [
   { pageIndex: 0, pageName: '홈', renderFunction: renderHomePage },
   { pageIndex: 1, pageName: '웹툰', renderFunction: renderWebtoonPage },
@@ -25,22 +27,6 @@ const LIST_TAG = 'li';
 const HEADER_NAV_LIST_CLASS_NAME = '.header-nav__list';
 
 let currentPage = 0;
-
-// util 함수
-const $ = (target, parent = document) => {
-  return document.querySelector(target);
-};
-
-const createNewElement = (tag, className, innerText) => {
-  const newElement = document.createElement(tag);
-  newElement.className = className;
-  newElement.innerText = innerText;
-  return newElement;
-};
-
-const deleteClassFromElement = (element, className) => {
-  element.classList.remove(className);
-};
 
 // render 함수
 const renderHeaderNav = () => {
