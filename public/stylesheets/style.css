@@ -90,7 +90,7 @@ li {
 .web-novel-genre-nav {
   width: 720px;
   background: #ffffff;
-  margin: 10px auto;
+  margin: 15px auto 0 auto;
 }
 
 .genre-nav__list {
@@ -111,7 +111,7 @@ li {
   width: 720px;
   height: 480px;
   box-sizing: border-box;
-  margin: 0 auto;
+  margin: 15px auto 0 auto;
 }
 
 .carousel__image {
@@ -130,4 +130,57 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.day-list {
+  background: #ffffff;
+  width: 720px;
+  margin: 15px auto 0 auto;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.day-list__header {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.day-list__header-left {
+  display: flex;
+  align-items: center;
+}
+
+.day-list__header-left-title {
+  font-size: 22px;
+  margin-right: 10px;
+}
+
+.day-list__header-left-subtitle {
+  color: #aaaaaa;
+}
+
+.day-list__header-right {
+  font-size: 15px;
+  color: #aaaaaa;
+}
+
+.day-list-nav__list {
+  box-sizing: border-box;
+  padding: 0;
+  display: flex;
+}
+
+.day-list-nav__item {
+  flex: 1 1 auto;
+  font-size: 20px;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+.day-list__nav {
+  width: 690px;
+  background: #ffffff;
+  margin: 15px auto 0 auto;
 }
