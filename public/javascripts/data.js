@@ -116,78 +116,169 @@ const webtoonPageData = {
 };
 
 const webtoonSniffetData = {
-  월: [
+  headerItemList: [
     {
-      sniffetTitle: '롱리브더킹',
-      sniffetViewCount: '235만명',
-      sniffetImageSrc:
-        'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
-      sniffetImageDetail: 'TOP',
+      pageIndex: 0,
+      pageName: '월',
+      renderFunction: renderCarousel,
+      carouselList: [
+        {
+          sniffetTitle: '롱리브더킹',
+          sniffetViewCount: '235만명',
+          sniffetImageSrc:
+            'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
+          sniffetImageDetail: 'TOP',
+        },
+        {
+          sniffetTitle: '롱리브더킹',
+          sniffetViewCount: '235만명',
+          sniffetImageSrc:
+            'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
+          sniffetImageDetail: 'TOP',
+        },
+        {
+          sniffetTitle: '롱리브더킹',
+          sniffetViewCount: '235만명',
+          sniffetImageSrc:
+            'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
+          sniffetImageDetail: 'TOP',
+        },
+        {
+          sniffetTitle: '롱리브더킹',
+          sniffetViewCount: '235만명',
+          sniffetImageSrc:
+            'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
+          sniffetImageDetail: 'TOP',
+        },
+        {
+          sniffetTitle: '롱리브더킹',
+          sniffetViewCount: '235만명',
+          sniffetImageSrc:
+            'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
+          sniffetImageDetail: 'TOP',
+        },
+        {
+          sniffetTitle: '롱리브더킹',
+          sniffetViewCount: '235만명',
+          sniffetImageSrc:
+            'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
+          sniffetImageDetail: 'TOP',
+        },
+        {
+          sniffetTitle: '롱리브더킹',
+          sniffetViewCount: '235만명',
+          sniffetImageSrc:
+            'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
+          sniffetImageDetail: 'TOP',
+        },
+        {
+          sniffetTitle: '롱리브더킹',
+          sniffetViewCount: '235만명',
+          sniffetImageSrc:
+            'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
+          sniffetImageDetail: 'TOP',
+        },
+        {
+          sniffetTitle: '롱리브더킹',
+          sniffetViewCount: '235만명',
+          sniffetImageSrc:
+            'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
+          sniffetImageDetail: 'TOP',
+        },
+        {
+          sniffetTitle: '롱리브더킹',
+          sniffetViewCount: '235만명',
+          sniffetImageSrc:
+            'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
+          sniffetImageDetail: 'TOP',
+        },
+      ],
     },
     {
-      sniffetTitle: '롱리브더킹',
-      sniffetViewCount: '235만명',
-      sniffetImageSrc:
-        'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
-      sniffetImageDetail: 'TOP',
+      pageIndex: 0,
+      pageName: '화',
+      renderFunction: renderCarousel,
+      carouselList: [
+        {
+          image:
+            'http://dn-img-page.kakao.com/download/resource?kid=chJoJc/hyLjfiEthl/g725sWc55RcZl2qZ6I5fcK',
+          description: '철벽 황제를 향한 청혼 프로젝트!',
+        },
+      ],
     },
     {
-      sniffetTitle: '롱리브더킹',
-      sniffetViewCount: '235만명',
-      sniffetImageSrc:
-        'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
-      sniffetImageDetail: 'TOP',
+      pageIndex: 0,
+      pageName: '수',
+      renderFunction: renderCarousel,
+      carouselList: [
+        {
+          image:
+            'http://dn-img-page.kakao.com/download/resource?kid=chJoJc/hyLjfiEthl/g725sWc55RcZl2qZ6I5fcK',
+          description: '철벽 황제를 향한 청혼 프로젝트!',
+        },
+      ],
     },
     {
-      sniffetTitle: '롱리브더킹',
-      sniffetViewCount: '235만명',
-      sniffetImageSrc:
-        'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
-      sniffetImageDetail: 'TOP',
+      pageIndex: 0,
+      pageName: '목',
+      renderFunction: renderCarousel,
+      carouselList: [
+        {
+          image:
+            'http://dn-img-page.kakao.com/download/resource?kid=chJoJc/hyLjfiEthl/g725sWc55RcZl2qZ6I5fcK',
+          description: '철벽 황제를 향한 청혼 프로젝트!',
+        },
+      ],
     },
     {
-      sniffetTitle: '롱리브더킹',
-      sniffetViewCount: '235만명',
-      sniffetImageSrc:
-        'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
-      sniffetImageDetail: 'TOP',
+      pageIndex: 0,
+      pageName: '금',
+      renderFunction: renderCarousel,
+      carouselList: [
+        {
+          image:
+            'http://dn-img-page.kakao.com/download/resource?kid=chJoJc/hyLjfiEthl/g725sWc55RcZl2qZ6I5fcK',
+          description: '철벽 황제를 향한 청혼 프로젝트!',
+        },
+      ],
     },
     {
-      sniffetTitle: '롱리브더킹',
-      sniffetViewCount: '235만명',
-      sniffetImageSrc:
-        'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
-      sniffetImageDetail: 'TOP',
+      pageIndex: 0,
+      pageName: '토',
+      renderFunction: renderCarousel,
+      carouselList: [
+        {
+          image:
+            'http://dn-img-page.kakao.com/download/resource?kid=chJoJc/hyLjfiEthl/g725sWc55RcZl2qZ6I5fcK',
+          description: '철벽 황제를 향한 청혼 프로젝트!',
+        },
+      ],
     },
     {
-      sniffetTitle: '롱리브더킹',
-      sniffetViewCount: '235만명',
-      sniffetImageSrc:
-        'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
-      sniffetImageDetail: 'TOP',
+      pageIndex: 0,
+      pageName: '일',
+      renderFunction: renderCarousel,
+      carouselList: [
+        {
+          image:
+            'http://dn-img-page.kakao.com/download/resource?kid=chJoJc/hyLjfiEthl/g725sWc55RcZl2qZ6I5fcK',
+          description: '철벽 황제를 향한 청혼 프로젝트!',
+        },
+      ],
     },
     {
-      sniffetTitle: '롱리브더킹',
-      sniffetViewCount: '235만명',
-      sniffetImageSrc:
-        'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
-      sniffetImageDetail: 'TOP',
-    },
-    {
-      sniffetTitle: '롱리브더킹',
-      sniffetViewCount: '235만명',
-      sniffetImageSrc:
-        'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
-      sniffetImageDetail: 'TOP',
-    },
-    {
-      sniffetTitle: '롱리브더킹',
-      sniffetViewCount: '235만명',
-      sniffetImageSrc:
-        'http://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2',
-      sniffetImageDetail: 'TOP',
+      pageIndex: 0,
+      pageName: '완결',
+      renderFunction: renderCarousel,
+      carouselList: [
+        {
+          image:
+            'http://dn-img-page.kakao.com/download/resource?kid=chJoJc/hyLjfiEthl/g725sWc55RcZl2qZ6I5fcK',
+          description: '철벽 황제를 향한 청혼 프로젝트!',
+        },
+      ],
     },
   ],
 };
 
-export { headerNavData, webtoonPageData };
+export { headerNavData, webtoonPageData, webtoonSniffetData };

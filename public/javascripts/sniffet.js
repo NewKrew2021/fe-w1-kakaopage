@@ -1,6 +1,6 @@
 import { $, createNewElement } from './utils.js';
 
-const createSniffetImage = (sniffetImageSrc, sniffetImageDetail) => {
+const createSniffetImage = (sniffetImageSrc, sniffetImageDetailText) => {
   const sniffetImageWrapper = createNewElement('div', 'sniffet-image', '');
   const sniffetImage = createNewElement('img', 'sniffet-image__image', '');
   sniffetImage.src = sniffetImageSrc;
@@ -8,7 +8,7 @@ const createSniffetImage = (sniffetImageSrc, sniffetImageDetail) => {
   const sniffetImageDetail = createNewElement(
     'div',
     'sniffet-image__detail',
-    sniffetImageDetail
+    sniffetImageDetailText
   );
 
   sniffetImageWrapper.appendChild(sniffetImage);
