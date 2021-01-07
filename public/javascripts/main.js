@@ -1,6 +1,7 @@
 import { $, createNewElement, deleteClassFromElement } from './utils.js';
 import { createGenreNav, changeClickedNavTab } from './genre-nav.js';
 import { headerNavData } from './data.js';
+import { renderWebtoonPage } from './webtoon.js';
 
 const HEADER_NAV_LIST = [
   { pageIndex: 0, pageName: '홈', renderFunction: renderHomePage },
@@ -9,18 +10,6 @@ const HEADER_NAV_LIST = [
   { pageIndex: 3, pageName: '영화', renderFunction: renderMoviePage },
   { pageIndex: 4, pageName: '방송', renderFunction: renderBroadcastingPage },
   { pageIndex: 5, pageName: '책', renderFunction: renderBookPage },
-];
-
-const WEBTOON_NAV_LIST = [
-  '홈',
-  '요일연재',
-  '웹툰',
-  '소년',
-  '드라마',
-  '로맨스',
-  '로판',
-  '액션무협',
-  'BL/GL',
 ];
 
 const HEADER_NAV_ITEM_CLASS_NAME = 'header-nav__item';
@@ -58,18 +47,6 @@ function renderHomePage(pageIndex) {
     HEADER_NAV_LIST_CLASS_NAME,
     HEADER_NAV_CLICKED_ITEM_CLASS_NAME
   );
-}
-
-function renderWebtoonPage(pageIndex) {
-  const contentTag = $('.content');
-  contentTag.innerText = '';
-  changeClickedNavTab(
-    headerNavData,
-    pageIndex,
-    HEADER_NAV_LIST_CLASS_NAME,
-    HEADER_NAV_CLICKED_ITEM_CLASS_NAME
-  );
-  contentTag.appendChild(createGenreNav(WEBTOON_NAV_LIST, 'webtoon-genre-nav'));
 }
 
 function renderWebNovelPage(pageIndex) {
