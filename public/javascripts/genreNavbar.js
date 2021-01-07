@@ -2,8 +2,37 @@ const genreData = {};
 const EVENT_DAY_NAVBAR_LOADED = "dayNavbarLoaded";
 
 (function() {
+
+    const BANNER_SLIDESHOW = 0;
+    const BUTTONS = 1;
+    const AD_SLIDESHOW = 2;
+    const CARDBOX_DAILY_TOP = 3;
+    const CARDBOX = 4;
+    const TWO_BANNER_BOX = 5;
+    const CARD_SCROLL_DAILY = 6;
+
+    const genreContentStruct = {
+        "home": [
+            BANNER_SLIDESHOW,
+            // BUTTONS,
+            // AD_SLIDESHOW,
+            CARDBOX_DAILY_TOP,
+            CARDBOX,
+            // TWO_BANNER_BOX
+        ],
+        "daily": [
+            BANNER_SLIDESHOW,
+            // CARD_SCROLL_DAILY,
+        ],
+        "webtoon": [
+
+        ],
+    }
     const options = document.querySelectorAll('.genre-navbar > ul > li');
     (function() {
+        options[0].className = "selected";
+        resetGenreContents();
+        renderGenreContents("home");
         for (let i = 0; i < options.length; i++) {
             options[i].addEventListener('click', (e) => {
                 resetGenreNavbar();
@@ -40,32 +69,6 @@ const EVENT_DAY_NAVBAR_LOADED = "dayNavbarLoaded";
         return genreContent;
     }
 
-    const BANNER_SLIDESHOW = 0;
-    const BUTTONS = 1;
-    const AD_SLIDESHOW = 2;
-    const CARDBOX_DAILY_TOP = 3;
-    const CARDBOX = 4;
-    const TWO_BANNER_BOX = 5;
-    const CARD_SCROLL_DAILY = 6;
-
-    const genreContentStruct = {
-        "home": [
-            // BANNER_SLIDESHOW,
-            // BUTTONS,
-            // AD_SLIDESHOW,
-            CARDBOX_DAILY_TOP,
-            CARDBOX,
-            // TWO_BANNER_BOX
-        ],
-        "daily": [
-            // BANNER_SLIDESHOW,
-            // CARD_SCROLL_DAILY,
-        ],
-        "webtoon": [
-
-        ],
-    }
-
     function getGenreContentStruct(genre) {
         return genreContentStruct[genre];
     }
@@ -74,8 +77,9 @@ const EVENT_DAY_NAVBAR_LOADED = "dayNavbarLoaded";
         const content = document.createElement('div');
         content.className = "content-box"
         switch (contentType) {
-            // case BANNER_SLIDESHOW:
-                // content.innerHTML=
+            case BANNER_SLIDESHOW:
+                content.innerHTML=`<img src="//dn-img-page.kakao.com/download/resource?kid=SSWdU/hyQ9OzbbQK/rMxp2Vnwp722KYMe1griR0" data-src="//dn-img-page.kakao.com/download/resource?kid=SSWdU/hyQ9OzbbQK/rMxp2Vnwp722KYMe1griR0" alt="마족의 계약" draggable="false" class="jsx-922166243" style="width: 720px; display: block;">`;
+                break;
             case CARDBOX_DAILY_TOP:
                 content.innerHTML = `<div class="content-box">
                     <div class="content-box__header">
@@ -101,7 +105,7 @@ const EVENT_DAY_NAVBAR_LOADED = "dayNavbarLoaded";
                     </div>
                     <div class="content-box__day-card-group"></div>
                 </div>`;
-           
+
                 const dailycardGroupElement = content.querySelector('.content-box__day-card-group');
 
                 for (let i = 0; i < 10; i++) {
