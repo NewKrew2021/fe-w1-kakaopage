@@ -228,7 +228,30 @@
                 </div>
 
                 <!-- 웹툰 -->
-                <div id="webtoon" class="page invisible">구현예정...</div>
+                <div id="webtoon" class="page invisible">
+                    <div class="slideshow-container">
+                        <% home_slide.forEach(function(home_slide){ %>
+                            <div class="webtoonSlides fade">
+                                <div class="slide-num">
+                                    <%= home_slide.slideNum %>
+                                </div>
+                                <img style="width:100%" src="<%= home_slide.img %>">
+                                <div class="slide-title">
+                                    <%= home_slide.title %>
+                                </div>
+                                <div class="slide-subtext"><img src="<%= home_slide.subtext_img %>">
+                                    <%= home_slide.subtext_dir %>
+                                        <img src="/images/line_top_banner.png"> <img
+                                            src="/images/ico-bigthum-person.svg">
+                                        <%= home_slide.subtext_cnt %>
+                                </div>
+                                <div class="slide-explain">
+                                    <%= home_slide.explain %>
+                                </div>
+                            </div>
+                            <% }); %>
+                    </div>
+                </div>
                 <div id="boy" class="page invisible">구현예정...</div>
                 <div id="drama" class="page invisible">구현예정...</div>
                 <div id="romance" class="page invisible">구현예정...</div>

@@ -78,8 +78,11 @@ function ADD_DAY_GRID_DATA(jsonFile, parent, daynum) {
             div_flex.className = "flex";
             let div_flex_btm = document.createElement("div");
             div_flex_btm.className = "yellow font-18 mg-left-5 mg-top-3";
-            div_flex_btm.innerHTML = json.data[daynum].item[i].rank; // top
 
+            if(json.data[daynum].item[i].s_img != null){
+                div_flex_btm.innerHTML = "<img src = '/images/star.svg'>";
+            }
+            div_flex_btm.innerHTML += json.data[daynum].item[i].rank; // top
             let clock_img = document.createElement("img");
             clock_img.setAttribute("src", json.data[daynum].item[i].c_img);
 

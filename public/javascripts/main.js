@@ -33,7 +33,9 @@ getElement("btn-next").addEventListener("click", () => {
 function clear__show(showname){
     slideIndex = 0;
     clearTimeout(timer);
-    showSlides(showname+'Slides');
+    if(getElementsClass(showname+'Slides').length != 0){
+        showSlides(showname+'Slides');
+    }
 }
 for (element of getElementsClass("webtoon-li")) {
     element.addEventListener("click", function () {

@@ -8,5 +8,5 @@ ADD_HIGHLIGHT_BY_CLICKED("daytop-main-li");
 ADD_DAY_GRID_DATA("../data/daytop.json", "daytop-div-row1", 0);
 SHOW_DAY_CONTENT("../data/daytop.json", "daytop-div-row1", "daytop-li");
 
-ADD_DAY_GRID_DATA("../data/daytop.json", "daytop-main-div", 0);
-SHOW_DAY_CONTENT("../data/daytop.json", "daytop-main-div", "daytop-main-li");
+ADD_DAY_GRID_DATA("../data/daytopmain.json", "daytop-main-div", 0);
+SHOW_DAY_CONTENT("../data/daytopmain.json", "daytop-main-div", "daytop-main-li");
