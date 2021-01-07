@@ -25,7 +25,7 @@ const EVENT_DAY_NAVBAR_LOADED = "dayNavbarLoaded";
             // CARD_SCROLL_DAILY,
         ],
         "webtoon": [
-            
+
         ],
     }
     const options = document.querySelectorAll('.genre-navbar > ul > li');
@@ -110,22 +110,7 @@ const EVENT_DAY_NAVBAR_LOADED = "dayNavbarLoaded";
                 const dailycardGroupElement = content.querySelector('.content-box__day-card-group');
 
                 for (let i = 0; i < 10; i++) {
-                    const card = document.createElement("div");
-                    card.innerHTML = `<div class="card-container">
-                    <div class="card">
-                    <img src=${dailyTopData[0][i]['image']}>
-                    <div class="card-footer">
-                    <span>${dailyTopData[0][i]['tag']}</span>
-                    <!-- <img src="https://static-page.kakao.com/static/common/bmbadge_webtoon.svg?f218f9d5ac717abcf43047ff23145119"> -->
-                    <img src="https://static-page.kakao.com/static/common/bmbadge_waitfree.svg?53cf25c84253dee8d32e66da7524dbaf">
-                    </div>
-                    </div>
-                    <div class="title">${dailyTopData[0][i]['title']}</div>
-                    <img class="viewers-icon" src="https://static-page.kakao.com/static/common/icon_read_count.png?817b1f83aa0dd8de232a68ac82efd871" alt="인원수">
-                    <div class="viewers">
-                    ${dailyTopData[0][i]['viewer_num']}
-                    </div>
-                    </div>`
+                    const card = Card.create(dailyTopData[0][i]);
                     dailycardGroupElement.appendChild(card);
                 }
                 (function renderDayNavbar() {
@@ -156,22 +141,7 @@ const EVENT_DAY_NAVBAR_LOADED = "dayNavbarLoaded";
                     function renderCards (data) {
                         const cardGroup = document.querySelector('.content-box__day-card-group');
                         for (let i = 0; i < 10; i++) {
-                            const card = document.createElement('div');
-                            card.innerHTML = `<div class="card-container">
-                            <div class="card">
-                            <img src=${data[i]['image']}>
-                            <div class="card-footer">
-                            <span>${data[i]['tag']}</span>
-                            <!-- <img src="https://static-page.kakao.com/static/common/bmbadge_webtoon.svg?f218f9d5ac717abcf43047ff23145119"> -->
-                            <img src="https://static-page.kakao.com/static/common/bmbadge_waitfree.svg?53cf25c84253dee8d32e66da7524dbaf">
-                            </div>
-                            </div>
-                            <div class="title">${data[i]['title']}</div>
-                            <img class="viewers-icon" src="https://static-page.kakao.com/static/common/icon_read_count.png?817b1f83aa0dd8de232a68ac82efd871" alt="인원수">
-                            <div class="viewers">
-                            ${data[i]['viewer_num']}
-                            </div>
-                            </div>`
+                            const card = Card.create(data[i]);
                             cardGroup.appendChild(card);
                         }
                     }
