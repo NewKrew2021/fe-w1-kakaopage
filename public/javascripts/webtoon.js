@@ -7,15 +7,15 @@ const HEADER_NAV_CLICKED_ITEM_CLASS_NAME = 'header-nav__item--clicked';
 const HEADER_NAV_LIST_CLASS_NAME = '.header-nav__list';
 
 const WEBTOON_NAV_LIST = [
-  '홈',
-  '요일연재',
-  '웹툰',
-  '소년',
-  '드라마',
-  '로맨스',
-  '로판',
-  '액션무협',
-  'BL/GL',
+  { pageIndex: 0, pageName: '홈', renderFunction: null },
+  { pageIndex: 1, pageName: '요일연재', renderFunction: null },
+  { pageIndex: 2, pageName: '웹툰', renderFunction: null },
+  { pageIndex: 3, pageName: '소년', renderFunction: null },
+  { pageIndex: 4, pageName: '드라마', renderFunction: null },
+  { pageIndex: 5, pageName: '로맨스', renderFunction: null },
+  { pageIndex: 6, pageName: '로판', renderFunction: null },
+  { pageIndex: 7, pageName: '액션무협', renderFunction: null },
+  { pageIndex: 8, pageName: 'BL/GL', renderFunction: null },
 ];
 
 const WEBTOON_CAROUSEL_LIST = [

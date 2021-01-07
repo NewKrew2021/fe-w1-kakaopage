@@ -20,7 +20,11 @@ const createGenreNav = (navItemList, navClassName) => {
   const genreNavList = createNewElement('ul', 'genre-nav__list', '');
 
   navItemList.forEach(navItem => {
-    const navItemElement = createNewElement('li', 'genre-nav__item', navItem);
+    const navItemElement = createNewElement(
+      'li',
+      'genre-nav__item',
+      navItem.pageName
+    );
     genreNavList.appendChild(navItemElement);
   });
   genreNav.appendChild(genreNavList);
