@@ -42,17 +42,19 @@ function getCategory(type) {
 }
 
 function setContainer(menu) {
+    // event 중복 방지
+    clearInterval(slide.timerId);
+
     if(menu != "웹툰") {
         // 웹툰 외 더미 데이터
         MAIN.containerDOM.innerHTML = `<p style="font-size:240px;text-align:center">${menu}</p>`;
 
-        // 웹툰 외 slide 없음 event 호출 취소
-        clearInterval(slide.timerId);
+        
     }
     else {
         // 공통(navigator, slide) + content container
         MAIN.containerDOM.innerHTML = `<div class="navigator"><ul class="navigator" id="webtoonCategory"></ul></div>`;
-        MAIN.containerDOM.innerHTML += `<div class="slide"><div id="slide"></div><div id="prevBtn"><img src="./images/slide_prev.svg"></div><div id="nextBtn"><img src="./images/slide_next.svg"></div><div id="page"></div></div>`;
+        MAIN.containerDOM.innerHTML += `<div class="slide"><div id="slide"></div><p class="slideTitle"></p><div id="prevBtn"><img src="./images/slide_prev.svg"></div><div id="nextBtn"><img src="./images/slide_next.svg"></div><div id="page"></div></div>`;
         MAIN.containerDOM.innerHTML += `<div class="content" id="content"></div>`;
         
         // 세부 카테고리 그리기
@@ -76,6 +78,15 @@ function setContainer(menu) {
                     MAIN.selectedWebtoonMenuDOM.firstChild.style.color = "#bbb";
                     MAIN.selectedWebtoonMenuDOM = menu;
                     MAIN.selectedWebtoonMenuDOM.firstChild.style.color = "#000";
+                    
+                    const menuName = menu.firstChild.textContent;
+                    if(menuName == "홈") setContent(MAIN.contentDOM, "웹툰 전체", MAIN.webtoons);
+                    else if(menuName == "소년") setContent(MAIN.contentDOM, menuName, webtoonFilter(MAIN.webtoons, {type: menuName}));
+                    else if(menuName == "드라마") setContent(MAIN.contentDOM, menuName, webtoonFilter(MAIN.webtoons, {type: menuName}));
+                    else if(menuName == "로맨스") setContent(MAIN.contentDOM, menuName, webtoonFilter(MAIN.webtoons, {type: menuName}));
+                    else if(menuName == "로판") setContent(MAIN.contentDOM, menuName, webtoonFilter(MAIN.webtoons, {type: menuName}));
+                    else if(menuName == "액션무협") setContent(MAIN.contentDOM, menuName, webtoonFilter(MAIN.webtoons, {type: menuName}));
+                    else if(menuName == "BL/GL") setContent(MAIN.contentDOM, menuName, webtoonFilter(MAIN.webtoons, {type: menuName}));
                 });
             }
 
@@ -86,7 +97,7 @@ function setContainer(menu) {
             MAIN.contentDOM = document.getElementById("content");
 
             // default 홈
-            setContent(MAIN.contentDOM, "웹툰 전체",MAIN.webtoons);
+            setContent(MAIN.contentDOM, "웹툰 전체", MAIN.webtoons);
         });
 
         

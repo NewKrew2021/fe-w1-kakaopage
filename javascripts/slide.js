@@ -6,15 +6,15 @@
 
 // 슬라이드 정보
 const slide = {
-    curId: 1,
+    curId: 0,
     position: 2,
     cnt: 3,
     timerId: 0,
     slideDOM: null,
     images: [
-        { id: 1, src: "../images/resource-1.png" },
-        { id: 2, src: "../images/resource-2.png" },
-        { id: 3, src: "../images/resource-3.png" }
+        { id: 1, src: "../images/resource-1.png", title: "나의 나쁜 연하남", subscriber: "25.5만명" },
+        { id: 2, src: "../images/slide-img2.png", title: "화룡왕", subscriber: "38.7만명" },
+        { id: 3, src: "../images/slide-img3.png", title: "절대무신", subscriber: "12.2만명" }
     ]
 };
 
@@ -34,6 +34,7 @@ function prev() {
             
         }, 300);  
     }
+    document.querySelector(".slideTitle").innerHTML = slide.images[slide.curId - 1].title;
 }
 function next() {
     slide.curId += 1;
@@ -51,6 +52,8 @@ function next() {
             
         }, 300);  
     }
+    document.querySelector(".slideTitle").innerHTML = slide.images[slide.curId - 1].title;
+    console.log(document.querySelector(".slideTitle"));
 }
 function makeImageElement(src, width, height) {
     let element = document.createElement("img");
