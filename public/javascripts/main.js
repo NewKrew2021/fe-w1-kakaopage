@@ -1,3 +1,9 @@
+import { $, createNewElement } from './utils.js';
+import { changeClickedNavTab } from './genre-nav.js';
+import { headerNavData } from './data.js';
+import { renderWebtoonPage } from './webtoon.js';
+import { renderWebNovelPage } from './web-novel.js';
+
 const HEADER_NAV_LIST = [
   { pageIndex: 0, pageName: '홈', renderFunction: renderHomePage },
   { pageIndex: 1, pageName: '웹툰', renderFunction: renderWebtoonPage },
@@ -7,43 +13,13 @@ const HEADER_NAV_LIST = [
   { pageIndex: 5, pageName: '책', renderFunction: renderBookPage },
 ];
 
-const WEBTOON_NAV_LIST = [
-  '홈',
-  '요일연재',
-  '웹툰',
-  '소년',
-  '드라마',
-  '로맨스',
-  '로판',
-  '액션무협',
-  'BL/GL',
-];
-
 const HEADER_NAV_ITEM_CLASS_NAME = 'header-nav__item';
 const HEADER_NAV_CLICKED_ITEM_CLASS_NAME = 'header-nav__item--clicked';
 const LIST_TAG = 'li';
 const HEADER_NAV_LIST_CLASS_NAME = '.header-nav__list';
 
-let currentPage = 0;
-
-// util 함수
-const $ = (target, parent = document) => {
-  return document.querySelector(target);
-};
-
-const createNewElement = (tag, className, innerText) => {
-  const newElement = document.createElement(tag);
-  newElement.className = className;
-  newElement.innerText = innerText;
-  return newElement;
-};
-
-const deleteClassFromElement = (element, className) => {
-  element.classList.remove(className);
-};
-
 // render 함수
-const renderHeaderNav = () => {
+const renderHeaderNav = headerNavData => {
   const headerNavList = $(HEADER_NAV_LIST_CLASS_NAME);
 
   HEADER_NAV_LIST.forEach(navItem => {
@@ -58,78 +34,57 @@ const renderHeaderNav = () => {
     headerNavList.appendChild(navItemElement);
   });
 
-  headerNavList.childNodes[currentPage].classList.add(
+  headerNavList.childNodes[headerNavData.currentPage].classList.add(
     HEADER_NAV_CLICKED_ITEM_CLASS_NAME
   );
-};
-
-const changeClickedNavTab = pageIndex => {
-  const headerNavList = $(HEADER_NAV_LIST_CLASS_NAME);
-  deleteClassFromElement(
-    headerNavList.childNodes[currentPage],
-    HEADER_NAV_CLICKED_ITEM_CLASS_NAME
-  );
-  headerNavList.childNodes[pageIndex].classList.add(
-    HEADER_NAV_CLICKED_ITEM_CLASS_NAME
-  );
-  currentPage = pageIndex;
-};
-
-const createGenreNav = (navItemList, navClassName) => {
-  const genreNav = createNewElement('div', 'webtoon-genre-nav', '');
-  const genreNavList = createNewElement('ul', 'genre-nav__list', '');
-
-  navItemList.forEach(navItem => {
-    const navItemElement = createNewElement(
-      LIST_TAG,
-      'genre-nav__item',
-      navItem
-    );
-    genreNavList.appendChild(navItemElement);
-  });
-  genreNav.appendChild(genreNavList);
-  return genreNav;
 };
 
 function renderHomePage(pageIndex) {
   const contentTag = $('.content');
   contentTag.innerText = '';
-  changeClickedNavTab(pageIndex);
-}
-
-function renderWebtoonPage(pageIndex) {
-  const contentTag = $('.content');
-  contentTag.innerText = '';
-  changeClickedNavTab(pageIndex);
-  contentTag.appendChild(createGenreNav(WEBTOON_NAV_LIST, 'webtoon-genre-nav'));
-}
-
-function renderWebNovelPage(pageIndex) {
-  const contentTag = $('.content');
-  contentTag.innerText = '';
-  changeClickedNavTab(pageIndex);
+  changeClickedNavTab(
+    headerNavData,
+    pageIndex,
+    HEADER_NAV_LIST_CLASS_NAME,
+    HEADER_NAV_CLICKED_ITEM_CLASS_NAME
+  );
 }
 
 function renderMoviePage(pageIndex) {
   const contentTag = $('.content');
   contentTag.innerText = '';
-  changeClickedNavTab(pageIndex);
+  changeClickedNavTab(
+    headerNavData,
+    pageIndex,
+    HEADER_NAV_LIST_CLASS_NAME,
+    HEADER_NAV_CLICKED_ITEM_CLASS_NAME
+  );
 }
 
 function renderBroadcastingPage(pageIndex) {
   const contentTag = $('.content');
   contentTag.innerText = '';
-  changeClickedNavTab(pageIndex);
+  changeClickedNavTab(
+    headerNavData,
+    pageIndex,
+    HEADER_NAV_LIST_CLASS_NAME,
+    HEADER_NAV_CLICKED_ITEM_CLASS_NAME
+  );
 }
 
 function renderBookPage(pageIndex) {
   const contentTag = $('.content');
   contentTag.innerText = '';
-  changeClickedNavTab(pageIndex);
+  changeClickedNavTab(
+    headerNavData,
+    pageIndex,
+    HEADER_NAV_LIST_CLASS_NAME,
+    HEADER_NAV_CLICKED_ITEM_CLASS_NAME
+  );
 }
 
 const render = () => {
-  renderHeaderNav();
+  renderHeaderNav(headerNavData);
 };
 
 window.addEventListener('DOMContentLoaded', () => render());

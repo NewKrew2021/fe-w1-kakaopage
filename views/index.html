@@ -8,7 +8,12 @@
     <title>kakaopage</title>
   </head>
   <body>
-    <script src="javascripts/main.js"></script>
+    <script type="module" src="javascripts/utils.js"></script>
+    <script type="module" src="javascripts/data.js"></script>
+    <script type="module" src="javascripts/genre-nav.js"></script>
+    <script type="module" src="javascripts/webtoon.js"></script>
+    <script type="module" src="javascripts/web-novel.js"></script>
+    <script type="module" src="javascripts/main.js"></script>
     <div class="header">
       <div class="header__logo">kakaopage</div>
       <div class="header__status">
@@ -17,12 +22,21 @@
           <div class="user-status__cash-charge-button">캐쉬충전</div>
           <div class="user-status__login-button">로그인</div>
         </div>
-        <!-- <div class="user-status user-status--login">puba님</div> -->
       </div>
     </div>
     <div class="header-nav">
       <ul class="header-nav__list"></ul>
     </div>
-    <div class="content"></div>
+    <div class="content">
+      <div class="carousel">
+        <img
+          class="carousel__image"
+          src="http://dn-img-page.kakao.com/download/resource?kid=chJoJc/hyLjfiEthl/g725sWc55RcZl2qZ6I5fcK"
+        />
+        <div class="carousel__description">
+          <p>철벽 황제를 향한 청혼 프로젝트!</p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
