@@ -1,4 +1,19 @@
-import { createNewElement } from './utils.js';
+import { $, createNewElement, deleteClassFromElement } from './utils.js';
+
+const changeClickedNavTab = (
+  navData,
+  newPageIndex,
+  navListClassName,
+  clickedNavItemClassName
+) => {
+  const navList = $(navListClassName);
+  deleteClassFromElement(
+    navList.childNodes[navData.currentPage],
+    clickedNavItemClassName
+  );
+  navList.childNodes[newPageIndex].classList.add(clickedNavItemClassName);
+  navData.currentPage = newPageIndex;
+};
 
 const createGenreNav = (navItemList, navClassName) => {
   const genreNav = createNewElement('div', navClassName, '');
@@ -12,4 +27,4 @@ const createGenreNav = (navItemList, navClassName) => {
   return genreNav;
 };
 
-export { createGenreNav };
+export { createGenreNav, changeClickedNavTab };

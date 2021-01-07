@@ -1,5 +1,6 @@
 import { $, createNewElement, deleteClassFromElement } from './utils.js';
-import { createGenreNav } from './genre-nav.js';
+import { createGenreNav, changeClickedNavTab } from './genre-nav.js';
+import { headerNavData } from './data.js';
 
 const HEADER_NAV_LIST = [
   { pageIndex: 0, pageName: '홈', renderFunction: renderHomePage },
@@ -27,10 +28,8 @@ const HEADER_NAV_CLICKED_ITEM_CLASS_NAME = 'header-nav__item--clicked';
 const LIST_TAG = 'li';
 const HEADER_NAV_LIST_CLASS_NAME = '.header-nav__list';
 
-let currentPage = 0;
-
 // render 함수
-const renderHeaderNav = () => {
+const renderHeaderNav = headerNavData => {
   const headerNavList = $(HEADER_NAV_LIST_CLASS_NAME);
 
   HEADER_NAV_LIST.forEach(navItem => {
@@ -45,31 +44,16 @@ const renderHeaderNav = () => {
     headerNavList.appendChild(navItemElement);
   });
 
-  headerNavList.childNodes[currentPage].classList.add(
+  headerNavList.childNodes[headerNavData.currentPage].classList.add(
     HEADER_NAV_CLICKED_ITEM_CLASS_NAME
   );
-};
-
-// currentPage는 전역 변수를 사용하기 때문에 현재는 범용성이 없음
-// 추후 데이터를 전역 변수가 아닌 object 형식으로 관리 후에 범용성 있는 코드로 리팩토링 할 예정
-const changeClickedNavTab = (
-  newPageIndex,
-  navListClassName,
-  clickedNavItemClassName
-) => {
-  const navList = $(navListClassName);
-  deleteClassFromElement(
-    navList.childNodes[currentPage],
-    clickedNavItemClassName
-  );
-  navList.childNodes[newPageIndex].classList.add(clickedNavItemClassName);
-  currentPage = newPageIndex;
 };
 
 function renderHomePage(pageIndex) {
   const contentTag = $('.content');
   contentTag.innerText = '';
   changeClickedNavTab(
+    headerNavData,
     pageIndex,
     HEADER_NAV_LIST_CLASS_NAME,
     HEADER_NAV_CLICKED_ITEM_CLASS_NAME
@@ -80,6 +64,7 @@ function renderWebtoonPage(pageIndex) {
   const contentTag = $('.content');
   contentTag.innerText = '';
   changeClickedNavTab(
+    headerNavData,
     pageIndex,
     HEADER_NAV_LIST_CLASS_NAME,
     HEADER_NAV_CLICKED_ITEM_CLASS_NAME
@@ -91,6 +76,7 @@ function renderWebNovelPage(pageIndex) {
   const contentTag = $('.content');
   contentTag.innerText = '';
   changeClickedNavTab(
+    headerNavData,
     pageIndex,
     HEADER_NAV_LIST_CLASS_NAME,
     HEADER_NAV_CLICKED_ITEM_CLASS_NAME
@@ -101,6 +87,7 @@ function renderMoviePage(pageIndex) {
   const contentTag = $('.content');
   contentTag.innerText = '';
   changeClickedNavTab(
+    headerNavData,
     pageIndex,
     HEADER_NAV_LIST_CLASS_NAME,
     HEADER_NAV_CLICKED_ITEM_CLASS_NAME
@@ -111,6 +98,7 @@ function renderBroadcastingPage(pageIndex) {
   const contentTag = $('.content');
   contentTag.innerText = '';
   changeClickedNavTab(
+    headerNavData,
     pageIndex,
     HEADER_NAV_LIST_CLASS_NAME,
     HEADER_NAV_CLICKED_ITEM_CLASS_NAME
@@ -121,6 +109,7 @@ function renderBookPage(pageIndex) {
   const contentTag = $('.content');
   contentTag.innerText = '';
   changeClickedNavTab(
+    headerNavData,
     pageIndex,
     HEADER_NAV_LIST_CLASS_NAME,
     HEADER_NAV_CLICKED_ITEM_CLASS_NAME
@@ -128,7 +117,7 @@ function renderBookPage(pageIndex) {
 }
 
 const render = () => {
-  renderHeaderNav();
+  renderHeaderNav(headerNavData);
 };
 
 window.addEventListener('DOMContentLoaded', () => render());
