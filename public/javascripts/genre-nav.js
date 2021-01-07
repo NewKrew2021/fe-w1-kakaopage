@@ -1,7 +1,7 @@
 import { createNewElement } from './utils.js';
 
 const createGenreNav = (navItemList, navClassName) => {
-  const genreNav = createNewElement('div', 'webtoon-genre-nav', '');
+  const genreNav = createNewElement('div', navClassName, '');
   const genreNavList = createNewElement('ul', 'genre-nav__list', '');
 
   navItemList.forEach(navItem => {
