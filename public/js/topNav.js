@@ -20,7 +20,6 @@ function onTopNavClick(id) {
     for (let i = 0; i < topContents.length; i++) {
         const contents = topContents[i];
         if (contents.id === id) {
-            console.log("here")
             contents.style.display = "block";
         } else {
             contents.style.display = "none";

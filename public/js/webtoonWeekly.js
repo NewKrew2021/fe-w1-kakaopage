@@ -47,9 +47,9 @@
         }
         li+=`</div>`
         li+=`<div></div>`
-        webtoonWeekly.innerHTML+=li;
+        innerHTML+=li;
     })();
-
+    
     (function releaseFilter(){
         dataList=[
             {text:"전체"},
@@ -66,10 +66,43 @@
             li+=`${d.text}</li>`;
         }
         li+=`</div>`
-        webtoonWeekly.innerHTML+=li;
+        innerHTML+=li;
     })();
-
     
+    (function(){
+        const dataList=[
+            {name:"롱리브더킹",feature:"TOP",releaseInfo:"https://static-page.kakao.com/static/common/bmbadge_webtoon.svg?f218f9d5ac717abcf43047ff23145119",count:"16.8만명",src:"https://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2"},
+            {name:"도깨비 아빠",feature:"TOP",releaseInfo:"https://static-page.kakao.com/static/common/bmbadge_webtoon.svg?f218f9d5ac717abcf43047ff23145119",count:"13.4만명",src:"https://dn-img-page.kakao.com/download/resource?kid=bUqSvk/hyLjhOb3Na/EuUjSS4h6sZO7kdzjJLvaK&filename=th2"},
+            {name:"질풍광룡",feature:"TOP",releaseInfo:"https://static-page.kakao.com/static/common/bmbadge_waitfree.svg?53cf25c84253dee8d32e66da7524dbaf",count:"18.5만명",src:"https://dn-img-page.kakao.com/download/resource?kid=i6xQb/hyfOeIB3yr/1Bv5nEknY601tCtCAyno0K&filename=th2"},
+            {name:"환골탈태",feature:"TOP",releaseInfo:"https://static-page.kakao.com/static/common/bmbadge_webtoon.svg?f218f9d5ac717abcf43047ff23145119",count:"13만명",src:"https://dn-img-page.kakao.com/download/resource?kid=bkGhnl/hyCvlk4b1c/K1g2B4zW6z51KcDjuiy1Y0&filename=th2"},
+            {name:"후궁계약",feature:"TOP",releaseInfo:"https://static-page.kakao.com/static/common/bmbadge_webtoon.svg?f218f9d5ac717abcf43047ff23145119",count:"51.9만명",src:"https://dn-img-page.kakao.com/download/resource?kid=jHoal/hyATowUXZF/JtV1jLTrSzJNmUkkGGhkF0&filename=th2"},
+            {name:"롱리브더킹",feature:"TOP",releaseInfo:"https://static-page.kakao.com/static/common/bmbadge_webtoon.svg?f218f9d5ac717abcf43047ff23145119",count:"16.8만명",src:"https://dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&filename=th2"},
+            {name:"도깨비 아빠",feature:"TOP",releaseInfo:"https://static-page.kakao.com/static/common/bmbadge_webtoon.svg?f218f9d5ac717abcf43047ff23145119",count:"13.4만명",src:"https://dn-img-page.kakao.com/download/resource?kid=bUqSvk/hyLjhOb3Na/EuUjSS4h6sZO7kdzjJLvaK&filename=th2"},
+            {name:"질풍광룡",feature:"TOP",releaseInfo:"https://static-page.kakao.com/static/common/bmbadge_waitfree.svg?53cf25c84253dee8d32e66da7524dbaf",count:"18.5만명",src:"https://dn-img-page.kakao.com/download/resource?kid=i6xQb/hyfOeIB3yr/1Bv5nEknY601tCtCAyno0K&filename=th2"},
+            {name:"환골탈태",feature:"TOP",releaseInfo:"https://static-page.kakao.com/static/common/bmbadge_webtoon.svg?f218f9d5ac717abcf43047ff23145119",count:"13만명",src:"https://dn-img-page.kakao.com/download/resource?kid=bkGhnl/hyCvlk4b1c/K1g2B4zW6z51KcDjuiy1Y0&filename=th2"},
+            {name:"후궁계약",feature:"TOP",releaseInfo:"https://static-page.kakao.com/static/common/bmbadge_webtoon.svg?f218f9d5ac717abcf43047ff23145119",count:"51.9만명",src:"https://dn-img-page.kakao.com/download/resource?kid=jHoal/hyATowUXZF/JtV1jLTrSzJNmUkkGGhkF0&filename=th2"},
+        ];
+        let li=`<div class="card-list">`;
+        for(let i=0;i<dataList.length;i++){
+            let d=dataList[i];
+            li+=`<li class="card" style="display:inline-block">
+                <div class="card-frame">
+                    <img class="card-image" src=${d.src}></img>
+                    <div class="card-bar">
+                        <div class="card-feature">${d.feature}</div>
+                        <img class="card-release"src=${d.releaseInfo}></img>
+                    </div>
+                </div>
+                <div class="web-font card-name">${d.name}</div>
+                <img src="https://static-page.kakao.com/static/common/icon_read_count.png?817b1f83aa0dd8de232a68ac82efd871">
+                <div class="web-font card-count"  style="display:inline-block">${d.count}</div>
+            </li>`
+        }
+        li+="</div>";
+        
+        innerHTML+=li;
 
+    })();
+    webtoonWeekly.innerHTML+=innerHTML;
 
 })();
