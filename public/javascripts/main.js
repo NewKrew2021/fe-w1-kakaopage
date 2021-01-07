@@ -62,10 +62,50 @@ const intervalTime = 2400;
     }
 })();
 
-/* [웹툰 > 홈] 첫번째 banner에 이미지 추가 */
+
+/* [웹툰 탭] navBar 요소 추가 */
+(function(){
+    const webtoon_ul = getElement("webtoon-nav");
+    const tabtext = [['홈','home'],['요일연재','day'],['웹툰','webtoon'],
+    ['소년','boy'],['드라마','drama'],['로맨스','romance'],['로판','fantasy'],
+    ['액션무협','action'],['BL/GL','blgl']];
+    tabtext.forEach(function(element){
+        let webtoon_li = document.createElement("LI");
+        webtoon_li.className += "webtoon-li contents-li "+element[1];
+        if(element[0] === '홈'){
+            webtoon_li.setAttribute("id","content-home");
+            webtoon_li.className += " c-active";
+        }
+        webtoon_li.innerHTML = element[0];
+        webtoon_ul.appendChild(webtoon_li);
+    });
+})();
+
+/* [웹툰 > 요일 연재 TOP] navBar 요소 추가 */
+(function(){
+    const daytop_ul = getElement("daytop-nav");
+    const daytext = ['월','화','수','목','금','토','일','완결'];
+    daytop_ul.className += " contents-ul";
+    for(let i = 0; i<=7; i++){
+        let daytop_li = document.createElement("LI");
+        daytop_li.className += "daytop-li contents-li font-title gray";
+        if(i == 0){
+            daytop_li.className += " active";
+        }
+        daytop_li.setAttribute('tab', i);
+        daytop_li.innerHTML = daytext[i];
+        daytop_ul.appendChild(daytop_li);
+    }
+})();
+
+
+/* [웹툰 > 홈] 이미지 추가 */
 getElement("btn-prev").setAttribute('src','/images/before.svg');
 getElement("btn-next").setAttribute('src','/images/next.svg');
 getElement("banner-img").setAttribute('src','/images/banner1.png');
+getQueryAll("img.more").forEach(function(element){
+    element.setAttribute('src','/images/more_btn.svg');
+});
 
 let slideIndex = 0;
 let timer;
@@ -84,8 +124,8 @@ function showSlides(slidename) {
 }
 
 /* [웹툰 > navBar] 클릭한 요소에 따라 컨텐츠 div 표시하기 */
-for (let i = 0; i < getElementsClass("contents-li").length; i++) {
-    getElementsClass("contents-li")[i].addEventListener("click", function () {
+for (let i = 0; i < getElementsClass("webtoon-li").length; i++) {
+    getElementsClass("webtoon-li")[i].addEventListener("click", function () {
         let current = getElementsClass("c-active");
         let cur_content = getElementsClass("visible");
 
@@ -95,16 +135,16 @@ for (let i = 0; i < getElementsClass("contents-li").length; i++) {
 
         /* 웹툰 > navBar 클릭에 따른 컨텐츠 구현 */
         cur_content[0].className = cur_content[0].className.replace(" visible", " invisible");
-        getElement(this.classList[1]).className = getElement(this.classList[1]).className.replace(" invisible", " visible");
+        getElement(this.classList[2]).className = getElement(this.classList[2]).className.replace(" invisible", " visible");
 
         /* 클릭 후 이미지, 텍스트 로딩 */
-        let show_content = this.classList[1];
+        let show_content = this.classList[2];
 
         /* 홈 tab */
         if (show_content == "home") {   
             slideIndex = 0;
             clearTimeout(timer);
-            showSlides('mySlides'); 
+            showSlides('homeSlides'); 
         }
         /* 요일연재 tab */
         else if (show_content == "day") { 
@@ -114,26 +154,8 @@ for (let i = 0; i < getElementsClass("contents-li").length; i++) {
         }
     })
 }
+
+/* 기능 추가 */
 getElement("content-home").click();
-
-/* [웹툰 > 요일 연재 TOP] navBar 요소 추가 */
-(function(){
-    const daytop_ul = getElement("daytop-nav");
-    const daytext = ['월','화','수','목','금','토','일','완결'];
-    daytop_ul.className += " contents-ul";
-    for(let i = 0; i<=7; i++){
-        let daytop_li = document.createElement("LI");
-        daytop_li.className += "daytop-li contents-li font-title gray";
-        if(i == 0){
-            daytop_li.setAttribute("id", "default");
-            daytop_li.className += " active";
-        }
-        daytop_li.setAttribute('tab', i);
-        daytop_li.innerHTML = daytext[i];
-        daytop_ul.appendChild(daytop_li);
-    }
-})();
-
-/* navBar 강조 기능 추가 */
 ADD_HIGHLIGHT_BY_CLICKED("daytop-li");
 ADD_HIGHLIGHT_BY_CLICKED("nav-dummy");
