@@ -17,27 +17,27 @@ const intervalTime = 2400;
         { name : "방송", img : "https://static-page.kakao.com/static/pc/menu_broadcast.svg?a6b4779526f1fa5dbeb1516607770b16" },
         { name : "책", img : "https://static-page.kakao.com/static/pc/menu_book.svg?8fd0c5dc69d357fa23dd953d3b7e71aa" },
     ];
-    const top_nav = getElement('top-nav-ul');
-    for(var i = 0; i < nav_list.length; i++){
+    nav_list.forEach(function(element, index){
         let node = getElementsClass("nav-dummy");
-        node[i].innerHTML = '<a><img src = '+nav_list[i].img+'></a>';
-    }
+        node[index].innerHTML = '<a><img src = '+element.img+'></a>';
+    });
 })();
 
 /* [공통] top_nav의 웹툰 탭 이외에는 더미 페이지가 보이게 하기 */
 (function(){
     const top_nav_li = getElementsClass("nav-dummy");
-    for(let i = 0; i < top_nav_li.length; i++){
-        if(top_nav_li[i].classList.contains("webtoon")){
-            top_nav_li[i].addEventListener("click",()=>{
+    for(element of top_nav_li) {
+        if(element.classList.contains("webtoon")){
+            element.addEventListener("click",()=>{
                 getElement("contents").style.display = 'block';
                 getElement("blank").style.display = 'none';
             });
-        } else{
-            top_nav_li[i].addEventListener("click",()=>{
+        }
+        else{
+            element.addEventListener("click",()=>{
                 getElement("contents").style.display = 'none';
                 getElement("blank").style.display = 'block';
-            })
+            });
         }
     }
 })();
@@ -65,26 +65,17 @@ const intervalTime = 2400;
     const daytop_ul = getElement("daytop-nav");
     const daytext = ['월','화','수','목','금','토','일','완결'];
     daytop_ul.className += " contents-ul";
-    for(let i = 0; i<=7; i++){
+    daytext.forEach(function(day, i){
         let daytop_li = document.createElement("LI");
         daytop_li.className += "daytop-li contents-li font-title gray";
-        if(i == 0){
+        if(day == '월'){
             daytop_li.className += " active";
         }
-        daytop_li.setAttribute('tab', i);
-        daytop_li.innerHTML = daytext[i];
+        daytop_li.setAttribute('tab',i);
+        daytop_li.innerHTML = day;
         daytop_ul.appendChild(daytop_li);
-    }
+    });
 })();
-
-/* [웹툰 > 홈] 이미지 추가 */
-getElement("btn-prev").setAttribute('src','/images/before.svg');
-getElement("btn-next").setAttribute('src','/images/next.svg');
-getElement("banner-img").setAttribute('src','/images/banner1.png');
-getQueryAll("img.more").forEach(function(element){
-    element.setAttribute('src','/images/more_btn.svg');
-});
-
 
 /* [웹툰 > 요일 연재] navBar 요소 추가 */
 (function(){
@@ -104,3 +95,23 @@ getQueryAll("img.more").forEach(function(element){
         daytop_main_ul.appendChild(daytop_main_li);
     });
 })();
+
+/* footer 추가 */
+(function(){
+    const footer_div = getElement("footer-line");
+    const footer_text = ["'회사소개 · 이용약관 · 개인정보처리방침 · 청소년보호정책 · 공지사항'", "(주)카카오페이지 사업자 정보▼ | 사업자 정보 확인","ⓒ Kakao Page Corp."];
+    footer_text.forEach(function(element){
+        let footer_p = document.createElement("p");
+        footer_p.className += "font-14 mg-top-5";
+        footer_p.innerHTML = element;
+        footer_div.appendChild(footer_p);
+    });
+})();
+
+/* [웹툰 > 홈] 이미지 추가 */
+getElement("btn-prev").setAttribute('src','/images/before.svg');
+getElement("btn-next").setAttribute('src','/images/next.svg');
+getElement("banner-img").setAttribute('src','/images/banner1.png');
+getQueryAll("img.more").forEach(function(element){
+    element.setAttribute('src','/images/more_btn.svg');
+});

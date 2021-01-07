@@ -25,6 +25,21 @@
     margin-top: 10px;
 }
 
+.footer{
+  margin: 0px auto;
+  width: 720px;
+  margin-top:10px;
+  margin-bottom:50px;
+}
+.footer>img{
+  display: block;
+  margin: 0px auto;
+  width:70%;
+}
+.footer-text{
+  margin-bottom:10px;
+}
+
 .visible{
     display: block;
 }

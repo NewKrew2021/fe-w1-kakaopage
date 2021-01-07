@@ -30,8 +30,13 @@ getElement("btn-next").addEventListener("click", () => {
 });
 
 /* [웹툰 > navBar] 클릭한 요소에 따라 컨텐츠 div 표시하기 */
-for (let i = 0; i < getElementsClass("webtoon-li").length; i++) {
-    getElementsClass("webtoon-li")[i].addEventListener("click", function () {
+function clear__show(showname){
+    slideIndex = 0;
+    clearTimeout(timer);
+    showSlides(showname+'Slides');
+}
+for (element of getElementsClass("webtoon-li")) {
+    element.addEventListener("click", function () {
         let current = getElementsClass("c-active");
         let cur_content = getElementsClass("visible");
 
@@ -43,21 +48,9 @@ for (let i = 0; i < getElementsClass("webtoon-li").length; i++) {
         cur_content[0].className = cur_content[0].className.replace(" visible", " invisible");
         getElement(this.classList[2]).className = getElement(this.classList[2]).className.replace(" invisible", " visible");
 
-        /* 클릭 후 이미지, 텍스트 로딩 */
+        /* 다른 tab을 클릭하였을 경우 이미지, 텍스트 새로 로딩 */
         let show_content = this.classList[2];
-
-        /* 홈 tab */
-        if (show_content == "home") {   
-            slideIndex = 0;
-            clearTimeout(timer);
-            showSlides('homeSlides'); 
-        }
-        /* 요일연재 tab */
-        else if (show_content == "day") { 
-            slideIndex = 0;
-            clearTimeout(timer);
-            showSlides('daySlides'); 
-        }
+        clear__show(show_content);
     })
 }
 

@@ -20,10 +20,9 @@ function getQueryAll(node){
 }
 /* [웹툰] 슬라이드 애니메이션 함수 */
 function showSlides(slidename) {
-    let i;
     let slides = getElementsClass(slidename);
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
+    for (element of slides){
+        element.style.display = "none";
     }
     slideIndex++;
     if (slideIndex > slides.length) {slideIndex = 1}  
@@ -44,13 +43,13 @@ function readTextFile(file, callback) {
 }
 /* navBar 클릭한 요소만 밑줄 강조하는 등록 함수 */
 function ADD_HIGHLIGHT_BY_CLICKED(element){
-    for (let i = 0; i < getQueryAll("li."+element).length; i++) {
-        getQueryAll("li."+element)[i].addEventListener("click", function() {
+    getQueryAll("li."+element).forEach(function(node, i){
+        node.addEventListener("click", function() {
             let current = getElementsClass(element+ " active");
             current[0].className = current[0].className.replace(" active", "");
             this.className += " active";
         });
-    }
+    });
 }
 /* 반복되는 그리드에 썸네일 데이터를 넣는 등록 함수 */
 function ADD_DAY_GRID_DATA(jsonFile, parent, daynum) {
@@ -64,7 +63,7 @@ function ADD_DAY_GRID_DATA(jsonFile, parent, daynum) {
             parentNode.removeChild(parentNode.firstChild);
         }
         // 컨텐츠 추가
-        for (let i = 0; i < json.data[daynum].item.length; i++) {
+        json.data[daynum].item.forEach(function(data, i){
             let div_wrapper = document.createElement("div");
             let div_thumb = document.createElement("div");
             div_wrapper.className = "mg-top-10";
@@ -98,7 +97,6 @@ function ADD_DAY_GRID_DATA(jsonFile, parent, daynum) {
 
             let div_count = document.createElement("div");
             div_count.className = "font-15 gray";
-
             div_count.innerHTML = json.data[daynum].item[i].count;
 
             parentNode.appendChild(div_wrapper);
@@ -114,13 +112,13 @@ function ADD_DAY_GRID_DATA(jsonFile, parent, daynum) {
             div_title_btm.appendChild(div_title_btm2);
             div_title_btm2.appendChild(people_img);
             div_title_btm2.appendChild(div_count);
-        }
+        });
     });
 }
 /* 선택한 요일에 따라 컨텐츠 변화시키는 등록 함수 */
 function SHOW_DAY_CONTENT(jsonFile, parent, clickedLI) {
-    for (let i = 0; i < getQueryAll("li." + clickedLI).length; i++) {
-        getQueryAll("li." + clickedLI)[i].addEventListener("click", function () {
+    for (element of getQueryAll("li."+clickedLI)){
+        element.addEventListener("click", function () {
             const daynum = Number(this.getAttribute("tab"));
             ADD_DAY_GRID_DATA(jsonFile, parent, daynum);
         });
