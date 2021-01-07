@@ -1,4 +1,4 @@
-import { createNewElement } from './utils.js';
+import { $, createNewElement } from './utils.js';
 
 const createCarouselElement = carouselData => {
   const carousel = createNewElement('div', 'carousel', '');
@@ -19,4 +19,10 @@ const createCarouselElement = carouselData => {
   return carousel;
 };
 
-export { createCarouselElement };
+function renderCarousel(pageIndex, contentListClassName, carouselList) {
+  const contentList = $(contentListClassName);
+  contentList.innerHTML = '';
+  contentList.appendChild(createCarouselElement(carouselList[0]));
+}
+
+export { createCarouselElement, renderCarousel };
