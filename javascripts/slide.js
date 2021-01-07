@@ -5,7 +5,7 @@
 - 마지막 사진에서 오른쪽 클릭 시 오른쪽으로 넘어가며 첫 사진이 나오게 */
 
 // 슬라이드 정보
-let slide = {
+const slide = {
     curId: 1,
     position: 2,
     cnt: 3,

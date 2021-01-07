@@ -8,17 +8,6 @@
 const MAIN = {};
 MAIN.URL = "http://localhost:5500";
 
-MAIN.mainCategory = {
-    currentMenu: "홈",
-    kinds : ["홈", "웹툰", "웹소설", "영화", "방송", "책"],
-    DOMs : undefined
-}
-MAIN.webtoonCategory = {
-    currentMenu: "홈",
-    kinds : ["홈", "요일연재", "웹툰", "소년", "드라마", "로맨스", "로판", "액션무협", "BL/GL"],
-    DOMs : undefined
-}
-
 MAIN.containerDOM;
 
 function getCategory(type) {
@@ -63,7 +52,6 @@ window.onload = function() {
 
     slide.timerId = setInterval(next, 2000);
 
-    MAIN.mainCategory.DOMs = document.querySelectorAll('.menu');
     MAIN.containerDOM = document.getElementById("container");
     
     getCategory("main").then(function(category) {
@@ -72,4 +60,7 @@ window.onload = function() {
             mainCategoryDOM.innerHTML += `<li class="menu"><img src="./images/${category[name]}" class="menuImage"></li>`;
         }
     });
+
+    MAIN.mainCategoryDOMs = document.querySelectorAll(".menu");
+    console.log(MAIN.mainCategoryDOMs);
 }

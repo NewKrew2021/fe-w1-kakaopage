@@ -10,9 +10,14 @@ const { response } = require("express");
 const MAIN = {};
 MAIN.URL = "http://localhost:5500";
 
+MAIN.mainCategoryDOMs;
+MAIN.containerDOM;
+
+MAIN.selectedMainMenu;
+
 function getCategory(type) {
-    return new Promise(function(resolve, reject) {
-        fetch(`${MAIN.URL}/${type}-category.json`).then(function(response) {
+    return new Promise((resolve, reject) => {
+        fetch(`${MAIN.URL}/${type}-category.json`).then(response => {
             resolve(response.json());
         });
     });
@@ -26,4 +31,7 @@ window.onload = function() {
             mainCategoryDOM.innerHTML += `<li class="menu"><img src="./images/${category[name]}" class="menuImage"></li>`;
         }
     });
+
+    MAIN.mainCategoryDOMs = document.querySelectorAll(".menu");
+    console.log(MAIN.mainCategoryDOMs);
 }
