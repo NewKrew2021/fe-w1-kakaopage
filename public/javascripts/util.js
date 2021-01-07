@@ -1,26 +1,36 @@
-/* 배너 이미지 변경하기 */
-var count = 0;
-getElement("btn-prev").addEventListener("click", () => {
-    if (count > 0) {
-        count--;
-        getElement("banner-img").setAttribute('src', topbannerImg[count]);
-    }
-    else if (count <= 0) {
-        count = 2;
-        getElement("banner-img").setAttribute('src', topbannerImg[count]);
-    }
-});
-getElement("btn-next").addEventListener("click", () => {
-    if (count < 2) {
-        count++;
-        getElement("banner-img").setAttribute('src', topbannerImg[count]);
-    }
-    else if (count >= 2) {
-        count = 0;
-        getElement("banner-img").setAttribute('src', topbannerImg[count]);
-    }
-});
+/*
+    util.js
+    유틸성 함수 목록
+    자주 사용하는 함수 간소화, 슬라이드 애니메이션 함수, 배너 이미지 변경 함수, json 파일 읽는 함수,
+    반복되는 그리드를 그리는 함수, 요일 선택에 따라 변화시키는 함수
+*/
 
+/* 자주 사용하는 함수 간소화 */
+function getElement(id){
+    return document.getElementById(id);
+}
+function creElement(id){
+    return document.createElement(id);
+}
+function getElementsClass(className){
+    return document.getElementsByClassName(className);
+}
+function getQueryAll(node){
+    return document.querySelectorAll(node);
+}
+/* [웹툰] 슬라이드 애니메이션 함수 */
+function showSlides(slidename) {
+    let i;
+    let slides = getElementsClass(slidename);
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}  
+    slides[slideIndex-1].style.display = "block";  
+    timer = setTimeout(showSlides, intervalTime, slidename); // 3초마다 이미지 변경
+}
+/* .js에서 json 파일을 읽는 함수 */
 function readTextFile(file, callback) {
     var rawFile = new XMLHttpRequest();
     rawFile.overrideMimeType("application/json");
@@ -32,8 +42,17 @@ function readTextFile(file, callback) {
     }
     rawFile.send(null);
 }
-
-/* 반복되는 그리드에 썸네일 데이터를 넣는 함수 */
+/* navBar 클릭한 요소만 밑줄 강조하는 등록 함수 */
+function ADD_HIGHLIGHT_BY_CLICKED(element){
+    for (let i = 0; i < getQueryAll("li."+element).length; i++) {
+        getQueryAll("li."+element)[i].addEventListener("click", function() {
+            let current = getElementsClass(element+ " active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
+}
+/* 반복되는 그리드에 썸네일 데이터를 넣는 등록 함수 */
 function ADD_DAY_GRID_DATA(jsonFile, parent, daynum) {
     /* json 파일 읽기 */
     let json;
@@ -98,8 +117,7 @@ function ADD_DAY_GRID_DATA(jsonFile, parent, daynum) {
         }
     });
 }
-
-/* 선택한 요일에 따라 컨텐츠 변화시키는 함수 */
+/* 선택한 요일에 따라 컨텐츠 변화시키는 등록 함수 */
 function SHOW_DAY_CONTENT(jsonFile, parent, clickedLI) {
     for (let i = 0; i < getQueryAll("li." + clickedLI).length; i++) {
         getQueryAll("li." + clickedLI)[i].addEventListener("click", function () {
@@ -108,7 +126,3 @@ function SHOW_DAY_CONTENT(jsonFile, parent, clickedLI) {
         });
     }
 }
-
-/* [웹툰 > 홈 > 요일 연재 TOP] 기능 등록 */
-ADD_DAY_GRID_DATA("../data/daytop.json", "daytop-div-row1", 0);
-SHOW_DAY_CONTENT("../data/daytop.json", "daytop-div-row1", "daytop-li");

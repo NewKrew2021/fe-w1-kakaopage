@@ -1,10 +1,8 @@
 
 /* 기본 컨텐츠 box */
 .card{
-  width:690px;
   background-color:#ffffff;
   margin-top:10px;
-  padding: 20px;
   height:100%;
 }
 .first{

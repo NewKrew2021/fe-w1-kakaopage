@@ -71,7 +71,7 @@
                     </div>
 
                     <!-- 첫번째 배너 -->
-                    <div class="card text-center" style="display: flex">
+                    <div class="card text-center pd-20px" style="display: flex">
                         <% homeBanner.forEach(function(homeBanner) {%>
                             <div class="flex-balanced mg-1px bg-color__main font-main pd-10 <%= homeBanner.attr %> >">
                                 <%= homeBanner.title %>
@@ -85,7 +85,7 @@
                     </div>
 
                     <!-- 두번째 배너 -->
-                    <div class="card flex">
+                    <div class="card flex pd-20px">
                         <img id="btn-prev" class="btn">
                         <div id="banner-1" class="middle mg-left-10 mg-right-10">
                             <img class="block" width="100%" id="banner-img">
@@ -94,7 +94,7 @@
                     </div>
 
                     <!-- 세번째 배너 - 요일 연재 TOP -->
-                    <div class="card">
+                    <div class="card pd-20px">
                         <div class="flex">
                             <div class="font-title"> 요일 연재 TOP </div>
                             <div class="font-small gray flex mg-left-5">(1,084)</div>
@@ -110,7 +110,7 @@
                     </div>
 
                     <!-- 네번째 배너 - 기대 신작 TOP -->
-                    <div class="card">
+                    <div class="card pd-20px">
                         <div class="flex">
                             <div class="font-title flex"> 기대신작 TOP </div>
                             <div class="font-main gray">더보기</div><img class="more btn mg-left-5">
@@ -138,7 +138,7 @@
 
                     <!-- 다섯번째 ~ 아홉번째 배너 -->
                     <% home_top.forEach(function(data) { %>
-                        <div class="card">
+                        <div class="card pd-20px">
                             <div class="flex">
                                 <div class="font-title flex">
                                     <%= data.subject %>
@@ -204,9 +204,18 @@
                             </div>
                             <% }); %>
                     </div>
-                    <div class="card">구현 예정입니다..</div>
-                    <div class="card">구현 예정입니다..</div>
-                    <div class="card">구현 예정입니다..</div>
+                    <!-- 요일연재 메인 -->
+                    <div class="card">
+                        <!-- 요일 내비게이션 -->
+                        <div class="flex bd-bt-gray">
+                            <ul id="daytop-main-nav">
+                            </ul>
+                        </div>
+                        <div id="daytop-main-div" class="flex-between pd-20px">
+                        </div>
+                    </div>
+                    <div class="card pd-20px">구현 예정입니다..</div>
+                    <div class="card pd-20px">구현 예정입니다..</div>
                 </div>
 
                 <!-- 웹툰 -->
@@ -225,8 +234,10 @@
         </div>
     </div>
 
-    <script src="/javascripts/main.js"></script>
     <script src="/javascripts/util.js"></script>
+    <script src="/javascripts/init.js"></script>
+    <script src="/javascripts/main.js"></script>
+    <script src="/javascripts/setting.js"></script>
 </body>
 
 </html>
