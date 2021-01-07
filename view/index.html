@@ -25,42 +25,20 @@
         <nav id="top-nav"></nav>
     </header>
 
-    <div id="container">
-        <nav id="genre-nav"></nav>
-        <!-- JS반복문으로 바꾸기 -->
-        <div id="home" class="genre-contents">
-            <div id="carousel"></div>
-        </div>
-        <div id="weekly" class="genre-contents" style="display: none;">
-            요일연재 페이지 입니다.
-        </div>
-        <div id="webtoon" class="genre-contents" style="display: none;">
-            웹툰 페이지 입니다.
-        </div>
-        <div id="boy" class="genre-contents" style="display: none;">
-            소년 페이지 입니다.
-        </div>
-        <div id="drama" class="genre-contents" style="display: none;">
-            드라마 페이지 입니다.
-        </div>
-        <div id="romance" class="genre-contents" style="display: none;">
-            로맨스 페이지 입니다.
-        </div>
-        <div id="romance-fantasy" class="genre-contents" style="display: none;">
-            로판 페이지 입니다.
-        </div>
-        <div id="action" class="genre-contents" style="display: none;">
-            액션무협 페이지 입니다.
-        </div>
-        <div id="BLGL" class="genre-contents" style="display: none;">
-            BL/GL 페이지 입니다.
-        </div>
-        
-    </div>
+    <div id="container"></div>
 
     <script src="/js/topNav.js"></script>
+    <script src="/js/topPages.js"></script>
+    <script src="/js/topWebtoonPage.js"></script>
+    <script src="/js/webtoonHome.js"></script>
+    <script src="/js/webtoonWeekly.js"></script>
     <script src="/js/genreNav.js"></script>
-    <script src="/js/carousel.js"></script>
+    
+    <!-- code for testing -->
+    <script>
+        onTopNavClick("top-webtoon");
+        onClick("genre-weekly");
+    </script>
     
 </body>
 

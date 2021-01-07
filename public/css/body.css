@@ -9,13 +9,13 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    top:30%;
+    top:22%;
     height: 1000px;
     width: 720px;
     /* background-color: rgb(0, 230, 250); */
 }
 body{
-    background-color:  rgb(230, 230, 250);
+    background-color:  rgb(238, 238, 238);
 }
 .genre-nav-li{
     text-align:center;
@@ -33,4 +33,89 @@ body{
     transform:translate(-50%);
     width: 100%;
     background-color: white;
+}
+
+#webtoon-weekly-day-nav{
+    background-color: white;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top:5px;
+}
+.webtoon-weekly-day-nav-item{
+    display: inline;
+    font-family: sans-serif;
+    font-size:20px;   
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+
+#webtoon-weekly-release-filter{
+    background-color: white;
+    display:block;
+    margin-top:5px;
+    padding:20px
+}
+.webtoon-weekly-release-filter-item{
+    display: inline;
+    font-family: sans-serif;
+    font-size:20px;   
+    margin-left:20px;
+    margin-right: 20px;
+}
+
+.card-list{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    width:720px;
+    flex-wrap : wrap;
+    background-color: white;
+}
+.card{
+    margin:7px;
+}
+.card-frame{
+    border-radius: 25px;
+}
+.card-bar{
+    position: relative;
+    bottom:4px;
+    height: 30px;
+    width:120px;
+    background-color:rgb(36,37,38);
+    border-radius: 0px 0px 10px 10px;
+    margin:0px;
+}
+.card-image{
+    height:120px;
+    width:120px;
+    border-radius: 10px 10px 0px 0px;
+}
+.card-feature{
+    position:relative;
+    top:7px;
+    left:7px;
+    color: rgb(246, 209, 3);
+    font-family: sans-serif;
+    display:inline;
+}
+.card-release{
+    position: absolute;
+    right:5px;
+    width:20%;
+    margin-top:5px;
+}
+.card-name{
+    position: relative;
+    top:5px;
+
+    margin-top:15px;
+    margin-bottom:15px;
+}
+.card-count{
+    color:rgb(171,171,171);
+}
+.web-font{
+    font-family: sans-serif;
 }
