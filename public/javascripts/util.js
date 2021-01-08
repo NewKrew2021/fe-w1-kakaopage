@@ -116,7 +116,7 @@ function showDayContent(jsonFile, parent, clickedLI) {
     for (element of getQueryAll("li."+clickedLI)){
         element.addEventListener("click", function () {
             const daynum = Number(this.getAttribute("tab"));
-            ADD_DAY_GRID_DATA(jsonFile, parent, daynum);
+            addDayGridData(jsonFile, parent, daynum);
         });
     }
 }

@@ -143,6 +143,25 @@ img {vertical-align: middle;}
   border-radius: 0 0 0.5em 0.5em;
 }
 
+/* 공통 랭킹 레이아웃 영역 */
+.ranking-img{
+  position:relative;
+}
+.ranking-thumb>img{
+  width:85px;
+}
+.ranking-clock{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.ranking-clock>img{
+  width:28px;
+}
+.ranking-text{
+  padding: 12px;
+}
+
 /* 공통 썸네일 영역 */
 .thumb{
   width: 120px;

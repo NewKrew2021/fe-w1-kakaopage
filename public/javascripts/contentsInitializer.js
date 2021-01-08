@@ -1,11 +1,10 @@
 /*
-    init.js
+    contentsInitializer.js
     > 렌더링 직후 바로 초기화 해야 하는 것들, 즉시 실행 함수 활용
 */
-const topbannerImg = ['/images/banner1.png', '/images/banner2.png', '/images/banner3.png'];
 
-/* 매직 넘버 */
 const slideShowIntervalTime = 2400;
+const topbannerImg = ['/images/banner1.png', '/images/banner2.png', '/images/banner3.png'];
 
 /* [공통] 공통 top_nav에 항목 추가 */
 (function(){

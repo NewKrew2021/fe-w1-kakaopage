@@ -12,7 +12,7 @@
 <body>
     <div id="root">
         <div id="header">
-            <div class="pd-20">
+            <div class="auto-left pd-20">
                 <img src="/images/title_logo.png">
             </div>
             <div class="absolute pd-40 top-0 right-0">
@@ -71,7 +71,7 @@
                     </div>
 
                     <!-- 첫번째 배너 -->
-                    <div class="card text-center pd-20px" style="display: flex">
+                    <div class="card text-center pd-20px" style="display: flex-1">
                         <% homeBanner.forEach(function(homeBanner) {%>
                             <div class="flex-balanced mg-1px bg-color__main font-main pd-10 <%= homeBanner.attr %> >">
                                 <%= homeBanner.title %>
@@ -85,7 +85,7 @@
                     </div>
 
                     <!-- 두번째 배너 -->
-                    <div class="card flex pd-20px">
+                    <div class="card flex-1 pd-20px">
                         <img id="btn-prev" class="btn">
                         <div id="banner-1" class="middle mg-left-10 mg-right-10">
                             <img class="block" width="100%" id="banner-img">
@@ -95,13 +95,13 @@
 
                     <!-- 세번째 배너 - 요일 연재 TOP -->
                     <div class="card pd-20px">
-                        <div class="flex">
+                        <div class="flex-1">
                             <div class="font-title"> 요일 연재 TOP </div>
-                            <div class="font-small gray flex mg-left-5">(1,084)</div>
+                            <div class="font-small gray flex-1 mg-left-5">(1,084)</div>
                             <div class="font-main gray">더보기</div><img class="more btn mg-left-5">
                         </div>
                         <!-- 요일 내비게이션 -->
-                        <div class="flex bd-bt-gray">
+                        <div class="flex-1 bd-bt-gray">
                             <ul id="daytop-nav" class="pd-t-10">
                             </ul>
                         </div>
@@ -111,8 +111,8 @@
 
                     <!-- 네번째 배너 - 기대 신작 TOP -->
                     <div class="card pd-20px">
-                        <div class="flex">
-                            <div class="font-title flex"> 기대신작 TOP </div>
+                        <div class="flex-1">
+                            <div class="font-title flex-1"> 기대신작 TOP </div>
                             <div class="font-main gray">더보기</div><img class="more btn mg-left-5">
                         </div>
                         <div class="flex-between">
@@ -139,8 +139,8 @@
                     <!-- 다섯번째 ~ 아홉번째 배너 -->
                     <% home_top.forEach(function(data) { %>
                         <div class="card pd-20px">
-                            <div class="flex">
-                                <div class="font-title flex">
+                            <div class="flex-1">
+                                <div class="font-title flex-1">
                                     <%= data.subject %>
                                 </div>
                                 <div class="font-main gray">더보기</div><img class="more btn mg-left-5">
@@ -151,8 +151,8 @@
                                     <div class="mg-top-10" style="width:120px;">
                                         <div class="thumb">
                                             <img src=" <%= item.image %> ">
-                                            <div class="thumb-bottom bottom flex">
-                                                <div class="flex">
+                                            <div class="thumb-bottom bottom flex-1">
+                                                <div class="flex-1">
                                                     <img class="star" src=" <%= item.star_img %> ">
                                                     <div class="yellow font-18 mg-top-3">
                                                         <%= item.score %>
@@ -165,7 +165,7 @@
                                             <%= item.title %>
                                         </div>
                                         <div class="bottom">
-                                            <div class="flex mg-top-3">
+                                            <div class="flex-1 mg-top-3">
                                                 <img src=" <%= item.up_img %> ">
                                                 <img src=" <%= item.p_img %> ">
                                                 <div class="font-14 gray">
@@ -178,7 +178,32 @@
                             </div>
                         </div>
                         <% }) %>
-                    <!-- 네번째 배너 - 기대 신작 TOP -->
+                    <!-- 10번째 배너 - 일간 랭킹 TOP - 다른 레이아웃 -->
+                    <div class="card pd-20px">
+                        <div class="flex-1">
+                            <div class="font-title flex-1">일간 랭킹 TOP</div>
+                            <div class="font-main gray">더보기</div><img class="more btn mg-left-5">
+                        </div>
+                        <% day_ranking.forEach(function(item){ %>
+                        <div class="flex mg-top-10">
+                            <div class="pd-5 mg-right-5 font-title">
+                                <%= item.number %>
+                            </div>
+                            <div class="ranking-img">
+                                <div class="ranking-thumb"><img class="bd-radius-5" src=" <%= item.image %> "></div>
+                                <div class="ranking-clock"><img src=" <%= item.c_img %> "></div>
+                            </div>
+                            <div class="ranking-text">
+                                <div><%= item.title %></div>
+                                <div class="mg-top-3 gray font-14">
+                                    <img class="icon-small" src="/images/people.png"> <%= item.count %> | <%=item.subject %> | <%= item.genre %> | <%=item.author %> </div>
+                                <div class="mg-top-10 gray font-14"><%= item.day %></div>
+                            </div>
+                        </div>
+                        <% }) %>
+                    </div>
+
+                    <!-- 마지막 배너 - 기대 신작 TOP -->
                     <div class="card pd-20px">
                         <div class="flex">
                             <div class="font-title flex">추천 이벤트</div>

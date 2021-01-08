@@ -1,6 +1,6 @@
 /*
     main.js
-    슬라이드 애니메이션, 웹툰 > navBar 클릭에 따른 div 표시기능
+    탭별 슬라이드 보이기 기능, 웹툰 > navBar 클릭에 따른 div 표시기능
 */
 
 let slideIndex = 0;
