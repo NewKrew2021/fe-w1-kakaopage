@@ -11,7 +11,7 @@ body {
     background: #fff;
     z-index: 999999;
 }
-.navHeader {
+.navBox {
     top: 80px;
     border-bottom: 1px solid #ddd;
 }
