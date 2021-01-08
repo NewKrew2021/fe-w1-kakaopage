@@ -29,7 +29,7 @@ const createGenreNav = (navItemList, navClassName) => {
     navItemElement.addEventListener('click', () => {
       navItem.renderFunction(
         navItem.pageIndex,
-        '.content__list',
+        'content__list',
         navItem.carouselList
       );
     });
