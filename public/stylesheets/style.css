@@ -87,7 +87,8 @@ li {
 }
 
 .webtoon-genre-nav,
-.web-novel-genre-nav {
+.web-novel-genre-nav,
+.movie-genre-nav {
   width: 720px;
   background: #ffffff;
   margin: 15px auto 0 auto;
