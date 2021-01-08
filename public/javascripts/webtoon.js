@@ -10,6 +10,13 @@ import {
 
 const CLICKED_HEADER_NAV_ITEM_CLASS_NAME = 'header-nav__item--clicked';
 const HEADER_NAV_LIST_CLASS_NAME = '.header-nav__list';
+const CLASS_NAME = {
+  content: 'content',
+  contentList: 'content__list',
+  clickedNavItem: 'header-nav__item--clicked',
+  navList: '.header-nav__list',
+  genreNav: 'webtoon-genre-nav',
+};
 
 const createWebtoonDayList = webtoonSniffetData => {
   const dayList = createNewElement('div', DAY_LIST_CLASS_NAME.dayList, '');
@@ -24,7 +31,7 @@ const createWebtoonDayList = webtoonSniffetData => {
 };
 
 function renderWebtoonPage(pageIndex) {
-  const contentTag = $('.content');
+  const contentTag = $(`.${CLASS_NAME.content}`);
   contentTag.innerText = '';
   changeClickedNavTab(
     headerNavData,
@@ -33,14 +40,14 @@ function renderWebtoonPage(pageIndex) {
     CLICKED_HEADER_NAV_ITEM_CLASS_NAME
   );
   contentTag.appendChild(
-    createGenreNav(webtoonPageData.WEBTOON_NAV_LIST, 'webtoon-genre-nav')
+    createGenreNav(webtoonPageData.WEBTOON_NAV_LIST, CLASS_NAME.genreNav)
   );
-  const contentList = createNewElement('div', 'content__list', '');
+  const contentList = createNewElement('div', CLASS_NAME.contentList, '');
   contentTag.appendChild(contentList);
 
   renderCarousel(
     0,
-    '.content__list',
+    CLASS_NAME.contentList,
     webtoonPageData.WEBTOON_NAV_LIST[0].carouselList
   );
   // 현재는 요일별 웹툰이 고정으로 보이지만, 추후 장르 클릭에 따라 다른 화면이 나오도록 할 예정
