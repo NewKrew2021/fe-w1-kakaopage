@@ -99,7 +99,7 @@ const intervalTime = 2400;
 /* footer 추가 */
 (function(){
     const footer_div = getElement("footer-line");
-    const footer_text = ["'회사소개 · 이용약관 · 개인정보처리방침 · 청소년보호정책 · 공지사항'", "(주)카카오페이지 사업자 정보▼ | 사업자 정보 확인","ⓒ Kakao Page Corp."];
+    const footer_text = ["회사소개 · 이용약관 · 개인정보처리방침 · 청소년보호정책 · 공지사항", "(주)카카오페이지 사업자 정보▼ | 사업자 정보 확인","ⓒ Kakao Page Corp."];
     footer_text.forEach(function(element){
         let footer_p = document.createElement("p");
         footer_p.className += "font-14 mg-top-5";
