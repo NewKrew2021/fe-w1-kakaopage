@@ -27,7 +27,7 @@ function showSlides(slidename) {
     slideIndex++;
     if (slideIndex > slides.length) {slideIndex = 1}  
     slides[slideIndex-1].style.display = "block";  
-    timer = setTimeout(showSlides, intervalTime, slidename); // 3초마다 이미지 변경
+    timer = setTimeout(showSlides, slideShowIntervalTime, slidename); // 3초마다 이미지 변경
 }
 /* .js에서 json 파일을 읽는 함수 */
 function readTextFile(file, callback) {
