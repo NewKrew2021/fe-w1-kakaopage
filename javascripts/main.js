@@ -1,57 +1,147 @@
 /*
-    [] 선택된 카테고리를 저장한다.
-    [] 선택된 카테고리에 표시한다.(노란색, 진한 글씨)
-    [] 메인 카테고리의 event를 등록한다.
+    메인 카테고리, 웹툰 카테고리 제어
+    웹툰 카테고리의 container 생성
+
+    [v] 선택된 카테고리를 저장한다.
+    [v] 선택된 카테고리에 표시한다.(노란색, 진한 글씨)
+    [v] 메인 카테고리의 event를 등록한다.
+    [v] 웹툰 카테고리의 event를 등록한다.
 */
 
 // name space 생성
 const MAIN = {};
+MAIN.URL = "http://localhost:5500";
 
-MAIN.mainCategory = "홈";
-MAIN.mainCategoryDOMs = {};
-
-MAIN.webtoonCategory = "홈";
-MAIN.webtoonCategoryDOMs = {};
+// 선택된 카테고리, container 정보 DOM 객체로 저장
+MAIN.mainCategoryDOMs;
+MAIN.webtoonCategoryDOMs;
 
 MAIN.containerDOM;
 
-window.onload = function() {
-    // 슬라이드를 위해 웹툰 포스터 이미지 연결
-    slide.slideDOM = document.getElementById("slide");
-    slide.slideDOM.style.width = `${(slide.cnt + 2) * 720}px`;
+MAIN.selectedMainMenuDOM;
+MAIN.selectedWebtoonMenuDOM;
 
-    slide.slideDOM.appendChild(makeImageElement(slide.images[slide.cnt - 1].src, 720, 480));
-    for(let img of slide.images) {
-        let element = makeImageElement(img.src, 720, 480);
-        slide.slideDOM.appendChild(element);
+MAIN.contentDOM;
+
+MAIN.webtoons;
+
+function getWebtoon() {
+    return new Promise((resolve, reject) => {
+        fetch(`${MAIN.URL}/../data/webtoon.json`).then(response => {
+            resolve(response.json());
+        });
+    });
+}
+
+function getCategory(type) {
+    return new Promise((resolve, reject) => {
+        fetch(`${MAIN.URL}/../data/${type}-category.json`).then(response => {
+            resolve(response.json());
+        });
+    });
+}
+
+function setContainer(menu) {
+    // event 중복 방지
+    clearInterval(slide.timerId);
+
+    if(menu != "웹툰") {
+        // 웹툰 외 더미 데이터
+        MAIN.containerDOM.innerHTML = `<p style="font-size:240px;text-align:center">${menu}</p>`;
+
+        
     }
-    slide.slideDOM.appendChild(makeImageElement(slide.images[0].src, 720, 480));
+    else {
+        // 공통(navigator, slide) + content container
+        MAIN.containerDOM.innerHTML = `<div class="navigator"><ul class="navigator" id="webtoonCategory"></ul></div>`;
+        MAIN.containerDOM.innerHTML += `<div class="slide"><div id="slide"></div><p class="slideTitle"></p><div id="prevBtn"><img src="./images/slide_prev.svg"></div><div id="nextBtn"><img src="./images/slide_next.svg"></div><div id="page"></div></div>`;
+        MAIN.containerDOM.innerHTML += `<div class="content" id="content"></div>`;
+        
+        // 세부 카테고리 그리기
+        MAIN.webtoonCategory = document.getElementById("webtoonCategory");
+        getCategory("webtoon").then(function(category) {
+            for(let name in category) {
+                MAIN.webtoonCategory.innerHTML += `<li class="menu2"><a>${name}</a></li>`;
+            }
+            MAIN.webtoonCategoryDOMs = document.querySelectorAll(".menu2");
 
-    // slide 버튼 이벤트 등록
-    let prevBtn = document.getElementById("prevBtn");
-    let nextBtn = document.getElementById("nextBtn");
-    prevBtn.addEventListener("click", function(e) {
-        prev();
-        clearInterval(slide.timerId);
-        slide.timerId = setInterval(next, 2000);
-    })
-    nextBtn.addEventListener("click", function(e) {
-        next();
-        clearInterval(slide.timerId);
-        slide.timerId = setInterval(next, 2000);
-    })
+            // default 홈(맨 왼쪽) 설정
+            if(MAIN.webtoonCategoryDOMs[0] != undefined) {
+                MAIN.selectedWebtoonMenuDOM = MAIN.webtoonCategoryDOMs[0];
+                MAIN.selectedWebtoonMenuDOM.firstChild.style.color = "#000";
+            }
 
-    // 현재 slide 1로 초기화
-    let page = document.getElementById("page");
-    page.innerHTML = `${slide.curId} / ${slide.cnt}`;
+            // 웹툰 카테고리 이벤트 등록
+            for(let menu of MAIN.webtoonCategoryDOMs) {
+                if(menu.firstChild == undefined) continue;
+                menu.firstChild.addEventListener("click", function(e) {
+                    MAIN.selectedWebtoonMenuDOM.firstChild.style.color = "#bbb";
+                    MAIN.selectedWebtoonMenuDOM = menu;
+                    MAIN.selectedWebtoonMenuDOM.firstChild.style.color = "#000";
+                    
+                    const menuName = menu.firstChild.textContent;
+                    if(menuName == "홈") setContent(MAIN.contentDOM, "웹툰 전체", MAIN.webtoons);
+                    else if(menuName == "소년") setContent(MAIN.contentDOM, menuName, webtoonFilter(MAIN.webtoons, {type: menuName}));
+                    else if(menuName == "드라마") setContent(MAIN.contentDOM, menuName, webtoonFilter(MAIN.webtoons, {type: menuName}));
+                    else if(menuName == "로맨스") setContent(MAIN.contentDOM, menuName, webtoonFilter(MAIN.webtoons, {type: menuName}));
+                    else if(menuName == "로판") setContent(MAIN.contentDOM, menuName, webtoonFilter(MAIN.webtoons, {type: menuName}));
+                    else if(menuName == "액션무협") setContent(MAIN.contentDOM, menuName, webtoonFilter(MAIN.webtoons, {type: menuName}));
+                    else if(menuName == "BL/GL") setContent(MAIN.contentDOM, menuName, webtoonFilter(MAIN.webtoons, {type: menuName}));
+                });
+            }
 
-    // 3 1 2 3 1 중 두번째 1로 한칸 옮기기
-    slide.slideDOM.style.transform = `translate(-720px)`;
+            // 슬라이드
+            setSlide();
 
-    slide.timerId = setInterval(next, 2000);
+            // 슬라이드 및 content DOM 객체 저장
+            MAIN.contentDOM = document.getElementById("content");
 
-    // main category DOM 객체 저장
-    MAIN.mainCategoryDOMs = document.querySelectorAll('.menu');
+            // default 홈
+            setContent(MAIN.contentDOM, "웹툰 전체", MAIN.webtoons);
+        });
 
+        
+
+        
+    }
+}
+
+window.onload = function() {
     MAIN.containerDOM = document.getElementById("container");
+
+    // 메인 카테고리 데이터를 받아서 그림, 카테고리 선택 이벤트 등록
+    getCategory("main").then(function(category) {
+        const mainCategoryDOM = document.getElementById("mainCategory");
+        
+        // 메인 카테고리 그리기
+        for(let name in category) {
+            mainCategoryDOM.innerHTML += `<li class="menu" id="${name}"><img src="./images/${category[name]}" class="menuImage"></li>`;
+        }
+        MAIN.mainCategoryDOMs = document.querySelectorAll(".menu");
+        
+        // default 홈(맨 왼쪽) 설정
+        if(MAIN.mainCategoryDOMs[0] != undefined) {
+            MAIN.selectedMainMenuDOM = MAIN.mainCategoryDOMs[0];
+            MAIN.selectedMainMenuDOM.style.borderBottom = "3px solid #fd0";
+            MAIN.containerDOM.innerHTML = `<p style="font-size:240px;text-align:center">${MAIN.selectedMainMenuDOM.id}</p>`;
+        }
+        
+        // 이벤트 등록(네모 칸 안의 글자에 등록)
+        for(let menu of MAIN.mainCategoryDOMs) {
+            if(menu.firstChild == undefined) continue;
+            menu.firstChild.addEventListener("click", function(e) {
+                MAIN.selectedMainMenuDOM.style.borderBottom = "";
+                MAIN.selectedMainMenuDOM = menu;
+                MAIN.selectedMainMenuDOM.style.borderBottom = "3px solid #fd0";
+
+                setContainer(menu.id);                
+            });
+        }
+
+    });
+
+    getWebtoon().then(function(webtoon) {
+        MAIN.webtoons = webtoon.webtoon;
+        
+    });
 }
