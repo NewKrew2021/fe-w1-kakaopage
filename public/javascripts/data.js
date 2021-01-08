@@ -361,8 +361,8 @@ const moviePageData = {
       carouselList: [
         {
           image:
-            'http://dn-img-page.kakao.com/download/resource?kid=chJoJc/hyLjfiEthl/g725sWc55RcZl2qZ6I5fcK',
-          description: '철벽 황제를 향한 청혼 프로젝트!',
+            'http://dn-img-page.kakao.com/download/resource?kid=bnhmk3/hyLjbOwfAS/2QxIk5LV223MS7a8S9ZY70',
+          description: '결코 평범할 수 없는 능력자 세계',
         },
       ],
     },
@@ -385,8 +385,8 @@ const moviePageData = {
       carouselList: [
         {
           image:
-            'http://dn-img-page.kakao.com/download/resource?kid=bnhmk3/hyLjbOwfAS/2QxIk5LV223MS7a8S9ZY70',
-          description: '결코 평범할 수 없는 능력자 세계',
+            'http://dn-img-page.kakao.com/download/resource?kid=chJoJc/hyLjfiEthl/g725sWc55RcZl2qZ6I5fcK',
+          description: '철벽 황제를 향한 청혼 프로젝트!',
         },
       ],
     },
