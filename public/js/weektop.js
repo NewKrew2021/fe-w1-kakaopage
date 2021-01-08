@@ -1,7 +1,3 @@
-/* eslint-disable no-unused-vars */
-
-var request = new XMLHttpRequest();
-
 const weekBtns = document.querySelectorAll("button.weektop_btn");
 const jsonFilePath = "../data/webtoon.json";
 
@@ -13,7 +9,7 @@ weekBtns.forEach( btn => {
 });
 
 const readjsonFile = (filePath, callback) => {
-  var jsonFile = new XMLHttpRequest();
+  let jsonFile = new XMLHttpRequest();
   jsonFile.overrideMimeType("application/json");
   jsonFile.open("GET", filePath, true);
   jsonFile.onreadystatechange = () => {
@@ -26,9 +22,9 @@ const readjsonFile = (filePath, callback) => {
 
 const getWebtoonData = (week) => {
   readjsonFile(jsonFilePath, text => {
-    var data = JSON.parse(text);
-    var top = [];
-    var rank= []
+    let data = JSON.parse(text);
+    let top = [];
+    let rank= []
     data["webtoon"].forEach(webtoon => {
       if(webtoon["week"] == week){
         if(webtoon["top"]) {
@@ -42,18 +38,18 @@ const getWebtoonData = (week) => {
     const webtoonImg = document.querySelectorAll("img.weektop_img");
     const webtoonTitle = document.querySelectorAll("div.webtoon_title");
     const webtoonWatch = document.querySelectorAll("div.numofwatch");
-    var idx=0;
+    let idx=0;
 
     top.forEach(webtoonInfo => {
       webtoonImg[idx].src = encodeURI("./img/webtoon/webtoon" + webtoonInfo[0] + ".png");
       webtoonTitle[idx].innerHTML = webtoonInfo[1];
-      webtoonWatch[idx].innerHTML = "<img style='height:12px' src='./img/person.png'> " + webtoonInfo[2]/10000 + " 만명"; 
+      webtoonWatch[idx].innerHTML = "<img class='webtoon_img' src='./img/person.png'> " + webtoonInfo[2]/10000 + " 만명"; 
       idx+=1;
     });
     rank.forEach(webtoonInfo => {
       webtoonImg[idx].src = encodeURI("./img/webtoon/webtoon" + webtoonInfo[0] + ".png");
       webtoonTitle[idx].innerHTML = webtoonInfo[1];
-      webtoonWatch[idx].innerHTML = "<img style='height:12px' src='./img/person.png'> " + webtoonInfo[2]/10000 + " 만명";
+      webtoonWatch[idx].innerHTML = "<img class='webtoon_img' src='./img/person.png'> " + webtoonInfo[2]/10000 + " 만명";
       idx+=1;
     });
   });
@@ -62,7 +58,7 @@ const getWebtoonData = (week) => {
 const drawWebtoonLayout = () => {
   const weekTop = document.getElementById("weektop_top");
   const weekRank = document.getElementById("weektop_rank");
-  for(var idx=0; idx<5; idx++){
+  for(let idx=0; idx<5; idx++){
     weekTop.innerHTML = weekTop.innerHTML + 
             "<li class='weektop_list'>" +
               "<img class='weektop_img' />" +
@@ -81,9 +77,9 @@ const drawWebtoonLayout = () => {
 const weekClickBold = (element) => {
   let ele = document.getElementById(element);
   weekBtns.forEach( categoryId => {
-    categoryId.style = "font-size:20%";
+    categoryId.className = "weektop_btn " + categoryId.id;
   })
-  ele.style = "font-size:22%;font-weight:900";
+  ele.className = "weektop_clicked " + element;
 }
 
 drawWebtoonLayout();

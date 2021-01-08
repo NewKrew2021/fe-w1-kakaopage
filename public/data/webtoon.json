@@ -6,7 +6,8 @@
       "numofwatch": 2360000,
       "week": "mon",
       "rank": 0,
-      "top": true
+      "top": true,
+      "genre": ""
     },
     {
       "id": 2,
@@ -14,7 +15,8 @@
       "numofwatch": 130000,
       "week": "mon",
       "rank": 0,
-      "top": true
+      "top": true,
+      "genre": ""
     },
     {
       "id": 3,
@@ -22,7 +24,8 @@
       "numofwatch": 220000,
       "week": "mon",
       "rank": 0,
-      "top": true
+      "top": true,
+      "genre": ""
     },
     {
       "id": 4,
@@ -30,7 +33,8 @@
       "numofwatch": 960000,
       "week": "mon",
       "rank": 0,
-      "top": true
+      "top": true,
+      "genre": ""
     },
     {
       "id": 5,
@@ -38,7 +42,8 @@
       "numofwatch": 790000,
       "week": "mon",
       "rank": 0,
-      "top": true
+      "top": true,
+      "genre": ""
     },
     {
       "id": 6,
@@ -46,7 +51,8 @@
       "numofwatch": 830000,
       "week": "mon",
       "rank": 1,
-      "top": false
+      "top": false,
+      "genre": ""
     },
     {
       "id": 7,
@@ -54,7 +60,8 @@
       "numofwatch": 1920000,
       "week": "mon",
       "rank": 2,
-      "top": false
+      "top": false,
+      "genre": ""
     },
     {
       "id": 8,
@@ -62,7 +69,8 @@
       "numofwatch": 960000,
       "week": "mon",
       "rank": 3,
-      "top": false
+      "top": false,
+      "genre": ""
     },
     {
       "id": 9,
@@ -70,7 +78,8 @@
       "numofwatch": 650000,
       "week": "mon",
       "rank": 4,
-      "top": false
+      "top": false,
+      "genre": ""
     },
     {
       "id": 10,
@@ -78,7 +87,8 @@
       "numofwatch": 290000,
       "week": "mon",
       "rank": 5,
-      "top": false
+      "top": false,
+      "genre": ""
     },
     {
       "id": 11,
@@ -86,7 +96,8 @@
       "numofwatch": 200000,
       "week": "tue",
       "rank": 0,
-      "top": true
+      "top": true,
+      "genre": ""
     },
     {
       "id": 12,
@@ -94,7 +105,8 @@
       "numofwatch": 370000,
       "week": "tue",
       "rank": 0,
-      "top": true
+      "top": true,
+      "genre": ""
     },
     {
       "id": 13,
@@ -102,7 +114,8 @@
       "numofwatch": 590000,
       "week": "tue",
       "rank": 0,
-      "top": true
+      "top": true,
+      "genre": ""
     },
     {
       "id": 14,
@@ -110,7 +123,8 @@
       "numofwatch": 2020000,
       "week": "tue",
       "rank": 0,
-      "top": true
+      "top": true,
+      "genre": ""
     },
     {
       "id": 15,
@@ -118,7 +132,8 @@
       "numofwatch": 910000,
       "week": "tue",
       "rank": 0,
-      "top": true
+      "top": true,
+      "genre": ""
     },
     {
       "id": 16,
@@ -126,7 +141,8 @@
       "numofwatch": 440000,
       "week": "tue",
       "rank": 1,
-      "top": false
+      "top": false,
+      "genre": ""
     },
     {
       "id": 17,
@@ -134,7 +150,8 @@
       "numofwatch": 600000,
       "week": "tue",
       "rank": 2,
-      "top": false
+      "top": false,
+      "genre": ""
     },
     {
       "id": 18,
@@ -142,7 +159,8 @@
       "numofwatch": 1420000,
       "week": "tue",
       "rank": 3,
-      "top": false
+      "top": false,
+      "genre": ""
     },
     {
       "id": 19,
@@ -150,7 +168,8 @@
       "numofwatch": 2020000,
       "week": "tue",
       "rank": 4,
-      "top": false
+      "top": false,
+      "genre": ""
     },
     {
       "id": 20,
@@ -158,7 +177,278 @@
       "numofwatch": 930000,
       "week": "tue",
       "rank": 5,
-      "top": false
+      "top": false,
+      "genre": ""
+    },
+    {
+      "id": 21,
+      "title": "연록흔",
+      "numofwatch": 580000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "romance"
+    },
+    {
+      "id": 22,
+      "title": "프로젝트 S",
+      "numofwatch": 260000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "romance"
+    },
+    {
+      "id": 23,
+      "title": "나의 나쁜 연하남",
+      "numofwatch": 310000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "romance"
+    },
+    {
+      "id": 24,
+      "title": "쇼윈도 커플",
+      "numofwatch": 410000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "romance"
+    },
+    {
+      "id": 25,
+      "title": "절대갑 길들이기",
+      "numofwatch": 310000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "romance"
+    },
+    {
+      "id": 26,
+      "title": "남편이 미모를",
+      "numofwatch": 910000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "rofan"
+    },
+    {
+      "id": 27,
+      "title": "공녀님의 우주",
+      "numofwatch": 490000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "rofan"
+    },
+    {
+      "id": 28,
+      "title": "프렌시아의 꽃",
+      "numofwatch": 280000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "rofan"
+    },
+    {
+      "id": 29,
+      "title": "뮈엘라의 수사관",
+      "numofwatch": 1270000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "rofan"
+    },
+    {
+      "id": 30,
+      "title": "레이디 비스트",
+      "numofwatch": 850000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "rofan"
+    },
+    {
+      "id": 31,
+      "title": "치트라",
+      "numofwatch": 900000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "drama"
+    },
+    {
+      "id": 32,
+      "title": "당골의 신부",
+      "numofwatch": 460000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "drama"
+    },
+    {
+      "id": 33,
+      "title": "은동은동+옹동스",
+      "numofwatch": 450000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "drama"
+    },
+    {
+      "id": 34,
+      "title": "판도라의 상자",
+      "numofwatch": 80000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "drama"
+    },
+    {
+      "id": 35,
+      "title": "지구의 주인은",
+      "numofwatch": 380000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "drama"
+    },
+    {
+      "id": 36,
+      "title": "엔젤 버디[BL]",
+      "numofwatch": 290000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "blgl"
+    },
+    {
+      "id": 37,
+      "title": "꿈 같은 거짓말",
+      "numofwatch": 90000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "blgl"
+    },
+    {
+      "id": 38,
+      "title": "주심의 죄",
+      "numofwatch": 90000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "blgl"
+    },
+    {
+      "id": 39,
+      "title": "황룡전 개정판",
+      "numofwatch": 80000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "blgl"
+    },
+    {
+      "id": 40,
+      "title": "호장이 장가드",
+      "numofwatch": 50000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "blgl"
+    },
+    {
+      "id": 41,
+      "title": "두 번 사는 랭커",
+      "numofwatch": 980000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "boy"
+    },
+    {
+      "id": 42,
+      "title": "아빠가 너무 강함",
+      "numofwatch": 290000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "boy"
+    },
+    {
+      "id": 43,
+      "title": "이차원 용병",
+      "numofwatch": 840000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "boy"
+    },
+    {
+      "id": 44,
+      "title": "도굴왕",
+      "numofwatch": 1420000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "boy"
+    },
+    {
+      "id": 45,
+      "title": "아크",
+      "numofwatch": 240000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "boy"
+    },
+    {
+      "id": 46,
+      "title": "미르의 전설",
+      "numofwatch": 280000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "action"
+    },
+    {
+      "id": 47,
+      "title": "비뢰도",
+      "numofwatch": 640000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "action"
+    },
+    {
+      "id": 48,
+      "title": "절대무신",
+      "numofwatch": 450000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "action"
+    },
+    {
+      "id": 49,
+      "title": "선무제존",
+      "numofwatch": 70000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "action"
+    },
+    {
+      "id": 50,
+      "title": "홍천신존",
+      "numofwatch": 60000,
+      "week": "",
+      "rank": 0,
+      "top": false,
+      "genre": "action"
     }
   ]
 }

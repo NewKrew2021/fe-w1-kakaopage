@@ -32,9 +32,9 @@ const hideElement = (element) => {
 const cateClickBold = (element) => {
   let ele = document.getElementById(element);
   categoryBtns.forEach( categoryId => {
-    categoryId.style = "box-shadow: 0";
+    categoryId.className = "category_btn";
   });
-  ele.style = "box-shadow: 0 80px 0 0 #F7E600 inset";
+  ele.className = "category_clicked";
 }
 
 setCategory("webtoon");
