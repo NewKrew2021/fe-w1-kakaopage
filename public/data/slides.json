@@ -46,23 +46,6 @@
             "subtext_img" : "/images/badge-up.svg",
             "subtext_dir" : "웹툰",
             "subtext_cnt" : "38.5만명"
-        },
-        {
-            "slideNum" : "2/3",
-            "title" : "사실, 그들은 오직 그녀만을 기다리고 있습니다",
-            "explain" : "그녀는 어디로 갔단 말입니까?",
-            "img" : "/images/daytoon2.png",
-            "subtext_img" : "/images/badge-up.svg",
-            "subtext_dir" : "웹툰",
-            "subtext_cnt" : "36.5만명"
-        },{
-            "slideNum" : "3/3",
-            "title" : "불사무적",
-            "explain" : "다시 태어난 불사존의 활약!",
-            "img" : "/images/daytoon3.png",
-            "subtext_img" : "/images/badge-up.svg",
-            "subtext_dir" : "웹툰",
-            "subtext_cnt" : "41만명"
         }
     ]
 }

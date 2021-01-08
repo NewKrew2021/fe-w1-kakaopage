@@ -6,28 +6,16 @@
 */
 
 /* 자주 사용하는 함수 간소화 */
-function getElement(id){
-    return document.getElementById(id);
-}
-function creElement(id){
-    return document.createElement(id);
-}
-function getElementsClass(className){
-    return document.getElementsByClassName(className);
-}
-function getQueryAll(node){
-    return document.querySelectorAll(node);
-}
+const getElement = (id) => document.getElementById(id);
+const creElement = (id) => document.createElement(id);
+const getElementsClass = (className) => document.getElementsByClassName(className);
+const getQueryAll = (node) => document.querySelectorAll(node);
+const getQuery = (node) => document.querySelector(node);
+
 /* [웹툰] 슬라이드 애니메이션 함수 */
 function showSlides(slidename) {
-    let slides = getElementsClass(slidename);
-    for (element of slides){
-        element.style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}  
-    slides[slideIndex-1].style.display = "block";  
-    timer = setTimeout(showSlides, intervalTime, slidename); // 3초마다 이미지 변경
+   
+
 }
 /* .js에서 json 파일을 읽는 함수 */
 function readTextFile(file, callback) {
@@ -42,7 +30,7 @@ function readTextFile(file, callback) {
     rawFile.send(null);
 }
 /* navBar 클릭한 요소만 밑줄 강조하는 등록 함수 */
-function ADD_HIGHLIGHT_BY_CLICKED(element){
+function addBorderOnClicked(element){
     getQueryAll("li."+element).forEach(function(node, i){
         node.addEventListener("click", function() {
             let current = getElementsClass(element+ " active");
@@ -52,7 +40,7 @@ function ADD_HIGHLIGHT_BY_CLICKED(element){
     });
 }
 /* 반복되는 그리드에 썸네일 데이터를 넣는 등록 함수 */
-function ADD_DAY_GRID_DATA(jsonFile, parent, daynum) {
+function addDayGridData(jsonFile, parent, daynum) {
     /* json 파일 읽기 */
     let json;
     readTextFile(jsonFile, function (text) {
@@ -73,9 +61,9 @@ function ADD_DAY_GRID_DATA(jsonFile, parent, daynum) {
             thumb_img.setAttribute("src", json.data[daynum].item[i].image);
 
             let div_thumb_btm = document.createElement("div");
-            div_thumb_btm.className = "thumb-bottom bottom flex";
+            div_thumb_btm.className = "thumb-bottom bottom flex-1";
             let div_flex = document.createElement("div");
-            div_flex.className = "flex";
+            div_flex.className = "flex-1";
             let div_flex_btm = document.createElement("div");
             div_flex_btm.className = "yellow font-18 mg-left-5 mg-top-3";
 
@@ -119,11 +107,11 @@ function ADD_DAY_GRID_DATA(jsonFile, parent, daynum) {
     });
 }
 /* 선택한 요일에 따라 컨텐츠 변화시키는 등록 함수 */
-function SHOW_DAY_CONTENT(jsonFile, parent, clickedLI) {
+function showDayContent(jsonFile, parent, clickedLI) {
     for (element of getQueryAll("li."+clickedLI)){
         element.addEventListener("click", function () {
             const daynum = Number(this.getAttribute("tab"));
-            ADD_DAY_GRID_DATA(jsonFile, parent, daynum);
+            addDayGridData(jsonFile, parent, daynum);
         });
     }
 }

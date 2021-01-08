@@ -54,38 +54,60 @@ img {vertical-align: middle;}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
   position: relative;
-  margin: auto;
+  margin: 0 auto;
+  width: 720px;
 }
-
+.slide-box{
+  width:100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+.slide-content{
+  float: left;
+  width:720px;
+}
+.slide-btn{
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  padding: 0px;
+}
+.prev{
+  left : 0;
+  margin-left: 20px;
+}
+.next{
+  right : 0;
+  margin-right: 20px;
+}
 
 /* slideshow 공통 */
 .slide-num {
   color: #f2f2f2;
-  font-size: 21px;
+  font-size: 23px;
   padding: 10px 15px;
   position: absolute;
   right: 0;
-  bottom: 47px;
+  bottom: 50px;
 }
 
 .slide-title {
   color: #ffffff;
-  font-size: 35px;
+  font-size: 30px;
   margin-left : 20px;
   position: absolute;
-  bottom: 100px;
+  top: 345px;
   width: 50%;
   text-align: left;
 }
 
 .slide-subtext{
   color: #ffffff;
-  font-size: 22px;
+  font-size: 20px;
   margin-left : 20px;
   position: absolute;
-  bottom: 60px;
+  top: 390px;
   width: 50%;
   text-align: left;
 }
@@ -94,10 +116,11 @@ img {vertical-align: middle;}
   position: absolute;
   font-size: 20px;
   bottom: 0;
-  width:100%;
+  width:720px;
   height: 45px;
   text-align: center;
   line-height: 2.2;
+  top: 435px;
   background-color: var(--main-yellow);
 }
 
@@ -143,6 +166,25 @@ img {vertical-align: middle;}
   border-radius: 0 0 0.5em 0.5em;
 }
 
+/* 공통 랭킹 레이아웃 영역 */
+.ranking-img{
+  position:relative;
+}
+.ranking-thumb>img{
+  width:85px;
+}
+.ranking-clock{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.ranking-clock>img{
+  width:28px;
+}
+.ranking-text{
+  padding: 12px;
+}
+
 /* 공통 썸네일 영역 */
 .thumb{
   width: 120px;
@@ -166,25 +208,4 @@ img {vertical-align: middle;}
   margin-right:3px;
 }
 
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
-}
+/* Slide animation */

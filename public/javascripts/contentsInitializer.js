@@ -1,11 +1,10 @@
 /*
-    init.js
+    contentsInitializer.js
     > 렌더링 직후 바로 초기화 해야 하는 것들, 즉시 실행 함수 활용
 */
-const topbannerImg = ['/images/banner1.png', '/images/banner2.png', '/images/banner3.png'];
 
-/* 매직 넘버 */
-const intervalTime = 2400;
+const slideShowIntervalTime = 2400;
+const topbannerImg = ['/images/banner1.png', '/images/banner2.png', '/images/banner3.png'];
 
 /* [공통] 공통 top_nav에 항목 추가 */
 (function(){
@@ -17,8 +16,8 @@ const intervalTime = 2400;
         { name : "방송", img : "https://static-page.kakao.com/static/pc/menu_broadcast.svg?a6b4779526f1fa5dbeb1516607770b16" },
         { name : "책", img : "https://static-page.kakao.com/static/pc/menu_book.svg?8fd0c5dc69d357fa23dd953d3b7e71aa" },
     ];
+    let node = getElementsClass("nav-dummy");
     nav_list.forEach(function(element, index){
-        let node = getElementsClass("nav-dummy");
         node[index].innerHTML = '<a><img src = '+element.img+'></a>';
     });
 })();
@@ -99,7 +98,7 @@ const intervalTime = 2400;
 /* footer 추가 */
 (function(){
     const footer_div = getElement("footer-line");
-    const footer_text = ["'회사소개 · 이용약관 · 개인정보처리방침 · 청소년보호정책 · 공지사항'", "(주)카카오페이지 사업자 정보▼ | 사업자 정보 확인","ⓒ Kakao Page Corp."];
+    const footer_text = ["회사소개 · 이용약관 · 개인정보처리방침 · 청소년보호정책 · 공지사항", "(주)카카오페이지 사업자 정보▼ | 사업자 정보 확인","ⓒ Kakao Page Corp."];
     footer_text.forEach(function(element){
         let footer_p = document.createElement("p");
         footer_p.className += "font-14 mg-top-5";

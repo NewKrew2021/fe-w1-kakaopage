@@ -12,7 +12,7 @@
 <body>
     <div id="root">
         <div id="header">
-            <div class="pd-20">
+            <div class="auto-left pd-20">
                 <img src="/images/title_logo.png">
             </div>
             <div class="absolute pd-40 top-0 right-0">
@@ -48,26 +48,33 @@
                 <!-- 홈 -->
                 <div id="home" class="page visible">
                     <div class="slideshow-container">
-                        <% home_slide.forEach(function(home_slide){ %>
-                            <div class="homeSlides fade">
-                                <div class="slide-num">
-                                    <%= home_slide.slideNum %>
-                                </div>
-                                <img style="width:100%" src="<%= home_slide.img %>">
-                                <div class="slide-title">
-                                    <%= home_slide.title %>
-                                </div>
-                                <div class="slide-subtext"><img src="<%= home_slide.subtext_img %>">
-                                    <%= home_slide.subtext_dir %>
-                                        <img src="/images/line_top_banner.png"> <img
-                                            src="/images/ico-bigthum-person.svg">
-                                        <%= home_slide.subtext_cnt %>
-                                </div>
-                                <div class="slide-explain">
-                                    <%= home_slide.explain %>
-                                </div>
+                        <div class="slide-box">
+                            <div class="slide-list">
+                                <% home_slide.forEach(function(home_slide){ %>
+                                    <div class="slide-content">
+                                        <img style="width:100%" src="<%= home_slide.img %>">
+                                        <div class="slide-title">
+                                            <%= home_slide.title %>
+                                        </div>
+                                        <div class="slide-subtext"><img src="<%= home_slide.subtext_img %>">
+                                            <%= home_slide.subtext_dir %>
+                                                <img src="/images/line_top_banner.png"> <img
+                                                    src="/images/ico-bigthum-person.svg">
+                                                <%= home_slide.subtext_cnt %>
+                                        </div>
+                                        <div class="slide-explain">
+                                            <%= home_slide.explain %>
+                                        </div>
+                                    </div>
+                                    <% }); %>
                             </div>
-                            <% }); %>
+                            <div class="slide-btn prev">
+                                <img src="/images/before_dark.svg">
+                            </div>
+                            <div class="slide-btn next">
+                                <img src="/images/next_dark.svg">
+                            </div>
+                        </div>
                     </div>
 
                     <!-- 첫번째 배너 -->
@@ -85,7 +92,7 @@
                     </div>
 
                     <!-- 두번째 배너 -->
-                    <div class="card flex pd-20px">
+                    <div class="card flex-1 pd-20px">
                         <img id="btn-prev" class="btn">
                         <div id="banner-1" class="middle mg-left-10 mg-right-10">
                             <img class="block" width="100%" id="banner-img">
@@ -95,13 +102,13 @@
 
                     <!-- 세번째 배너 - 요일 연재 TOP -->
                     <div class="card pd-20px">
-                        <div class="flex">
+                        <div class="flex-1">
                             <div class="font-title"> 요일 연재 TOP </div>
-                            <div class="font-small gray flex mg-left-5">(1,084)</div>
+                            <div class="font-small gray flex-1 mg-left-5">(1,084)</div>
                             <div class="font-main gray">더보기</div><img class="more btn mg-left-5">
                         </div>
                         <!-- 요일 내비게이션 -->
-                        <div class="flex bd-bt-gray">
+                        <div class="flex-1 bd-bt-gray">
                             <ul id="daytop-nav" class="pd-t-10">
                             </ul>
                         </div>
@@ -111,36 +118,38 @@
 
                     <!-- 네번째 배너 - 기대 신작 TOP -->
                     <div class="card pd-20px">
-                        <div class="flex">
-                            <div class="font-title flex"> 기대신작 TOP </div>
+                        <div class="flex-1">
+                            <div class="font-title flex-1"> 기대신작 TOP </div>
                             <div class="font-main gray">더보기</div><img class="more btn mg-left-5">
                         </div>
                         <div class="flex-between">
                             <% day_expect.forEach(function(data) { %>
-                            <div class="minishow-container">
-                                <img class="bd-radius-5" src=" <%= data.item.image %> ">
-                                <div class="minishow-title"> <%= data.item.title %> </div>
-                                <div class="minishow-subtext">
-                                    <img src=" <%= data.item.e_img %> ">
-                                    <img src=" <%= data.item.c_img %> ">
-                                    <%= data.item.subject %>
-                                    <img src=" <%= data.item.b_img %> ">
-                                    <img src=" <%= data.item.p_img %> ">
-                                    <%= data.item.count %>
+                                <div class="minishow-container">
+                                    <img class="bd-radius-5" src=" <%= data.item.image %> ">
+                                    <div class="minishow-title">
+                                        <%= data.item.title %>
+                                    </div>
+                                    <div class="minishow-subtext">
+                                        <img src=" <%= data.item.e_img %> ">
+                                        <img src=" <%= data.item.c_img %> ">
+                                        <%= data.item.subject %>
+                                            <img src=" <%= data.item.b_img %> ">
+                                            <img src=" <%= data.item.p_img %> ">
+                                            <%= data.item.count %>
+                                    </div>
+                                    <div class="minishow-explain">
+                                        <%= data.item.explain %>
+                                    </div>
                                 </div>
-                                <div class="minishow-explain">
-                                    <%= data.item.explain %>
-                                </div>
-                            </div>
-                            <% }) %>
+                                <% }) %>
                         </div>
                     </div>
 
                     <!-- 다섯번째 ~ 아홉번째 배너 -->
                     <% home_top.forEach(function(data) { %>
                         <div class="card pd-20px">
-                            <div class="flex">
-                                <div class="font-title flex">
+                            <div class="flex-1">
+                                <div class="font-title flex-1">
                                     <%= data.subject %>
                                 </div>
                                 <div class="font-main gray">더보기</div><img class="more btn mg-left-5">
@@ -151,8 +160,8 @@
                                     <div class="mg-top-10" style="width:120px;">
                                         <div class="thumb">
                                             <img src=" <%= item.image %> ">
-                                            <div class="thumb-bottom bottom flex">
-                                                <div class="flex">
+                                            <div class="thumb-bottom bottom flex-1">
+                                                <div class="flex-1">
                                                     <img class="star" src=" <%= item.star_img %> ">
                                                     <div class="yellow font-18 mg-top-3">
                                                         <%= item.score %>
@@ -165,7 +174,7 @@
                                             <%= item.title %>
                                         </div>
                                         <div class="bottom">
-                                            <div class="flex mg-top-3">
+                                            <div class="flex-1 mg-top-3">
                                                 <img src=" <%= item.up_img %> ">
                                                 <img src=" <%= item.p_img %> ">
                                                 <div class="font-14 gray">
@@ -178,22 +187,59 @@
                             </div>
                         </div>
                         <% }) %>
-                    <!-- 네번째 배너 - 기대 신작 TOP -->
-                    <div class="card pd-20px">
-                        <div class="flex">
-                            <div class="font-title flex">추천 이벤트</div>
-                            <div class="font-main gray">더보기</div><img class="more btn mg-left-5">
-                        </div>
-                        <div class="flex-between">
-                        </div>
-                    </div>
+                            <!-- 10번째 배너 - 일간 랭킹 TOP - 다른 레이아웃 -->
+                            <div class="card pd-20px">
+                                <div class="flex-1">
+                                    <div class="font-title flex-1">일간 랭킹 TOP</div>
+                                    <div class="font-main gray">더보기</div><img class="more btn mg-left-5">
+                                </div>
+                                <% day_ranking.forEach(function(item){ %>
+                                    <div class="flex mg-top-10">
+                                        <div class="pd-5 mg-right-5 font-title">
+                                            <%= item.number %>
+                                        </div>
+                                        <div class="ranking-img">
+                                            <div class="ranking-thumb"><img class="bd-radius-5"
+                                                    src=" <%= item.image %> "></div>
+                                            <div class="ranking-clock"><img src=" <%= item.c_img %> "></div>
+                                        </div>
+                                        <div class="ranking-text">
+                                            <div>
+                                                <%= item.title %>
+                                            </div>
+                                            <div class="mg-top-3 gray font-14">
+                                                <img class="icon-small" src="/images/people.png">
+                                                <%= item.count %> | <%=item.subject %> | <%= item.genre %> |
+                                                            <%=item.author %>
+                                            </div>
+                                            <div class="mg-top-10 gray font-14">
+                                                <%= item.day %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% }) %>
+                            </div>
+
+                            <!-- 마지막 배너 - 기대 신작 TOP -->
+                            <div class="card pd-20px">
+                                <div class="flex-1">
+                                    <div class="font-title flex-1">추천 이벤트</div>
+                                    <div class="font-main gray">더보기</div><img class="more btn mg-left-5">
+                                </div>
+                                <div class="flex-between mg-top-10">
+                                    <div class="flex bd-radius-10">
+                                        <img style="width: 100%" class="bd-radius-5"
+                                            src="https://dn-img-page.kakao.com/download/resource?kid=crzwdR/hyLi7ZIVZJ/yQGntGgOxy05OrbbAqMmgk">
+                                    </div>
+                                </div>
+                            </div>
                 </div>
 
                 <!-- 요일연재 -->
                 <div id="day" class="page invisible">
                     <div class="slideshow-container">
                         <% day_slide.forEach(function(day_slide){ %>
-                            <div class="daySlides fade">
+                            <div>
                                 <div class="slide-num">
                                     <%= day_slide.slideNum %>
                                 </div>
@@ -211,7 +257,7 @@
                                     <%= day_slide.explain %>
                                 </div>
                             </div>
-                            <% }); %>
+                        <% }); %>
                     </div>
                     <!-- 요일연재 메인 -->
                     <div class="card">
@@ -265,14 +311,14 @@
             </div>
         </div>
         <div class="footer bg-color__content">
-           <img src="/images/appDownload.png">
+            <img src="/images/appDownload.png">
         </div>
         <div id="footer-line" class="footer gray">
         </div>
     </div>
 
     <script src="/javascripts/util.js"></script>
-    <script src="/javascripts/init.js"></script>
+    <script src="/javascripts/contentsInitializer.js"></script>
     <script src="/javascripts/main.js"></script>
     <script src="/javascripts/setting.js"></script>
 </body>
