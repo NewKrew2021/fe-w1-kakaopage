@@ -1,35 +1,3 @@
-const slideShowData =  [{"viewer_img": "https://static-page.kakao.com/static/pc/ico-bigthum-person.svg?100328455b1454b0ffff555caf02e71e",
-        "viewer_num": "12.6만명",
-        "description": "결코 평범할 수 없는 능력자 세계",
-        "redirectionLink" : "/home?seriesId=56235400",
-        "image": "//dn-img-page.kakao.com/download/resource?kid=cMgmyK/hyORZceoQU/CvbDTCffPMtIfkABIzyxak",
-        "title": "화룡왕",
-        "badges": [
-            {"type": "img", "data": "https://static-page.kakao.com/static/pc/badge-bigthum-up.svg?a70b9cea4cb6b972e794d199820782a2"},
-            {"type": "img", "data": "https://static-page.kakao.com/static/pc/ico-bigthum-wait.svg?aeb2837e99c7d1055cbc3444433f4858"},
-            {"type": "text", "data": "웹툰"}
-        ]},
-        
-        {"viewer_img": "https://static-page.kakao.com/static/pc/ico-bigthum-person.svg?100328455b1454b0ffff555caf02e71e",
-        "viewer_num": "14.7만명",
-        "description": "붓끝으로 펼쳐가는 강호 유랑기!",
-        "redirectionLink" : "/home?seriesId=54688834",
-        "image": "//dn-img-page.kakao.com/download/resource?kid=chJoJc/hyLjfiEthl/g725sWc55RcZl2qZ6I5fcK",
-        "title": "악당의 아빠를 꼬셔라 시즌2",
-        "badges": [{"type": "img", "data": "https://static-page.kakao.com/static/pc/badge-bigthum-up.svg?a70b9cea4cb6b972e794d199820782a2"},
-        {"type": "img", "data": "https://static-page.kakao.com/static/pc/ico-bigthum-wait.svg?aeb2837e99c7d1055cbc3444433f4858"},
-        {"type": "text", "data": "웹툰"}]},
-        
-        {"viewer_img": "https://static-page.kakao.com/static/pc/ico-bigthum-person.svg?100328455b1454b0ffff555caf02e71e",
-        "viewer_num": "119.1만명",
-        "description": "철벽 황제를 향한 청혼 프로젝트!",
-        "redirectionLink" : "/home?seriesId=56203743",
-        "image": "//dn-img-page.kakao.com/download/resource?kid=esnSf/hyQ9UF9rej/puiIZrnl8oxPV2L9dYnTP0",
-        "title": "가장 평범한 이세계",
-        "badges": [{"type": "img", "data": "https://static-page.kakao.com/static/pc/badge-bigthum-new.svg?ffdef148078f601fa45da8b0ab56d834"},
-        {"type": "text", "data": "웹툰"}]}
-    ];
-
 const adSlideShowData = [
         {"image": "//dn-img-page.kakao.com/download/resource?kid=OTHLN/hyORYYFtQJ/70mk7mMaVLeghLdd4iKsjK"},
         {"image": "//dn-img-page.kakao.com/download/resource?kid=CCXIr/hyLi8K3MkQ/biTYzPvgpWCGGJe6gB45xk"},

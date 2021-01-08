@@ -10,38 +10,82 @@ const EVENT_DAY_NAVBAR_LOADED = "dayNavbarLoaded";
     const CARDBOX = 4;
     const TWO_BANNER_BOX = 5;
     const CARD_SCROLL_DAILY = 6;
+    const DAILY_TOP = 7;
 
     const genreContentStruct = {
         "home": [
-            BANNER_SLIDESHOW,
             // BUTTONS,
             // AD_SLIDESHOW,
             CARDBOX_DAILY_TOP,
-            CARDBOX,
             // TWO_BANNER_BOX
+            CARDBOX,
+            CARDBOX,
+            CARDBOX,
+            CARDBOX,
+            CARDBOX,
+            CARDBOX,
+             // RECOMMENDED_EVENT
         ],
         "daily": [
-            BANNER_SLIDESHOW,
             // CARD_SCROLL_DAILY,
         ],
         "webtoon": [
-
+            // LIST_WEBTOON_DAILY,
         ],
+        "highteen": [
+            // BUTTONS,
+            // LIST_4,
+            // AD_SLIDESHOW,
+            // LIST_TOP_3,
+            CARDBOX,
+            // LIST_4,
+            // LIST_4,
+            // LIST_4,
+            // LIST_4,
+            // LIST_4,
+            // LIST_4,
+            // LIST_2,
+            // LIST_4,
+            // LIST_4,
+            // LIST_4,
+            // LIST_4,
+            // LIST_4,
+            // LIST_2,
+            // FILTER_LIST_4
+        ],
+        "drama": [
+            // LIST_4,
+            // AD_SLIDESHOW,
+            // LIST_TOP_3,
+            CARDBOX,
+            // LIST_4,
+            // LIST_4,
+            // LIST_2,
+            // LIST_2,
+            // LIST_4,
+            // LIST_4
+            // LIST_4
+            // LIST_2
+            // LIST_2
+            // LIST_2
+            // LIST_4
+            // LIST_4
+            // LIST_4
+            // filter_ist_4
+        ]
     }
     const options = document.querySelectorAll('.genre-navbar > ul > li');
-    (function() {
-        options[0].className = "selected";
-        resetGenreContents();
-        renderGenreContents("home");
-        for (let i = 0; i < options.length; i++) {
-            options[i].addEventListener('click', (e) => {
-                resetGenreNavbar();
-                e.target.className = "selected";
-                resetGenreContents();
-                renderGenreContents(e.target.id);
-            })
-        }
-    })()
+    options[0].className = "selected";
+    resetGenreContents();
+    renderGenreContents("home");
+    for (let i = 0; i < options.length; i++) {
+        options[i].addEventListener('click', (e) => {
+            resetGenreNavbar();
+            e.target.className = "selected";
+            resetGenreContents();
+            renderGenreContents(e.target.id);
+        })
+    }
 
     function resetGenreNavbar() {
         for (let i = 0; i < options.length; i++) {
@@ -55,6 +99,7 @@ const EVENT_DAY_NAVBAR_LOADED = "dayNavbarLoaded";
     }
 
     function renderGenreContents(genre) {
+        Slideshow.render(genre);
         const contents = document.querySelector('.container > .container__contents');
         const genreContent = createGenreContentNode(genre);
         contents.appendChild(genreContent);

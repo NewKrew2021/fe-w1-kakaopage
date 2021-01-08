@@ -43,7 +43,6 @@
         navLink.href = navData['link'];
         navImg.alt = navData['name'];
         navImg.src = navData['image'];
-        console.log(window.location.pathname)
         if (navData['link'] == window.location.pathname) {
             navElement.className="selected";
         }

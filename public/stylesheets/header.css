@@ -73,3 +73,7 @@
 .header__sidemenu > a:last-child {
     border-right: none;
 }
+
+.slideshow > img {
+    width: 100%;
+}
