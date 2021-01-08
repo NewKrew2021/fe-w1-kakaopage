@@ -71,7 +71,7 @@
                     </div>
 
                     <!-- 첫번째 배너 -->
-                    <div class="card text-center pd-20px" style="display: flex-1">
+                    <div class="card text-center pd-20px" style="display: flex">
                         <% homeBanner.forEach(function(homeBanner) {%>
                             <div class="flex-balanced mg-1px bg-color__main font-main pd-10 <%= homeBanner.attr %> >">
                                 <%= homeBanner.title %>
@@ -117,22 +117,24 @@
                         </div>
                         <div class="flex-between">
                             <% day_expect.forEach(function(data) { %>
-                            <div class="minishow-container">
-                                <img class="bd-radius-5" src=" <%= data.item.image %> ">
-                                <div class="minishow-title"> <%= data.item.title %> </div>
-                                <div class="minishow-subtext">
-                                    <img src=" <%= data.item.e_img %> ">
-                                    <img src=" <%= data.item.c_img %> ">
-                                    <%= data.item.subject %>
-                                    <img src=" <%= data.item.b_img %> ">
-                                    <img src=" <%= data.item.p_img %> ">
-                                    <%= data.item.count %>
+                                <div class="minishow-container">
+                                    <img class="bd-radius-5" src=" <%= data.item.image %> ">
+                                    <div class="minishow-title">
+                                        <%= data.item.title %>
+                                    </div>
+                                    <div class="minishow-subtext">
+                                        <img src=" <%= data.item.e_img %> ">
+                                        <img src=" <%= data.item.c_img %> ">
+                                        <%= data.item.subject %>
+                                            <img src=" <%= data.item.b_img %> ">
+                                            <img src=" <%= data.item.p_img %> ">
+                                            <%= data.item.count %>
+                                    </div>
+                                    <div class="minishow-explain">
+                                        <%= data.item.explain %>
+                                    </div>
                                 </div>
-                                <div class="minishow-explain">
-                                    <%= data.item.explain %>
-                                </div>
-                            </div>
-                            <% }) %>
+                                <% }) %>
                         </div>
                     </div>
 
@@ -178,40 +180,52 @@
                             </div>
                         </div>
                         <% }) %>
-                    <!-- 10번째 배너 - 일간 랭킹 TOP - 다른 레이아웃 -->
-                    <div class="card pd-20px">
-                        <div class="flex-1">
-                            <div class="font-title flex-1">일간 랭킹 TOP</div>
-                            <div class="font-main gray">더보기</div><img class="more btn mg-left-5">
-                        </div>
-                        <% day_ranking.forEach(function(item){ %>
-                        <div class="flex mg-top-10">
-                            <div class="pd-5 mg-right-5 font-title">
-                                <%= item.number %>
+                            <!-- 10번째 배너 - 일간 랭킹 TOP - 다른 레이아웃 -->
+                            <div class="card pd-20px">
+                                <div class="flex-1">
+                                    <div class="font-title flex-1">일간 랭킹 TOP</div>
+                                    <div class="font-main gray">더보기</div><img class="more btn mg-left-5">
+                                </div>
+                                <% day_ranking.forEach(function(item){ %>
+                                    <div class="flex mg-top-10">
+                                        <div class="pd-5 mg-right-5 font-title">
+                                            <%= item.number %>
+                                        </div>
+                                        <div class="ranking-img">
+                                            <div class="ranking-thumb"><img class="bd-radius-5"
+                                                    src=" <%= item.image %> "></div>
+                                            <div class="ranking-clock"><img src=" <%= item.c_img %> "></div>
+                                        </div>
+                                        <div class="ranking-text">
+                                            <div>
+                                                <%= item.title %>
+                                            </div>
+                                            <div class="mg-top-3 gray font-14">
+                                                <img class="icon-small" src="/images/people.png">
+                                                <%= item.count %> | <%=item.subject %> | <%= item.genre %> |
+                                                            <%=item.author %>
+                                            </div>
+                                            <div class="mg-top-10 gray font-14">
+                                                <%= item.day %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% }) %>
                             </div>
-                            <div class="ranking-img">
-                                <div class="ranking-thumb"><img class="bd-radius-5" src=" <%= item.image %> "></div>
-                                <div class="ranking-clock"><img src=" <%= item.c_img %> "></div>
-                            </div>
-                            <div class="ranking-text">
-                                <div><%= item.title %></div>
-                                <div class="mg-top-3 gray font-14">
-                                    <img class="icon-small" src="/images/people.png"> <%= item.count %> | <%=item.subject %> | <%= item.genre %> | <%=item.author %> </div>
-                                <div class="mg-top-10 gray font-14"><%= item.day %></div>
-                            </div>
-                        </div>
-                        <% }) %>
-                    </div>
 
-                    <!-- 마지막 배너 - 기대 신작 TOP -->
-                    <div class="card pd-20px">
-                        <div class="flex">
-                            <div class="font-title flex">추천 이벤트</div>
-                            <div class="font-main gray">더보기</div><img class="more btn mg-left-5">
-                        </div>
-                        <div class="flex-between">
-                        </div>
-                    </div>
+                            <!-- 마지막 배너 - 기대 신작 TOP -->
+                            <div class="card pd-20px">
+                                <div class="flex-1">
+                                    <div class="font-title flex-1">추천 이벤트</div>
+                                    <div class="font-main gray">더보기</div><img class="more btn mg-left-5">
+                                </div>
+                                <div class="flex-between mg-top-10">
+                                    <div class="flex bd-radius-10">
+                                        <img style="width: 100%" class="bd-radius-5"
+                                        src="https://dn-img-page.kakao.com/download/resource?kid=crzwdR/hyLi7ZIVZJ/yQGntGgOxy05OrbbAqMmgk">
+                                    </div>
+                                </div>
+                            </div>
                 </div>
 
                 <!-- 요일연재 -->
@@ -290,7 +304,7 @@
             </div>
         </div>
         <div class="footer bg-color__content">
-           <img src="/images/appDownload.png">
+            <img src="/images/appDownload.png">
         </div>
         <div id="footer-line" class="footer gray">
         </div>
