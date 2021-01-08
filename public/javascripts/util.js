@@ -6,18 +6,11 @@
 */
 
 /* 자주 사용하는 함수 간소화 */
-function getElement(id){
-    return document.getElementById(id);
-}
-function creElement(id){
-    return document.createElement(id);
-}
-function getElementsClass(className){
-    return document.getElementsByClassName(className);
-}
-function getQueryAll(node){
-    return document.querySelectorAll(node);
-}
+const getElement = (id) => document.getElementById(id);
+const creElement = (id) => document.createElement(id);
+const getElementsClass = (className) => document.getElementsByClassName(className);
+const getQueryAll = (node) => document.querySelectorAll(node);
+
 /* [웹툰] 슬라이드 애니메이션 함수 */
 function showSlides(slidename) {
     let slides = getElementsClass(slidename);
