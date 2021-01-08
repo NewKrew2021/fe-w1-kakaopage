@@ -22,7 +22,6 @@
 })();
 
 function onClick(name){
-    console.log("click",name);
     const genreContents=document.getElementsByClassName("genre-contents");
     for(let i = 0; i < genreContents.length;i++){
         const contents=genreContents[i];

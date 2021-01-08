@@ -60,7 +60,6 @@
         for(let i = 0 ; i<dataList.length;i++){
             
             let d=dataList[i];
-            console.log(d);
             li+=`<li class="webtoon-weekly-release-filter-item">`;
             if(d.icon) li+=`<img src="${d.url}" style="margin-right:10px"></img>`
             li+=`${d.text}</li>`;

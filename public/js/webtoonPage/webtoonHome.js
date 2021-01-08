@@ -1,6 +1,5 @@
 (function () {
     const webtoonHome = document.getElementById("genre-home");
-    console.log("webtoon",webtoonHome);
     let carouselHTML = `<div id="webtoon-home-carousel"></div>`;
     webtoonHome.innerHTML = carouselHTML;
 
