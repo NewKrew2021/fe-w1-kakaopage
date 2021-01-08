@@ -54,7 +54,8 @@ function setContainer(menu) {
     else {
         // 공통(navigator, slide) + content container
         MAIN.containerDOM.innerHTML = `<div class="navigator"><ul class="navigator" id="webtoonCategory"></ul></div>`;
-        MAIN.containerDOM.innerHTML += `<div class="slide"><div id="slide"></div><p class="slideTitle"></p><div id="prevBtn"><img src="./images/slide_prev.svg"></div><div id="nextBtn"><img src="./images/slide_next.svg"></div><div id="page"></div></div>`;
+        MAIN.containerDOM.innerHTML += `<div class="slide"><div id="slide"></div><p class="slideTitle"></p><div id="prevBtn">
+        <img src="./images/slide_prev.svg"></div><div id="nextBtn"><img src="./images/slide_next.svg"></div><div id="page"></div></div>`;
         MAIN.containerDOM.innerHTML += `<div class="content" id="content"></div>`;
         
         // 세부 카테고리 그리기
@@ -106,9 +107,7 @@ function setContainer(menu) {
     }
 }
 
-window.onload = function() {
-    MAIN.containerDOM = document.getElementById("container");
-
+function setMainCategory() {
     // 메인 카테고리 데이터를 받아서 그림, 카테고리 선택 이벤트 등록
     getCategory("main").then(function(category) {
         const mainCategoryDOM = document.getElementById("mainCategory");
@@ -139,9 +138,16 @@ window.onload = function() {
         }
 
     });
+}
 
+window.onload = () => {
+    // container DOM 변수에 저장(content 렌더링 위함)
+    MAIN.containerDOM = document.getElementById("container");
+    console.log("AAA");
+    setMainCategory();
+
+    // 웹툰 데이터 불러옴
     getWebtoon().then(function(webtoon) {
         MAIN.webtoons = webtoon.webtoon;
-        
     });
-}
+};
