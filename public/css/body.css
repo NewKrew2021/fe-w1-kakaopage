@@ -109,13 +109,54 @@ body{
 .card-name{
     position: relative;
     top:5px;
-
     margin-top:15px;
     margin-bottom:15px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    width:115px;
+    height: 20px;
+
 }
 .card-count{
     color:rgb(171,171,171);
 }
 .web-font{
     font-family: sans-serif;
+}
+
+.hotfeature{
+    position:relative;
+    top:10px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hotfeature-count{
+    display:inline;
+    background-color: rgb(246,209,3);
+    border-radius:20px;
+    padding-left:7px;
+    padding-right:7px;
+    padding-top:2px;
+    padding-bottom:2px;
+    margin-left:5px;
+}
+.hotfeature-text{
+    display:inline;
+    margin-right:5px;
+}
+.hotfeature-item{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color:  rgb(243, 243, 243);
+    margin-top:20px;
+    margin-bottom:20px;
+    margin-left:5px;
+    margin-right:5px;
+    padding:15px;
+    width :180px;
+    height: 30px;
 }
