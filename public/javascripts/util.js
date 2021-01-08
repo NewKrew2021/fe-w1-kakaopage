@@ -42,7 +42,7 @@ function readTextFile(file, callback) {
     rawFile.send(null);
 }
 /* navBar 클릭한 요소만 밑줄 강조하는 등록 함수 */
-function ADD_HIGHLIGHT_BY_CLICKED(element){
+function addBorderOnClicked(element){
     getQueryAll("li."+element).forEach(function(node, i){
         node.addEventListener("click", function() {
             let current = getElementsClass(element+ " active");
@@ -52,7 +52,7 @@ function ADD_HIGHLIGHT_BY_CLICKED(element){
     });
 }
 /* 반복되는 그리드에 썸네일 데이터를 넣는 등록 함수 */
-function ADD_DAY_GRID_DATA(jsonFile, parent, daynum) {
+function addDayGridData(jsonFile, parent, daynum) {
     /* json 파일 읽기 */
     let json;
     readTextFile(jsonFile, function (text) {
@@ -119,7 +119,7 @@ function ADD_DAY_GRID_DATA(jsonFile, parent, daynum) {
     });
 }
 /* 선택한 요일에 따라 컨텐츠 변화시키는 등록 함수 */
-function SHOW_DAY_CONTENT(jsonFile, parent, clickedLI) {
+function showDayContent(jsonFile, parent, clickedLI) {
     for (element of getQueryAll("li."+clickedLI)){
         element.addEventListener("click", function () {
             const daynum = Number(this.getAttribute("tab"));
