@@ -5,7 +5,7 @@
 
 let slideIndex = 0;
 let timer;
-let MAX_SLIDE_COUNT = 2; // 슬라이드에 포함되는 최대 컨텐츠 갯수
+const MAX_SLIDE_COUNT = 2; // 슬라이드에 포함되는 최대 컨텐츠 갯수
 
 /* 배너 이미지 변경하기 */
 var count = 0;
