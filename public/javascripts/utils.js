@@ -1,5 +1,5 @@
 const $ = (target, parent = document) => {
-  return document.querySelector(target);
+  return parent.querySelector(target);
 };
 
 const createNewElement = (tag, className, innerText) => {

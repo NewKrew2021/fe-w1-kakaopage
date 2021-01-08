@@ -3,6 +3,7 @@ import { changeClickedNavTab } from './genre-nav.js';
 import { headerNavData } from './data.js';
 import { renderWebtoonPage } from './webtoon.js';
 import { renderWebNovelPage } from './web-novel.js';
+import { renderMoviePage } from './movie.js';
 
 const HEADER_NAV_LIST = [
   { pageIndex: 0, pageName: '홈', renderFunction: renderHomePage },
@@ -40,17 +41,6 @@ const renderHeaderNav = headerNavData => {
 };
 
 function renderHomePage(pageIndex) {
-  const contentTag = $('.content');
-  contentTag.innerText = '';
-  changeClickedNavTab(
-    headerNavData,
-    pageIndex,
-    HEADER_NAV_LIST_CLASS_NAME,
-    HEADER_NAV_CLICKED_ITEM_CLASS_NAME
-  );
-}
-
-function renderMoviePage(pageIndex) {
   const contentTag = $('.content');
   contentTag.innerText = '';
   changeClickedNavTab(

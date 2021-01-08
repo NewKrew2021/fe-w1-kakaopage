@@ -20,7 +20,7 @@ const createCarouselElement = carouselData => {
 };
 
 function renderCarousel(pageIndex, contentListClassName, carouselList) {
-  const contentList = $(contentListClassName);
+  const contentList = $(`.${contentListClassName}`);
   contentList.innerHTML = '';
   contentList.appendChild(createCarouselElement(carouselList[0]));
 }
