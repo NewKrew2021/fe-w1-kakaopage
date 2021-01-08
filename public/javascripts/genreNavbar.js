@@ -10,38 +10,82 @@ const EVENT_DAY_NAVBAR_LOADED = "dayNavbarLoaded";
     const CARDBOX = 4;
     const TWO_BANNER_BOX = 5;
     const CARD_SCROLL_DAILY = 6;
+    const DAILY_TOP = 7;
 
     const genreContentStruct = {
         "home": [
-            BANNER_SLIDESHOW,
             // BUTTONS,
             // AD_SLIDESHOW,
             CARDBOX_DAILY_TOP,
-            CARDBOX,
             // TWO_BANNER_BOX
+            CARDBOX,
+            CARDBOX,
+            CARDBOX,
+            CARDBOX,
+            CARDBOX,
+            CARDBOX,
+             // RECOMMENDED_EVENT
         ],
         "daily": [
-            BANNER_SLIDESHOW,
             // CARD_SCROLL_DAILY,
         ],
         "webtoon": [
-
+            // LIST_WEBTOON_DAILY,
         ],
+        "highteen": [
+            // BUTTONS,
+            // LIST_4,
+            // AD_SLIDESHOW,
+            // LIST_TOP_3,
+            CARDBOX,
+            // LIST_4,
+            // LIST_4,
+            // LIST_4,
+            // LIST_4,
+            // LIST_4,
+            // LIST_4,
+            // LIST_2,
+            // LIST_4,
+            // LIST_4,
+            // LIST_4,
+            // LIST_4,
+            // LIST_4,
+            // LIST_2,
+            // FILTER_LIST_4
+        ],
+        "drama": [
+            // LIST_4,
+            // AD_SLIDESHOW,
+            // LIST_TOP_3,
+            CARDBOX,
+            // LIST_4,
+            // LIST_4,
+            // LIST_2,
+            // LIST_2,
+            // LIST_4,
+            // LIST_4
+            // LIST_4
+            // LIST_2
+            // LIST_2
+            // LIST_2
+            // LIST_4
+            // LIST_4
+            // LIST_4
+            // filter_ist_4
+        ]
     }
     const options = document.querySelectorAll('.genre-navbar > ul > li');
-    (function() {
-        options[0].className = "selected";
-        resetGenreContents();
-        renderGenreContents("home");
-        for (let i = 0; i < options.length; i++) {
-            options[i].addEventListener('click', (e) => {
-                resetGenreNavbar();
-                e.target.className = "selected";
-                resetGenreContents();
-                renderGenreContents(e.target.id);
-            })
-        }
-    })()
+    options[0].className = "selected";
+    resetGenreContents();
+    renderGenreContents("home");
+    for (let i = 0; i < options.length; i++) {
+        options[i].addEventListener('click', (e) => {
+            resetGenreNavbar();
+            e.target.className = "selected";
+            resetGenreContents();
+            renderGenreContents(e.target.id);
+        })
+    }
 
     function resetGenreNavbar() {
         for (let i = 0; i < options.length; i++) {
@@ -55,6 +99,7 @@ const EVENT_DAY_NAVBAR_LOADED = "dayNavbarLoaded";
     }
 
     function renderGenreContents(genre) {
+        Slideshow.render(genre);
         const contents = document.querySelector('.container > .container__contents');
         const genreContent = createGenreContentNode(genre);
         contents.appendChild(genreContent);
@@ -93,7 +138,7 @@ const EVENT_DAY_NAVBAR_LOADED = "dayNavbarLoaded";
                     </div>
                     <div class="content-box__day-navbar">
                         <ul>
-                            <li>월</li>
+                            <li class="selected">월</li>
                             <li>화</li>
                             <li>수</li>
                             <li>목</li>
@@ -106,38 +151,23 @@ const EVENT_DAY_NAVBAR_LOADED = "dayNavbarLoaded";
                     <div class="content-box__day-card-group"></div>
                 </div>`;
 
+
                 const dailycardGroupElement = content.querySelector('.content-box__day-card-group');
 
                 for (let i = 0; i < 10; i++) {
-                    const card = document.createElement("div");
-                    card.innerHTML=`<div class="card-container">
-                        <div class="card">
-                            <img src="//dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&amp;filename=th2" data-src="//dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&amp;filename=th2" alt="롱리브더킹" draggable="false">
-                            <div class="card-footer">
-                                <span>TOP</span>
-                                <!-- <img src="https://static-page.kakao.com/static/common/bmbadge_webtoon.svg?f218f9d5ac717abcf43047ff23145119"> -->
-                                <img src="https://static-page.kakao.com/static/common/bmbadge_waitfree.svg?53cf25c84253dee8d32e66da7524dbaf">
-                            </div>
-                        </div>
-                        <div class="title">기이이이이이이이인제목</div>
-                        <img class="viewers-icon" src="https://static-page.kakao.com/static/common/icon_read_count.png?817b1f83aa0dd8de232a68ac82efd871" alt="인원수">
-                        <div class="viewers">
-                            126만명
-                        </div>
-                    </div>`
+                    const card = Card.create(dailyTopData[0][i]);
                     dailycardGroupElement.appendChild(card);
                 }
-                const dayData = {};
                 (function renderDayNavbar() {
-                    const dayOptions = content.querySelectorAll('.content-box__day-navbar > ul > li')
-                    console.log(dayOptions);
+                    
+                    const dayOptions = content.querySelectorAll('.content-box__day-navbar > ul > li');
                     (function() {
                         for (let i = 0; i < dayOptions.length; i++) {
                             dayOptions[i].addEventListener('click', (e) => {
                                 resetDayNavbar();
                                 e.target.className = "selected";
                                 resetCards();
-                                renderCards(dayData);
+                                renderCards(dailyTopData[i])
                             })
                         }
                     })()
@@ -156,22 +186,7 @@ const EVENT_DAY_NAVBAR_LOADED = "dayNavbarLoaded";
                     function renderCards (data) {
                         const cardGroup = document.querySelector('.content-box__day-card-group');
                         for (let i = 0; i < 10; i++) {
-                            const card = document.createElement('div');
-                            card.innerHTML = `<div class="card-container">
-                            <div class="card">
-                            <img src="//dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&amp;filename=th2" data-src="//dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&amp;filename=th2" alt="롱리브더킹" draggable="false">
-                            <div class="card-footer">
-                            <span>TOP</span>
-                            <!-- <img src="https://static-page.kakao.com/static/common/bmbadge_webtoon.svg?f218f9d5ac717abcf43047ff23145119"> -->
-                            <img src="https://static-page.kakao.com/static/common/bmbadge_waitfree.svg?53cf25c84253dee8d32e66da7524dbaf">
-                            </div>
-                            </div>
-                            <div class="title">새로생긴거</div>
-                            <img class="viewers-icon" src="https://static-page.kakao.com/static/common/icon_read_count.png?817b1f83aa0dd8de232a68ac82efd871" alt="인원수">
-                            <div class="viewers">
-                            126만명
-                            </div>
-                            </div>`
+                            const card = Card.create(data[i]);
                             cardGroup.appendChild(card);
                         }
                     }
@@ -194,22 +209,7 @@ const EVENT_DAY_NAVBAR_LOADED = "dayNavbarLoaded";
                 </div>`;
                 const cardGroupElement = content.querySelector('.content-box__card-group');
                 for (let i = 0; i < 5; i++) {
-                    const card = document.createElement("div");
-                    card.innerHTML=`<div class="card-container">
-                        <div class="card">
-                            <img src="//dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&amp;filename=th2" data-src="//dn-img-page.kakao.com/download/resource?kid=dAtlY/hyATpI9YDi/0TS5mPhtYK9kVvJcgiV6b0&amp;filename=th2" alt="롱리브더킹" draggable="false">
-                            <div class="card-footer">
-                                <span>TOP</span>
-                                <!-- <img src="https://static-page.kakao.com/static/common/bmbadge_webtoon.svg?f218f9d5ac717abcf43047ff23145119"> -->
-                                <img src="https://static-page.kakao.com/static/common/bmbadge_waitfree.svg?53cf25c84253dee8d32e66da7524dbaf">
-                            </div>
-                        </div>
-                        <div class="title">기이이이이이이이인제목</div>
-                        <img class="viewers-icon" src="https://static-page.kakao.com/static/common/icon_read_count.png?817b1f83aa0dd8de232a68ac82efd871" alt="인원수">
-                        <div class="viewers">
-                            126만명
-                        </div>
-                    </div>`
+                    const card = Card.create(dailyTopData[0][i]);
                     cardGroupElement.appendChild(card);
                 }
                 
