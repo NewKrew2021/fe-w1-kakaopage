@@ -5,6 +5,7 @@
 
 let slideIndex = 0;
 let timer;
+let MAX_SLIDE_COUNT = 2; // 슬라이드에 포함되는 최대 컨텐츠 갯수
 
 /* 배너 이미지 변경하기 */
 var count = 0;
@@ -14,16 +15,16 @@ getElement("btn-prev").addEventListener("click", () => {
         getElement("banner-img").setAttribute('src', topbannerImg[count]);
     }
     else if (count <= 0) {
-        count = 2;
+        count = MAX_SLIDE_COUNT;
         getElement("banner-img").setAttribute('src', topbannerImg[count]);
     }
 });
 getElement("btn-next").addEventListener("click", () => {
-    if (count < 2) {
+    if (count < MAX_SLIDE_COUNT) {
         count++;
         getElement("banner-img").setAttribute('src', topbannerImg[count]);
     }
-    else if (count >= 2) {
+    else if (count >= MAX_SLIDE_COUNT) {
         count = 0;
         getElement("banner-img").setAttribute('src', topbannerImg[count]);
     }
