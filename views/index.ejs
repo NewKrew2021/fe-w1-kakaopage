@@ -48,26 +48,33 @@
                 <!-- 홈 -->
                 <div id="home" class="page visible">
                     <div class="slideshow-container">
-                        <% home_slide.forEach(function(home_slide){ %>
-                            <div class="homeSlides fade">
-                                <div class="slide-num">
-                                    <%= home_slide.slideNum %>
-                                </div>
-                                <img style="width:100%" src="<%= home_slide.img %>">
-                                <div class="slide-title">
-                                    <%= home_slide.title %>
-                                </div>
-                                <div class="slide-subtext"><img src="<%= home_slide.subtext_img %>">
-                                    <%= home_slide.subtext_dir %>
-                                        <img src="/images/line_top_banner.png"> <img
-                                            src="/images/ico-bigthum-person.svg">
-                                        <%= home_slide.subtext_cnt %>
-                                </div>
-                                <div class="slide-explain">
-                                    <%= home_slide.explain %>
-                                </div>
+                        <div class="slide-box">
+                            <div class="slide-list">
+                                <% home_slide.forEach(function(home_slide){ %>
+                                    <div class="slide-content">
+                                        <img style="width:100%" src="<%= home_slide.img %>">
+                                        <div class="slide-title">
+                                            <%= home_slide.title %>
+                                        </div>
+                                        <div class="slide-subtext"><img src="<%= home_slide.subtext_img %>">
+                                            <%= home_slide.subtext_dir %>
+                                                <img src="/images/line_top_banner.png"> <img
+                                                    src="/images/ico-bigthum-person.svg">
+                                                <%= home_slide.subtext_cnt %>
+                                        </div>
+                                        <div class="slide-explain">
+                                            <%= home_slide.explain %>
+                                        </div>
+                                    </div>
+                                    <% }); %>
                             </div>
-                            <% }); %>
+                            <div class="slide-btn prev">
+                                <img src="/images/before_dark.svg">
+                            </div>
+                            <div class="slide-btn next">
+                                <img src="/images/next_dark.svg">
+                            </div>
+                        </div>
                     </div>
 
                     <!-- 첫번째 배너 -->
@@ -222,7 +229,7 @@
                                 <div class="flex-between mg-top-10">
                                     <div class="flex bd-radius-10">
                                         <img style="width: 100%" class="bd-radius-5"
-                                        src="https://dn-img-page.kakao.com/download/resource?kid=crzwdR/hyLi7ZIVZJ/yQGntGgOxy05OrbbAqMmgk">
+                                            src="https://dn-img-page.kakao.com/download/resource?kid=crzwdR/hyLi7ZIVZJ/yQGntGgOxy05OrbbAqMmgk">
                                     </div>
                                 </div>
                             </div>
@@ -232,7 +239,7 @@
                 <div id="day" class="page invisible">
                     <div class="slideshow-container">
                         <% day_slide.forEach(function(day_slide){ %>
-                            <div class="daySlides fade">
+                            <div>
                                 <div class="slide-num">
                                     <%= day_slide.slideNum %>
                                 </div>
@@ -250,7 +257,7 @@
                                     <%= day_slide.explain %>
                                 </div>
                             </div>
-                            <% }); %>
+                        <% }); %>
                     </div>
                     <!-- 요일연재 메인 -->
                     <div class="card">

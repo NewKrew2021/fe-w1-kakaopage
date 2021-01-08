@@ -10,17 +10,12 @@ const getElement = (id) => document.getElementById(id);
 const creElement = (id) => document.createElement(id);
 const getElementsClass = (className) => document.getElementsByClassName(className);
 const getQueryAll = (node) => document.querySelectorAll(node);
+const getQuery = (node) => document.querySelector(node);
 
 /* [웹툰] 슬라이드 애니메이션 함수 */
 function showSlides(slidename) {
-    let slides = getElementsClass(slidename);
-    for (element of slides){
-        element.style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}  
-    slides[slideIndex-1].style.display = "block";  
-    timer = setTimeout(showSlides, slideShowIntervalTime, slidename); // 3초마다 이미지 변경
+   
+
 }
 /* .js에서 json 파일을 읽는 함수 */
 function readTextFile(file, callback) {
@@ -66,9 +61,9 @@ function addDayGridData(jsonFile, parent, daynum) {
             thumb_img.setAttribute("src", json.data[daynum].item[i].image);
 
             let div_thumb_btm = document.createElement("div");
-            div_thumb_btm.className = "thumb-bottom bottom flex";
+            div_thumb_btm.className = "thumb-bottom bottom flex-1";
             let div_flex = document.createElement("div");
-            div_flex.className = "flex";
+            div_flex.className = "flex-1";
             let div_flex_btm = document.createElement("div");
             div_flex_btm.className = "yellow font-18 mg-left-5 mg-top-3";
 
