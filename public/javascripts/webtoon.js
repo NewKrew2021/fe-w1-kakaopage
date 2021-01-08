@@ -1,66 +1,22 @@
 import { $, createNewElement } from './utils.js';
 import { createGenreNav, changeClickedNavTab } from './genre-nav.js';
-import {
-  headerNavData,
-  webtoonPageData,
-  webtoonSniffetData,
-  sniffetDataListText,
-} from './data.js';
+import { headerNavData, webtoonPageData, webtoonSniffetData } from './data.js';
 import { renderCarousel } from './carousel.js';
-import { createSniffetImage, createSniffetDescription } from './sniffet.js';
+import {
+  createSniffetListContent,
+  createDayListHeader,
+  DAY_LIST_CLASS_NAME,
+} from './sniffet.js';
 
-const HEADER_NAV_CLICKED_ITEM_CLASS_NAME = 'header-nav__item--clicked';
+const CLICKED_HEADER_NAV_ITEM_CLASS_NAME = 'header-nav__item--clicked';
 const HEADER_NAV_LIST_CLASS_NAME = '.header-nav__list';
 
-const DAY_LIST_HEADER_DATA = {
-  title: '요일 연재 TOP',
-  subtitle: '(1,085)',
-  right: '더보기 >',
-};
-
-const createSniffetListContent = () => {
-  const dayListContent = createNewElement('div', 'day-list__content', '');
-  dayListContent.innerHTML = sniffetDataListText + sniffetDataListText;
-  return dayListContent;
-};
-
-const createDayListHeader = dayListHeaderData => {
-  const dayListHeader = createNewElement('div', 'day-list__header', '');
-  const dayListHeaderLeft = createNewElement(
-    'div',
-    'day-list__header-left',
-    ''
-  );
-  const dayListHeaderRight = createNewElement(
-    'div',
-    'day-list__header-right',
-    dayListHeaderData.right
-  );
-  dayListHeaderLeft.appendChild(
-    createNewElement(
-      'p',
-      'day-list__header-left-title',
-      dayListHeaderData.title
-    )
-  );
-  dayListHeaderLeft.appendChild(
-    createNewElement(
-      'p',
-      'day-list__header-left-subtitle',
-      dayListHeaderData.subtitle
-    )
-  );
-  dayListHeader.appendChild(dayListHeaderLeft);
-  dayListHeader.appendChild(dayListHeaderRight);
-  return dayListHeader;
-};
-
 const createWebtoonDayList = webtoonSniffetData => {
-  const dayList = createNewElement('div', 'day-list', '');
-  const dayListHeader = createDayListHeader(DAY_LIST_HEADER_DATA);
+  const dayList = createNewElement('div', DAY_LIST_CLASS_NAME.dayList, '');
+  const dayListHeader = createDayListHeader();
   dayList.appendChild(dayListHeader);
   dayList.appendChild(
-    createGenreNav(webtoonSniffetData.headerItemList, 'day-list__nav')
+    createGenreNav(webtoonSniffetData.headerItemList, DAY_LIST_CLASS_NAME.nav)
   );
   dayList.appendChild(createSniffetListContent());
 
@@ -74,7 +30,7 @@ function renderWebtoonPage(pageIndex) {
     headerNavData,
     pageIndex,
     HEADER_NAV_LIST_CLASS_NAME,
-    HEADER_NAV_CLICKED_ITEM_CLASS_NAME
+    CLICKED_HEADER_NAV_ITEM_CLASS_NAME
   );
   contentTag.appendChild(
     createGenreNav(webtoonPageData.WEBTOON_NAV_LIST, 'webtoon-genre-nav')
